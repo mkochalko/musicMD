@@ -1,6 +1,5 @@
 const Validator = require('validator');
 const validText = require('./valid-text');
-const validArray = require('./valid-array');
 
 const express = require("express");
 const router = express.Router();
