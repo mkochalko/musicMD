@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
-const tweets = require("./routes/api/tweets");
+const events = require("./routes/api/events");
 const login = require("./validation/login")
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -24,7 +24,7 @@ mongoose
 
 
 app.use("/api/users", users);
-app.use("/api/tweets", tweets);
+app.use("/api/events", events);
 
 
 const port = process.env.PORT || 5000;
