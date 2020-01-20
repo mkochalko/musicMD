@@ -57,8 +57,10 @@ router.post("/register", (req, res) => {
                             newLibrary.save()
                             jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                                 res.json({
+                                    id: newUser.id,
                                     success: true,
-                                    token: "Bearer " + token
+                                    token: "Bearer " + token,
+                                    library: newLibrary
                                 });
                             });
                         })

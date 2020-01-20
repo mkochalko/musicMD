@@ -21,6 +21,13 @@ router.post("/", passport.authenticate("jwt", { session: false }),
     }
 );
 
+router.get("/index", (req, res) => {
+    let index = Library.find({});
+    res.json({
+        index
+    });
+})
+
 router.get("/test", (req, res) => res.json({ msg: "This is the libraries route" }));
 
 module.exports = router;
