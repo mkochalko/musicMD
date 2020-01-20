@@ -4,6 +4,8 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 const bcrypt = require('bcryptjs');
 const User = require("../../models/User");
+const Library = require("../../models/Library");
+
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
@@ -37,15 +39,22 @@ router.post("/register", (req, res) => {
                 password: req.body.password
             });
 
+
             bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(newUser.password, salt, (err, hash) => {
                     if (err) throw err;
+
                     newUser.password = hash;
                     newUser
                         .save()
                         .then(user => {
                             const payload = { id: user.id, handle: user.handle };
-
+                            const newLibrary = new Library({
+                                userId: newUser.id,
+                                eventIds: [],
+                                songIds: []
+                            });
+                            newLibrary.save()
                             jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
                                 res.json({
                                     success: true,
@@ -54,6 +63,7 @@ router.post("/register", (req, res) => {
                             });
                         })
                         .catch(err => console.log(err));
+
                 });
             });
         }
