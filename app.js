@@ -9,7 +9,7 @@ const libraries = require("./routes/api/libraries");
 const login = require("./validation/login")
 const bodyParser = require('body-parser');
 const passport = require('passport');
-
+const path = require('path')
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
@@ -18,19 +18,27 @@ app.use(bodyParser.json());
 
 
 
-
 mongoose
     .connect(db, { useNewUrlParser: true })
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
+app.get('/', function (req, res) {
+    res.sendFile('/frontend/public/index.html', { root: __dirname });
+
+});
+
+
 
 app.use("/api/users", users);
+app.use(express.static(path.join(__dirname, "frontend/public")));
 app.use("/api/events", events);
 app.use("/api/songs", songs);
 app.use("/api/libraries", libraries);
 
-
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/frontend/public/index.html'));
+});
 
 
 const port = process.env.PORT || 5000;
