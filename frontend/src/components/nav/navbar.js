@@ -35,10 +35,9 @@ class NavBar extends React.Component {
     }
 
     render() {
-        console.log(this.props.loggedIn)
         return (
             <div>
-                <h1>Chirper</h1>
+                <h1>NavBar</h1>
                 {this.getLinks()}
             </div>
         );
