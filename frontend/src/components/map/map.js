@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Key from "./keys"
+import Key from "./keys";
+import classes from "./map.module.css";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -16,7 +17,7 @@ class SimpleMap extends Component {
     render() {
         return (
             // Important! Always set the container height explicitly
-            <div style={{ height: '100vh', width: '100%' }}>
+            <div className={classes.mapContainer}>
                 <GoogleMapReact
                     bootstrapURLKeys={{ key: Key }}
                     defaultCenter={this.props.center}
