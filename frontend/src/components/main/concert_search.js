@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from "../map/map"
 
 class ConcertSearch extends React.Component {
 
@@ -6,6 +7,7 @@ class ConcertSearch extends React.Component {
         return (
             <div>
                 <h1>Concert Search</h1>
+                <Map></Map>
                 <footer>
                 </footer>
             </div>
