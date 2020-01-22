@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
-import ConcertSearch from './main/concert_search';
+import ConcertSearchContainer from './main/concert_search_container';
 
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -14,7 +14,7 @@ const App = () => (
     <div className={classes.wrapper}>
         <NavBarContainer className={classes.navContainer}/>
         <Switch>
-            <Route exact path="/" component={ConcertSearch} />
+            <Route exact path="/" component={ConcertSearchContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
