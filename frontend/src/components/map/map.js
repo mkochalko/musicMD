@@ -28,6 +28,7 @@ class SimpleMap extends Component {
         let lng = e.lng;
         this.props.getMetroIdByClick(`${lat},${lng}`);
         console.log(this.props.getMetroIdByClick(`${lat},${lng}`));
+
         // this.props.getEvents(`${lat},${lng}`)
     }
 
