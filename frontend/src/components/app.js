@@ -10,6 +10,8 @@ import SignupFormContainer from './session/signup_form_container';
 import classes from './wrapper.module.css';
 import './reset.css';
 
+
+
 const App = () => (
     <div className={classes.wrapper}>
         <NavBarContainer className={classes.navContainer}/>

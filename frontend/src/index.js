@@ -8,6 +8,7 @@ import { logout } from './actions/session_actions';
 import axios from 'axios';
 import { getMetroIdByClick, getMetroIdByText } from './actions/ticketmaster_actions';
 
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
