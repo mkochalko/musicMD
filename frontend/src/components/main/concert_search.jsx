@@ -43,7 +43,7 @@ class ConcertSearch extends React.Component {
         // console.log(this.props.events[0])
         // console.log(this.state.selectedEvent)
         return (
-            <div>
+            <div className={classes.indexSearchContainer}>
                 <div className={classes.searchBar}>
                     <input 
                         type="text" 

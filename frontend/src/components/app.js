@@ -7,10 +7,12 @@ import ConcertSearchContainer from './main/concert_search_container';
 
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import classes from './wrapper.module.css';
+import './reset.css';
 
 const App = () => (
-    <div>
-        <NavBarContainer />
+    <div className={classes.wrapper}>
+        <NavBarContainer className={classes.navContainer}/>
         <Switch>
             <Route exact path="/" component={ConcertSearchContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />

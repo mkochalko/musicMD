@@ -11,7 +11,7 @@ const passport = require('passport');
 router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => {
     
     
-    const {errors, isValid} = validateEventData(req.body)
+    const {errors, isValid} = validateEventData(req.body);
 
     if (!isValid) {
         return res.status(400).json(errors);
@@ -21,10 +21,10 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         artist: req.body.artist,
         venue: req.body.venue,
         songIds: req.body.songIds
-    })
+    });
 
-    newEvent.save().then(event => res.json(event))
-})
+    newEvent.save().then(event => res.json(event));
+});
 
 router.get("/test", (req, res) => res.json({ msg: "This is the events route" }));
 module.exports = router;
