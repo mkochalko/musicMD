@@ -4,12 +4,12 @@ import { fetchEvents } from '../../actions/event_actions';
 import userSplash from './user_splash';
 
 const mapStateToProps = state => ({
-    currentUser: state.entities.user,
+    currentUser: state.session.user,
     events: state.entities.events
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchEvents: () => dispatch(fetchEvents)
+    fetchEvents: () => dispatch(fetchEvents())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(userSplash);

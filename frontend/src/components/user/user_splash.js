@@ -3,24 +3,25 @@ import EventIndexItem from '../main/events_index_item';
 
 class UserSplash extends React.Component {
 
-    constructor({ currentUser, events, fetchEvents }) { 
-        super({ currentUser, events, fetchEvents });
+    constructor(props) { 
+        super(props);
     }
 
     componentDidMount() {
-        this.fetchEvents();
+        // this.fetchEvents();
     }
 
     render() {
+        console.log(this.props)
         return (
             <div className="user-splash">
                 <div className="user-info">
-                    <h3>Hey {this.currentUser.username}</h3>
+                    <h3>Hey {this.props.currentUser.username}</h3>
                 </div>
                 <div className="user-events">
                     <ul>
                         {
-                            this.events.map((event, idx) => (
+                            Object.values(this.props.events).map((event, idx) => (
                                 <EventIndexItem event={event} key={idx} />
                             ))
                         }

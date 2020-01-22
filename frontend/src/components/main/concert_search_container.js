@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchtoProps = dispatch => ({
-    getEvents: (latlng) => dispatch(TMAction.getEvents(latlng))
+    getMetroIdByClick: (latlng) => dispatch(TMAction.getMetroIdByClick(latlng))
 })
 
 
