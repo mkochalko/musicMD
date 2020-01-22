@@ -29,3 +29,19 @@ export const getMetroIdByClick = (latlng) => {
         })
     )
 }
+
+export const getMetroIdByText = (text) => {
+    return (
+        $.ajax({
+            url: `https://api.songkick.com/api/3.0/search/locations.json?query=${text}&apikey=${SKKey}`,
+            method: 'GET',
+            async: false,
+            dataType: "json",
+            success: function (json) {
+                // console.log(json.resultsPage.results.location[0].metroArea.id);
+                let events = getEvents(json.resultsPage.results.location[0].metroArea.id)
+                console.log(events);
+            }
+        })
+    )
+}
