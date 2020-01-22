@@ -21,10 +21,10 @@ router.post("/", passport.authenticate("jwt", { session: false }),
     }
 );
 
-router.get("/index", (req, res) => {
-    let index = Library.find({});
+router.get("/library", (req, res) => {
+    let library = Library.find({userId: req.body.userId});
     res.json({
-        index
+        library
     });
 })
 

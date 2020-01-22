@@ -1,6 +1,11 @@
 
 import $ from "jquery";
+<<<<<<< HEAD:frontend/src/util/ticketmaster_api_util.js
 import * as Keys from "./keys";
+=======
+import { SKKey } from "../config/keys";
+// const SKKey = require('../config/keys').SKKey
+>>>>>>> master:frontend/src/util/songkick_api_util.js
 
 
 export const getEvents = (metroId) => {

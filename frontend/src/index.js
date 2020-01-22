@@ -6,9 +6,18 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
+<<<<<<< HEAD
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
+=======
+<<<<<<< HEAD
+import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
+=======
+import { fetchEvents } from './actions/event_actions';
+>>>>>>> master
 import { getMetroIdByClick, getMetroIdByText } from './actions/ticketmaster_actions';
+>>>>>>> master
+
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -38,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     // window.dispatch = dispatch;
     window.getState = store.getState;
+    window.fetchEvents = fetchEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
     window.SAU = SAU;

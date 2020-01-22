@@ -1,4 +1,4 @@
-import * as TMAPIUtil from '../util/ticketmaster_api_util';
+import * as TMAPIUtil from '../util/songkick_api_util';
 
 
 export const RECEIVE_EVENTS = "RECEIVE_EVENTS";
