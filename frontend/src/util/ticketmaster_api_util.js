@@ -1,12 +1,12 @@
 
 import $ from "jquery";
-import SKKey from "./keys";
+import * as Keys from "./keys";
 
 
 export const getEvents = (metroId) => {
     return (
         $.ajax({
-            url: `https://api.songkick.com/api/3.0/metro_areas/${metroId}/calendar.json?apikey=${SKKey}`,
+            url: `https://api.songkick.com/api/3.0/metro_areas/${metroId}/calendar.json?apikey=${Keys.SKAPI}`,
             method: 'GET',
             async: false,
             dataType: "json",
@@ -17,7 +17,7 @@ export const getEvents = (metroId) => {
 export const getMetroIdByClick = (latlng) => {
     return (
         $.ajax({
-            url: `https://api.songkick.com/api/3.0/search/locations.json?location=geo:${latlng}&apikey=${SKKey}`,
+            url: `https://api.songkick.com/api/3.0/search/locations.json?location=geo:${latlng}&apikey=${Keys.SKAPI}`,
             method: 'GET',
             async: false,
             dataType: "json",
@@ -33,7 +33,7 @@ export const getMetroIdByClick = (latlng) => {
 export const getMetroIdByText = (text) => {
     return (
         $.ajax({
-            url: `https://api.songkick.com/api/3.0/search/locations.json?query=${text}&apikey=${SKKey}`,
+            url: `https://api.songkick.com/api/3.0/search/locations.json?query=${text}&apikey=${Keys.SKAPI}`,
             method: 'GET',
             async: false,
             dataType: "json",
