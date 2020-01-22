@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-<<<<<<< HEAD
-import Key from "./keys"
-=======
 import Key from "./keys";
 import classes from "./map.module.css";
 
->>>>>>> master
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
