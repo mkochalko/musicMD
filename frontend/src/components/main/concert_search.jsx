@@ -61,8 +61,6 @@ class ConcertSearch extends React.Component {
                     <div className={classes.eventShow}>
                         <EventIndexShowItem event={this.state.selectedEvent} /> 
                     </div>
-                    <footer>
-                    </footer>
                 </div>
             </div>
         );
