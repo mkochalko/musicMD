@@ -1,6 +1,10 @@
 .loginContainer {
     background-color: #7f5a83;
     background-image: linear-gradient(315deg, #0d324d 0%, #80088d 74%);
+    /* background-image: url('https://media1.giphy.com/media/3o6ozscsz4jRX7xuQE/giphy.gif'); */
+    background-image: url('https://i.gifer.com/4eC0.gif');
+
+    background-size: 100%;
     display: flex;
     align-items: center;
     justify-content: center;

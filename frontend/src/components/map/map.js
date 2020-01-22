@@ -25,7 +25,9 @@ class SimpleMap extends Component {
         console.log(e);
         let lat = e.lat;
         let lng = e.lng;
-        this.props.getEvents(`${lat},${lng}`)
+        this.props.getMetroId(`${lat},${lng}`);
+        console.log(this.props.getMetroId(`${lat},${lng}`));
+        // this.props.getEvents(`${lat},${lng}`)
     }
 
 

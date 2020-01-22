@@ -6,7 +6,7 @@ class EventIndexShowItem extends React.Component {
         // console.log(this.props.event)
         return (
             <div>
-                {this.props.event.name}
+                {/* {this.props.event.name} */}
             </div>
         )
     }
