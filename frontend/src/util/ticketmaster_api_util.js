@@ -14,7 +14,7 @@ export const getEvents = (metroId) => {
     )
 }
 
-export const getMetroId = (latlng) => {
+export const getMetroIdByClick = (latlng) => {
     return (
         $.ajax({
             url: `https://api.songkick.com/api/3.0/search/locations.json?location=geo:${latlng}&apikey=${SKKey}`,

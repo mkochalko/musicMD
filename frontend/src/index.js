@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
-import { getMetroId } from './actions/ticketmaster_actions';
+import { getMetroIdByClick } from './actions/ticketmaster_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     // window.dispatch = dispatch;
     window.getState = store.getState;
-    window.getMetroId = getMetroId;
+    window.getMetroIdByClick = getMetroIdByClick;
 
     ReactDOM.render(<Root store={store} />, root);
 });

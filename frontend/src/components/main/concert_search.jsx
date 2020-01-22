@@ -18,14 +18,14 @@ class ConcertSearch extends React.Component {
 
     componentDidMount() {
         let latlng = '37.7749,-122.4194'
-        this.props.getMetroId(latlng)
+        this.props.getMetroIdByClick(latlng)
         // THE BLEOW IS NOT RIGHT, we should change this but jus wanted to get it working for testing purposes -Matt
         setTimeout( () => this.setState({ selectedEvent: this.props.events[0] }), 1000)
     }
 
     handleClick(e) {
         e.preventDefault();
-        TMApiUtil.getMetroId();
+        TMApiUtil.getMetroIdByClick();
     }
 
     handleEventClick(e) {
