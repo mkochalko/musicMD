@@ -9,6 +9,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import classes from './wrapper.module.css';
 import './reset.css';
+import UserSplashContainer from '../components/user/user_splash_container';
 
 const App = () => (
     <div className={classes.wrapper}>
@@ -17,6 +18,7 @@ const App = () => (
             <Route exact path="/" component={ConcertSearchContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <Route exact path="/prescriptions" component={UserSplashContainer} />
         </Switch>
     </div>
 );

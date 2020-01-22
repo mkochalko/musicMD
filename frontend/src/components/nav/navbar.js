@@ -22,7 +22,7 @@ class NavBar extends React.Component {
                         Music MD
                     </div>
                     <Link to={'/'}>Event Map</Link>
-                    <Link to={'/profile'}>Profile</Link>
+                    <Link to={'/prescriptions'}>Profile</Link>
                     <button 
                         onClick={this.logoutUser}
                         className={classes.logoutButton}
