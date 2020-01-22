@@ -4,7 +4,7 @@ import React from 'react';
 import Map from "./map";
 
 const mapDispatchtoProps = dispatch => ({
-    getEvents: (latlng) => dispatch(TMAction.getEvents(latlng))
+    getMetroId: (latlng) => dispatch(TMAction.getMetroId(latlng))
 })
 
 
