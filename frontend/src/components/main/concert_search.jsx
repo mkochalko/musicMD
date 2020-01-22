@@ -1,5 +1,5 @@
 import React from 'react';
-import * as TMApiUtil from "../../util/ticketmaster_api_util";
+import * as TMApiUtil from "../../util/songkick_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
 import EventsIndexContainer from './events_index_container';
@@ -31,16 +31,16 @@ class ConcertSearch extends React.Component {
     handleEventClick(e) {
         e.preventDefault();
         let selectedEventId = e.target.id;
-        for (let i = 0; i < this.props.events.length; i++) {
-            if (selectedEventId === this.props.events[i].id ) {
-                this.setState({selectedEvent: this.props.events[i]})
+        for (let i = 0; i < this.props.results.events.length; i++) {
+            if (selectedEventId === this.props.results.events[i].id ) {
+                this.setState({selectedEvent: this.props.results.events[i]})
             }
         }
     }
 
 
     render() {
-        // console.log(this.props.events[0])
+        console.log(this.props)
         // console.log(this.state.selectedEvent)
         return (
             <div className={classes.indexSearchContainer}>

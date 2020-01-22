@@ -11,6 +11,8 @@ import classes from './wrapper.module.css';
 import './reset.css';
 import UserSplashContainer from '../components/user/user_splash_container';
 
+
+
 const App = () => (
     <div className={classes.wrapper}>
         <NavBarContainer className={classes.navContainer}/>
