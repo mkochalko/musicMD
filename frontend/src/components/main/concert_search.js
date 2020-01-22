@@ -6,7 +6,7 @@ class ConcertSearch extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className={classes.indexSearchContainer}>
                 <div className={classes.searchBar}>
                     <input 
                         type="text" 

@@ -28,13 +28,21 @@
 
 .map {
     grid-area: map;
+    padding-left: 30px;
 }
 
 .eventIndex {
     grid-area: idx;
+    padding-left: 30px;
 }
 
 .eventShow {
     grid-area: shw;
     
+}
+
+.indexSearchContainer {
+    width: 100%;
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #0d324d 0%, #7f5a83 74%);
 }
