@@ -3,12 +3,24 @@ import * as TMApiUtil from "../../util/ticketmaster_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
 import EventsIndexContainer from './events_index_container';
+import EventIndexShowItem from './event_index_show_item';
 
 
 class ConcertSearch extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = { selectedEvent: {} }
+
         this.handleClick = this.handleClick.bind(this);
+        this.handleEventClick = this.handleEventClick.bind(this);
+    }
+
+    componentDidMount() {
+        let latlng = '37.7749,-122.4194'
+        this.props.getEvents(latlng)
+        // THE BLEOW IS NOT RIGHT, we should change this but jus wanted to get it working for testing purposes -Matt
+        setTimeout( () => this.setState({ selectedEvent: this.props.events[0] }), 1000)
     }
 
     handleClick(e) {
@@ -16,8 +28,20 @@ class ConcertSearch extends React.Component {
         TMApiUtil.getEvents();
     }
 
+    handleEventClick(e) {
+        e.preventDefault();
+        let selectedEventId = e.target.id;
+        for (let i = 0; i < this.props.events.length; i++) {
+            if (selectedEventId === this.props.events[i].id ) {
+                this.setState({selectedEvent: this.props.events[i]})
+            }
+        }
+    }
+
 
     render() {
+        // console.log(this.props.events[0])
+        // console.log(this.state.selectedEvent)
         return (
             <div>
                 <div className={classes.searchBar}>
@@ -31,11 +55,11 @@ class ConcertSearch extends React.Component {
                     <div className={classes.map}>
                         <Map></Map>
                     </div>
-                    <div className={classes.eventIndex}>
-                        <EventsIndexContainer />
+                    <div className={classes.eventIndex} onClick={this.handleEventClick}>
+                        {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
                     </div>
                     <div className={classes.eventShow}>
-                        <p>your event</p>
+                        <EventIndexShowItem event={this.state.selectedEvent} /> 
                     </div>
                     <footer>
                     </footer>
