@@ -1,8 +1,21 @@
 import React from 'react';
-import Map from "../map/map";
+import * as TMApiUtil from "../../util/ticketmaster_api_util";
+import Map from "../map/map_container";
 import classes from './concert_search.module.css';
+import EventsIndexContainer from './events_index_container';
+
 
 class ConcertSearch extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        TMApiUtil.getEvents();
+    }
+
 
     render() {
         return (
@@ -19,7 +32,7 @@ class ConcertSearch extends React.Component {
                         <Map></Map>
                     </div>
                     <div className={classes.eventIndex}>
-                        <p>events index</p>
+                        <EventsIndexContainer />
                     </div>
                     <div className={classes.eventShow}>
                         <p>your event</p>
