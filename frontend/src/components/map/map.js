@@ -17,6 +17,7 @@ class SimpleMap extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        // this.
     }
     
     handleClick(e) {
@@ -25,8 +26,8 @@ class SimpleMap extends Component {
         console.log(e);
         let lat = e.lat;
         let lng = e.lng;
-        this.props.getMetroId(`${lat},${lng}`);
-        console.log(this.props.getMetroId(`${lat},${lng}`));
+        this.props.getMetroIdByClick(`${lat},${lng}`);
+        console.log(this.props.getMetroIdByClick(`${lat},${lng}`));
         // this.props.getEvents(`${lat},${lng}`)
     }
 
