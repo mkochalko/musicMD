@@ -6,7 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
-import { getMetroIdByClick, getMetroIdByText } from './actions/ticketmaster_actions';
+import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
