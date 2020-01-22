@@ -6,7 +6,11 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
+
+import * as SAU from "./util/setlist_api_util";
+import * as DeezerUtil from "./util/deezer_util";
 import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.fetchEvents = fetchEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
-
+    window.SAU = SAU;
+    window.DeezerUtil = DeezerUtil;
     ReactDOM.render(<Root store={store} />, root);
 });
