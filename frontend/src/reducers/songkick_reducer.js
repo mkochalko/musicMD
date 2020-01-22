@@ -7,7 +7,7 @@ export default function (state = {}, action) {
     console.log(action);
     switch (action.type) {
         case RECEIVE_EVENTS:
-            newState = action.events._embedded.events
+            newState = action.resultsPage.results.event
             return newState;
         default:
             return state;
