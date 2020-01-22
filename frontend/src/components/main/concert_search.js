@@ -6,6 +6,10 @@ import Map from "../map/map_container";
 =======
 import Map from "../map/map";
 import classes from './concert_search.module.css';
+<<<<<<< HEAD
+import EventsIndexContainer from './events_index_container';
+=======
+>>>>>>> master
 >>>>>>> master
 
 class ConcertSearch extends React.Component {
@@ -42,7 +46,7 @@ class ConcertSearch extends React.Component {
                         <Map></Map>
                     </div>
                     <div className={classes.eventIndex}>
-                        <p>events index</p>
+                        <EventsIndexContainer />
                     </div>
                     <div className={classes.eventShow}>
                         <p>your event</p>
