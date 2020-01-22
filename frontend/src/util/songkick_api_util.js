@@ -1,6 +1,7 @@
 
 import $ from "jquery";
-import SKKey from "./keys";
+import { SKKey } from "../config/keys";
+// const SKKey = require('../config/keys').SKKey
 
 
 export const getEvents = (metroId) => {
