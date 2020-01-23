@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Key from "./keys";
+import { MapsAPI } from "../../config/keys";
+// const MapsAPI = require('../../config/keys').MapsAPI
 import classes from "./map.module.css";
+
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -23,11 +25,11 @@ class SimpleMap extends Component {
     handleClick(e) {
         // e.preventDefault();
 
-        console.log(e);
+        // console.log(e);
         let lat = e.lat;
         let lng = e.lng;
         this.props.getMetroIdByClick(`${lat},${lng}`);
-        console.log(this.props.getMetroIdByClick(`${lat},${lng}`));
+        // console.log(this.props.getMetroIdByClick(`${lat},${lng}`));
 
         // this.props.getEvents(`${lat},${lng}`)
     }
@@ -39,7 +41,7 @@ class SimpleMap extends Component {
             <div className={classes.mapContainer}>
                 <GoogleMapReact
                     onClick={this.handleClick}
-                    bootstrapURLKeys={{ key: Key }}
+                    bootstrapURLKeys={{ key: window.MapsAPI }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
