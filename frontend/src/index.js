@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getMetroIdByText = getMetroIdByText;
     // window.getSetlist = getSetlist;
     // window.postEvent = postEvent;
+    window.getSetlist = getSetlist;
 
     window.SAU = SAU;
     window.DeezerUtil = DeezerUtil;

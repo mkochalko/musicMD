@@ -21,7 +21,7 @@ export const postEvent = event => dispatch => (
 export const fetchUserEvents = () => dispatch => (
     eventAPIUtil.fetchUserEvents()
         .then(library => { 
-            debugger;
+            // debugger;
             return dispatch(receiveUserEvents(library))}
             )
 );
