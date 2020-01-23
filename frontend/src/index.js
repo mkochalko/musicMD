@@ -11,6 +11,7 @@ import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
 import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
 import {MapsAPI, SKKey, SLKey} from './config/keys';
+import { getSetlist } from './actions/setlist_actions';
 
 
 
@@ -43,11 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.axios = axios;
     window.login = login;
     window.logout = logout;
-    // window.dispatch = dispatch;
+    window.dispatch = store.dispatch;
     window.getState = store.getState;
     window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
+    window.getSetlist = getSetlist;
     window.SAU = SAU;
     window.DeezerUtil = DeezerUtil;
     ReactDOM.render(<Root store={store} />, root);

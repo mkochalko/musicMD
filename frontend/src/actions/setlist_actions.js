@@ -13,8 +13,8 @@ const receiveSetlist = setlist => ({
 
 export const getSetlist = artist => dispatch => {
     SetlistAPIUtil.getArtistId(artist)
-        .then(artistId => SetlistAPIUtil.getArtistSetlist(artistId))
-        .then(events => dispatch(receiveSetlist(events)))
+        .then(data => SetlistAPIUtil.getArtistSetlist(data.artist[0].mbid))
+        .then(setlist => dispatch(receiveSetlist(setlist)))
 };
 
 

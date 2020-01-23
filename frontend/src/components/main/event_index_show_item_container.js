@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    getSetlist: (artist) => dispatch(getSetlist())
+    getSetlist: (artist) => dispatch(getSetlist(artist))
 })
 
 export default connect(
