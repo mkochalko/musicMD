@@ -4,7 +4,7 @@ import { fetchEvents } from '../../actions/event_actions';
 import userSplash from './user_splash';
 
 const mapStateToProps = state => ({
-    currentUser: state.session.user,
+    currentUser: state.entities.user,
     events: state.entities.events
 });
 

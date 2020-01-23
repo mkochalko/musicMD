@@ -22,6 +22,7 @@ router.post("/", passport.authenticate("jwt", { session: false }),
 );
 
 router.get("/library", (req, res) => {
+    console.log(req.body);
     let library = Library.find({userId: req.body.userId});
     res.json({
         library
