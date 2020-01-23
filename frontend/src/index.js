@@ -6,15 +6,19 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
-
+import {getEvents} from './util/songkick_api_util';
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
 import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
+import {MapsAPI, SKKey, SLKey} from './config/keys';
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
+    window.MapsAPI = MapsAPI
+    window.SKKey = SKKey
+    window.SLKey = SLKey
 
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
@@ -41,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.logout = logout;
     // window.dispatch = dispatch;
     window.getState = store.getState;
-    // window.fetchEvents = fetchEvents;
+    window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
     window.SAU = SAU;

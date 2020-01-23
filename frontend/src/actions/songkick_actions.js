@@ -12,12 +12,16 @@ const receiveEvents = events => ({
 
 
 export const getMetroIdByClick = latlng => dispatch => {
-    TMAPIUtil.getMetroIdByClick(latlng)
-        .then(events => dispatch(receiveEvents(events)))
+    return ( 
+        TMAPIUtil.getMetroIdByClick(latlng)
+            .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
+            .then(events => dispatch(receiveEvents(events)))
+    )
 };
 
 
 export const getMetroIdByText = text => dispatch => {
     TMAPIUtil.getMetroIdByText(text)
+        .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
         .then(events => dispatch(receiveEvents(events)))
 };

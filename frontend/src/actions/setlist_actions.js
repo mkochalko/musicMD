@@ -5,19 +5,20 @@ export const RECEIVE_SETLIST = "RECEIVE_SETLIST";
 
 
 const receiveSetlist = setlist => ({
-    type: RECEIVE_EVENTS,
-    events
+    type: RECEIVE_SETLIST,
+    setlist
 })
 
 
 
-export const getMetroIdByClick = latlng => dispatch => {
-    TMAPIUtil.getMetroIdByClick(latlng)
-        .then(events => dispatch(receiveEvents(events)))
+export const getSetlist = artist => dispatch => {
+    SetlistAPIUtil.getArtistId(artist)
+        .then(artistId => SetlistAPIUtil.getArtistSetlist(artistId))
+        .then(events => dispatch(receiveSetlist(events)))
 };
 
 
-export const getMetroIdByText = text => dispatch => {
-    TMAPIUtil.getMetroIdByText(text)
-        .then(events => dispatch(receiveEvents(events)))
-};
+// export const getMetroIdByText = text => dispatch => {
+//     SetlistAPIUtil.getMetroIdByText(text)
+//         .then(events => dispatch(receiveEvents(events)))
+// };

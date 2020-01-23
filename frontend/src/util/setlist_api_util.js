@@ -1,6 +1,6 @@
 
 import $ from "jquery";
-import * as Keys from "./keys";
+import SLKey from "../config/keys";
 
 
 export const getArtistSetlist = (artistId) => {
@@ -8,7 +8,7 @@ export const getArtistSetlist = (artistId) => {
         $.ajax({
             url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/artist/${artistId}/setlists?p=1`,
             headers: {
-                'x-api-key': Keys.SetlistAPI
+                'x-api-key': window.SLKey
             },
             method: 'GET',
             dataType: 'json',
@@ -31,7 +31,7 @@ export const getArtistId = (artist) => {
         $.ajax({
             url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/artists?artistName=${artist}&sort=relevance`,
             headers: {
-                'x-api-key': Keys.SetlistAPI 
+                'x-api-key': window.SLKey 
             },
             method: 'GET',
             dataType: 'json',
