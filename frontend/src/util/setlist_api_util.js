@@ -13,20 +13,14 @@ export const getArtistSetlist = (artistId) => {
             method: 'GET',
             dataType: 'json',
             contentType: 'application/json',
-            processData: false,
-            success: function (data) {
-                console.log(data);
-            },
-            error: function () {
-                alert("Cannot get data");
-            }
+            processData: false
         }
         ))
 }
 
 export const getArtistId = (artist) => {
   
-
+    debugger;
     return (
         $.ajax({
             url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/artists?artistName=${artist}&sort=relevance`,
@@ -36,13 +30,7 @@ export const getArtistId = (artist) => {
             method: 'GET',
             dataType: 'json',
             contentType: 'application/json',
-            processData: false,
-            success: function (data) {
-                console.log(data.artist[0].mbid);
-            },
-            error: function () {
-                alert("Cannot get data");
-            }
+            processData: false
         }
     ))
 }

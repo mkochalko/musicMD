@@ -4,10 +4,10 @@ export default function (state = {}, action) {
 
     Object.freeze(state)
     let newState = Object.assign({}, state)
-    console.log(action)
+    // console.log(action)
     switch (action.type) {
         case RECEIVE_SETLIST:
-            // newState = action.events.resultsPage.results.event
+            newState = action.setlist.setlist
             return newState;
         default:
             return state;
