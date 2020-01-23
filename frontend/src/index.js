@@ -10,11 +10,15 @@ import {getEvents} from './util/songkick_api_util';
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
 import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
+import {MapsAPI, SKKey, SLKey} from './config/keys';
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
+    window.MapsAPI = MapsAPI
+    window.SKKey = SKKey
+    window.SLKey = SLKey
 
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);

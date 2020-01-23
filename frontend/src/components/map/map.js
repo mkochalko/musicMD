@@ -41,7 +41,7 @@ class SimpleMap extends Component {
             <div className={classes.mapContainer}>
                 <GoogleMapReact
                     onClick={this.handleClick}
-                    bootstrapURLKeys={{ key: MapsAPI }}
+                    bootstrapURLKeys={{ key: window.MapsAPI }}
                     defaultCenter={this.props.center}
                     defaultZoom={this.props.zoom}
                 >
