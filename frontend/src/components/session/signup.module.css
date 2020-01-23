@@ -1,4 +1,4 @@
-.loginContainer {
+.signupContainer {
     background-color: #7f5a83;
     background-image: linear-gradient(315deg, #0d324d 0%, #80088d 74%);
     /* background-image: url('https://media1.giphy.com/media/3o6ozscsz4jRX7xuQE/giphy.gif'); */
@@ -23,73 +23,83 @@
     z-index: 1;
 } */
 
-.date {
-    font-size: 30px;
-    margin-right: -500px;
-    margin-top: 80px;
+.note {
+    position: relative;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: black;
+    top: 20%;
+    right: 40%;
 }
-
 
 .inputContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     z-index: 2;
-    background-image: url('https://i.ibb.co/RDKRYgW/sign-in-form-V1.png');
-    background-size: 1000px;
+    background-image: url('https://i.ibb.co/RgKY9J1/doctors-Note-V5.png');
+    background-size: 600px;
     background-repeat: no-repeat;
-    margin-top: 30%;
-    width: 1000px;
-    height: 1000px;
+    width: 600px;
+    height: 900px;
 
 }
 
-
-
 .emailInput {
     padding: 10px;
-    height: 18px;
-    width: 330px;
+    height: 40px;
+    width: 300px;
     font-size: 24px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-top: 315px;
     margin-left: 60px;
+    margin-top: 70px;
+}
+.usernameInput {
+    padding: 10px;
+    height: 40px;
+    width: 300px;
+    font-size: 24px;
+    text-align: center;
+    font-family: Tahoma, Geneva, sans-serif;
+    background-color: white;
+    margin-left: 60px;
+    margin-top: 70px;
 }
 
 .passwordInput {
     padding: 10px;
-    height: 18px;
-    width: 330px;
+    height: 40px;
+    width: 300px;
     font-size: 24px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-top: 40px;
 }
-.loginSubmit {
+.signupSubmit {
     /* height: 40px;
     width: 150px;
     border-radius: 10px;
     font-family: 'Acme', sans-serif;
     font-size: 20px; */
-    background-color: lightblue;
       text-decoration: none;
-    border: 2px solid black;
+    border: 2px solid #71D4E1;
     height: 50px;
-    width: 85%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #7f5a83;
     font-size: 20px;
-    margin-top: 190px;
+    margin-top: 130px;
     /* background-color: #0d324d ; */
     font-family: Tahoma, Geneva, sans-serif;
 }
 
-.loginSubmit:hover {
+.signupSubmit:hover {
      background-color: #7f5a83;
     transition: 0.5s;
     cursor: pointer;

@@ -6,6 +6,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken, login } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import axios from 'axios';
+import { postEvent } from './actions/event_actions';
 import {getEvents} from './util/songkick_api_util';
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
@@ -49,7 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
-    window.getSetlist = getSetlist;
+    // window.getSetlist = getSetlist;
+    // window.postEvent = postEvent;
+
     window.SAU = SAU;
     window.DeezerUtil = DeezerUtil;
     ReactDOM.render(<Root store={store} />, root);

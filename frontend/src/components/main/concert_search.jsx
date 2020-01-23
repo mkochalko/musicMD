@@ -78,8 +78,6 @@ class ConcertSearch extends React.Component {
                     <div className={classes.eventShow}>
                         {this.props.events.length > 0 ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
                     </div>
-                    <footer>
-                    </footer>
                 </div>
             </div>
         );
