@@ -6,8 +6,9 @@ export default function (state = {}, action) {
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_EVENTS:
-            newState = action.events.resultsPage.results.event
-            return newState;
+            // newState = action.events.resultsPage.results.event
+            // return newState;
+            return state;
         default:
             return state;
     }
