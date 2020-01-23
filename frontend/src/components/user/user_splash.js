@@ -1,5 +1,5 @@
 import React from 'react';
-import EventIndexItem from '../main/events_index_item';
+import UserEventItem from './user_event_item';
 
 class UserSplash extends React.Component {
 
@@ -8,11 +8,10 @@ class UserSplash extends React.Component {
     }
 
     componentDidMount() {
-        // this.fetchEvents();
+        this.props.fetchUserEvents();
     }
 
     render() {
-        // console.log(this.props)
         return (
             <div className="user-splash">
                 <div className="user-info">
@@ -22,7 +21,7 @@ class UserSplash extends React.Component {
                     <ul>
                         {
                             Object.values(this.props.events).map((event, idx) => (
-                                <EventIndexItem event={event} key={idx} />
+                                <UserEventItem event={event} key={idx} />
                             ))
                         }
                     </ul>

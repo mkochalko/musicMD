@@ -1,12 +1,13 @@
 import {
     RECEIVE_EVENT, 
-    RECEIVE_EVENTS
+    RECEIVE_USER_EVENTS
 } from '../actions/event_actions';
 
-const eventsReducer = (state={}, action) => {
+const eventsReducer = (state=[], action) => {
     Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_EVENTS:
+        case RECEIVE_USER_EVENTS:
+            console.log(action.events);
             return Object.assign({}, action.events);
         case RECEIVE_EVENT:
             let newState = Object.assign({}, action.event);
