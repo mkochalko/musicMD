@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
             <div className={classes.signupContainer}>
                 <div className={classes.background}></div>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className={classes.signupForm}>
                     <div className={classes.inputContainer}>
 
                         <input type="text"

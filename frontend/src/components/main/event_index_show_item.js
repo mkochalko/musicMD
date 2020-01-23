@@ -18,7 +18,8 @@ class EventIndexShowItem extends React.Component {
     }
 
     render() {
-        // let test = this.props.event.performance
+        let test = this.props.event.performance;
+        // console.log(test)
         return (
             <div>
                 {this.props.event.displayName}
