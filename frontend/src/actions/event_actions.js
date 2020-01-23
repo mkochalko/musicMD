@@ -18,7 +18,7 @@ export const postEvent = event => dispatch => (
         .then((event) => dispatch(receiveEvent(event)))
 );
 
-export const fetchEvents = currentUser => dispatch => (
-    eventAPIUtil.fetchEvents(currentUser)
+export const fetchEvents = currentUserId => dispatch => (
+    eventAPIUtil.fetchEvents(currentUserId)
         .then(events => dispatch(receiveEvents(events)))
 );

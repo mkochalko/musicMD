@@ -8,12 +8,10 @@ class UserSplash extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.currentUser);
-        this.props.fetchEvents(this.props.currentUser);
+        this.props.fetchEvents(this.props.currentUser.id);
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="user-splash">
                 <div className="user-info">
