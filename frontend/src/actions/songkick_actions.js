@@ -14,7 +14,7 @@ const receiveEvents = events => ({
 export const getMetroIdByClick = latlng => dispatch => {
     return ( 
         TMAPIUtil.getMetroIdByClick(latlng)
-            .then(events => TMAPIUtil.getEvents(events))
+            .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
             .then(events => dispatch(receiveEvents(events)))
     )
 };
@@ -22,5 +22,6 @@ export const getMetroIdByClick = latlng => dispatch => {
 
 export const getMetroIdByText = text => dispatch => {
     TMAPIUtil.getMetroIdByText(text)
+        .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
         .then(events => dispatch(receiveEvents(events)))
 };

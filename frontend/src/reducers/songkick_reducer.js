@@ -4,10 +4,9 @@ export default function (state = {}, action) {
 
     Object.freeze(state)
     let newState = Object.assign({}, state)
-    console.log(action);
     switch (action.type) {
         case RECEIVE_EVENTS:
-            newState = action.resultsPage.results.event
+            newState = action.events.resultsPage.results.event
             return newState;
         default:
             return state;

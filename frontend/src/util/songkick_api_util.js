@@ -5,16 +5,12 @@ import { SKKey } from "../config/keys";
 
 
 export const getEvents = (metroId) => {
-    console.log('hello')
     return (
         $.ajax({
             url: `https://api.songkick.com/api/3.0/metro_areas/${metroId}/calendar.json?apikey=${SKKey}`,
             method: 'GET',
             async: false,
-            dataType: "json",
-            success: function (json) {
-                return json
-            }
+            dataType: "json"
         })
     )
 }
@@ -25,14 +21,12 @@ export const getMetroIdByClick = (latlng) => {
             url: `https://api.songkick.com/api/3.0/search/locations.json?location=geo:${latlng}&apikey=${SKKey}`,
             method: 'GET',
             async: false,
-            dataType: "json",
-            success: function (json) {
-                console.log(json.resultsPage.results.location[0].metroArea.id);
-                getEvents(json.resultsPage.results.location[0].metroArea.id)
-            }
+            dataType: "json"
         })
     )
 }
+
+
 
 export const getMetroIdByText = (text) => {
     return (
@@ -40,12 +34,7 @@ export const getMetroIdByText = (text) => {
             url: `https://api.songkick.com/api/3.0/search/locations.json?query=${text}&apikey=${SKKey}`,
             method: 'GET',
             async: false,
-            dataType: "json",
-            success: function (json) {
-                // console.log(json.resultsPage.results.location[0].metroArea.id);
-                let events = getEvents(json.resultsPage.results.location[0].metroArea.id)
-                return events;
-            }
+            dataType: "json"
         })
     )
 }

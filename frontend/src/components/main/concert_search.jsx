@@ -31,9 +31,9 @@ class ConcertSearch extends React.Component {
     handleEventClick(e) {
         e.preventDefault();
         let selectedEventId = e.target.id;
-        for (let i = 0; i < this.props.results.events.length; i++) {
-            if (selectedEventId === this.props.results.events[i].id ) {
-                this.setState({selectedEvent: this.props.results.events[i]})
+        for (let i = 0; i < this.props.events.length; i++) {
+            if (selectedEventId == this.props.events[i].id ) {
+                this.setState({selectedEvent: this.props.events[i]})
             }
         }
     }
