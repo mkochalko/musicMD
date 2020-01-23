@@ -8,6 +8,7 @@
     width: 100%;
     height: 100vh;
     background-color: #80088d;
+    text-decoration: none;
 }
 
 .logoutButton {
@@ -18,3 +19,23 @@
 .musicMD {
     font-family: 'Acme', sans-serif;
 }
+.navBar a{
+    text-decoration: none;
+    border: 2px solid orange;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    background-color: #0d324d ;
+    font-family: Tahoma, Geneva, sans-serif;
+}
+
+.navBar a:hover{
+    background-color: #7f5a83;
+    transition: 0.5s;
+}
+
+
