@@ -59,31 +59,36 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        let today = new Date();
+        let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
         return (
             <div className={classes.loginContainer}>
                 <div className={classes.background}></div>
 
                 <form onSubmit={this.handleSubmit}>
                     <div className={classes.inputContainer}>
+                        <div className={classes.date}>{current}</div>
+
                         {/* <div className={classes.note}>
                             <div className={classes.musicMD}>Music MD</div>
                             <div className={classes.musicMD}>Get your prescription filled</div>
                         </div> */}
-
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                            className={classes.emailInput}
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                            className={classes.passwordInput}
-                        />
-                        <br />
+                            <div classname={classes.inputs}>
+                                <input type="text"
+                                    value={this.state.email}
+                                    onChange={this.update('email')}
+                                    placeholder="Email"
+                                    className={classes.emailInput}
+                                />
+                                <input type="password"
+                                    value={this.state.password}
+                                    onChange={this.update('password')}
+                                    placeholder="Password"
+                                    className={classes.passwordInput}
+                                />
+                            </div>
+                       
+                      
                         <input type="submit" value="GET YOUR PRESCRIPTION" className={classes.loginSubmit}/>
                         {this.renderErrors()}
                     </div>
