@@ -13,7 +13,7 @@ class EventIndexShowItem extends React.Component {
         if (this.props.event.performance.length > 0) {
             let artist = this.props.event.performance[0].displayName;
             console.log(this.props)
-            console.log(this.props.getSetlist([artist]))
+            console.log(this.props.getSetlist(artist))
         }
     }
 
@@ -22,8 +22,7 @@ class EventIndexShowItem extends React.Component {
         // console.log(test)
         return (
             <div>
-                {/* {this.props.event.displayName} */}
-                test
+                {this.props.event.displayName}
             </div>
         )
     }

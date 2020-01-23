@@ -11,7 +11,6 @@ class ConcertSearch extends React.Component {
 
         this.state = { selectedEvent: 0 }
 
-        this.handleClick = this.handleClick.bind(this);
         this.handleEventClick = this.handleEventClick.bind(this);
         this.resetState = this.resetState.bind(this);
     }
@@ -19,26 +18,15 @@ class ConcertSearch extends React.Component {
     componentDidMount() {
         let latlng = '37.7749,-122.4194'
         this.props.getMetroIdByClick(latlng)
-        // THE BLEOW IS NOT RIGHT, we should change this but jus wanted to get it working for testing purposes -Matt
-        // this.setState({ selectedEvent: this.props.events[0] })
     }
 
     // componentDidUpdate(prevProps) {
-    //     debugger
+    //     // debugger
     //     console.log(prevProps)
     //     if (prevProps.events.length === 0 && this.props.events.length !== 0) {
     //         this.setState({ selectedEvent: this.props.events[0] })
     //     }
     // }
-
-    handleClick(e) {
-        e.preventDefault();
-        // debugger
-        TMApiUtil.getMetroIdByClick().then(() => {
-            // debugger
-            this.setState({ selectedEvent: 0 })}
-            );
-    }
 
     resetState() {
         this.setState({selectedEvent: 0})
@@ -57,8 +45,8 @@ class ConcertSearch extends React.Component {
 
     render() {
         // debugger
-        // console.log(this.props.events.length)
-        // console.log(this.state.selectedEvent)
+        console.log(this.props.events.length)
+        console.log(this.state.selectedEvent)
         return (
             <div className={classes.indexSearchContainer}>
                 <div className={classes.searchBar}>
@@ -76,7 +64,7 @@ class ConcertSearch extends React.Component {
                         {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
                     </div>
                     <div className={classes.eventShow}>
-                        {this.props.events.length > 0 ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
+                        {this.state.selectedEvent ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
                     </div>
                 </div>
             </div>
