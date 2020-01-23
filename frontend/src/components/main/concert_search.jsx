@@ -9,22 +9,39 @@ class ConcertSearch extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { selectedEvent: {} }
+        this.state = { selectedEvent: 0 }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleEventClick = this.handleEventClick.bind(this);
+        this.resetState = this.resetState.bind(this);
     }
 
     componentDidMount() {
         let latlng = '37.7749,-122.4194'
         this.props.getMetroIdByClick(latlng)
         // THE BLEOW IS NOT RIGHT, we should change this but jus wanted to get it working for testing purposes -Matt
-        setTimeout( () => this.setState({ selectedEvent: this.props.events[0] }), 1000)
+        // this.setState({ selectedEvent: this.props.events[0] })
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     console.log(prevProps)
+    //     if (prevProps.events.length === 0 && this.props.events.length !== 0) {
+    //         this.setState({ selectedEvent: this.props.events[0] })
+    //     }
+    // }
 
     handleClick(e) {
         e.preventDefault();
-        TMApiUtil.getMetroIdByClick();
+        // debugger
+        TMApiUtil.getMetroIdByClick().then(() => {
+            // debugger
+            this.setState({ selectedEvent: 0 })}
+            );
+    }
+
+    resetState() {
+        this.setState({selectedEvent: 0})
     }
 
     handleEventClick(e) {
@@ -32,14 +49,15 @@ class ConcertSearch extends React.Component {
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
             if (selectedEventId == this.props.events[i].id ) {
-                this.setState({selectedEvent: this.props.events[i]})
+                this.setState({selectedEvent: i})
             }
         }
     }
 
 
     render() {
-        // console.log(this.props)
+        // debugger
+        // console.log(this.props.events.length)
         // console.log(this.state.selectedEvent)
         return (
             <div className={classes.indexSearchContainer}>
@@ -52,13 +70,13 @@ class ConcertSearch extends React.Component {
                 </div>
                 <div className={classes.searchPage}>
                     <div className={classes.map}>
-                        <Map></Map>
+                        <Map resetState={this.resetState}></Map>
                     </div>
                     <div className={classes.eventIndex} onClick={this.handleEventClick}>
                         {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
                     </div>
                     <div className={classes.eventShow}>
-                        <EventIndexShowItemContainer event={this.state.selectedEvent} /> 
+                        {this.props.events.length > 0 ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
                     </div>
                 </div>
             </div>

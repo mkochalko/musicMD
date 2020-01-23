@@ -4,7 +4,7 @@ import React from 'react';
 import ConcertSearch from './concert_search.jsx';
 
 const mapStateToProps = state => ({
-    events: state.entities.songkick
+    events: Object.values(state.entities.songkick)
 })
 
 const mapDispatchtoProps = dispatch => ({
