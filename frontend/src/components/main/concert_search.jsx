@@ -3,8 +3,7 @@ import * as TMApiUtil from "../../util/songkick_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
 import EventsIndexContainer from './events_index_container';
-import EventIndexShowItem from './event_index_show_item';
-
+import EventIndexShowItemContainer from './event_index_show_item_container';
 
 class ConcertSearch extends React.Component {
     constructor(props) {
@@ -59,7 +58,7 @@ class ConcertSearch extends React.Component {
                         {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
                     </div>
                     <div className={classes.eventShow}>
-                        <EventIndexShowItem event={this.state.selectedEvent} /> 
+                        <EventIndexShowItemContainer event={this.state.selectedEvent} /> 
                     </div>
                     <footer>
                     </footer>
