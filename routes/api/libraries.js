@@ -6,6 +6,7 @@ const Library = require("../../models/Library");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
+
 router.post("/", passport.authenticate("jwt", { session: false }),
     (req, res) => {
         const { errors, isValid } = validateLibraryData(req.body);
@@ -21,13 +22,16 @@ router.post("/", passport.authenticate("jwt", { session: false }),
     }
 );
 
-router.get("/", (req, res) => {
-    console.log(res);
-    let library = Library.find({userId: req.body});
-    res.json({
-        library
-    });
-})
+router.get("/library", 
+    passport.authenticate('jwt', { session: false }), 
+    (req, res) => {
+        let library = Library.find({userId: req.user._id});
+        console.log(library.schema.obj.eventIds);
+        return res.json({
+            test: 'test'
+        });
+    }
+);
 
 router.get("/test", (req, res) => res.json({ msg: "This is the libraries route" }));
 

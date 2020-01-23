@@ -8,7 +8,7 @@ class UserSplash extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchEvents(this.props.currentUser.id);
+        this.props.fetchUserEvents();
     }
 
     render() {
