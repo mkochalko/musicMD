@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
     window.getMetroIdByText = getMetroIdByText;
+    
     // window.getSetlist = getSetlist;
     // window.postEvent = postEvent;
     window.getSetlist = getSetlist;

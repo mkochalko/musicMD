@@ -13,9 +13,14 @@ const receiveEvents = events => ({
 
 export const getMetroIdByClick = latlng => dispatch => {
     return ( 
+
         TMAPIUtil.getMetroIdByClick(latlng)
-            .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
-            .then(events => dispatch(receiveEvents(events)))
+           
+            .then(events =>{
+                debugger;
+                console.log(events)
+                dispatch(receiveEvents(events))
+            })
     )
 };
 
