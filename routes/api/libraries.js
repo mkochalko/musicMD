@@ -25,7 +25,10 @@ router.post("/", passport.authenticate("jwt", { session: false }),
 router.get("/library", 
     passport.authenticate('jwt', { session: false }), 
     (req, res) => {
-        Library.find({userId: req.user._id}).then((library) => res.json(library[0].eventIds));
+        Library
+            .find({userId: req.user._id})
+            .populate("eventIds")
+            .then((library) => res.json(library[0]));
     }
 );
 
