@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './event_index_show_item.module.css';
+// import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
@@ -63,7 +63,7 @@ class EventIndexShowItem extends React.Component {
         console.log(this.props.event)
         // console.log(this.configureSetList())
         return (
-            <div>
+            <div className={classes.searchShowPage}>
                 {this.props.event.name}
                 <br/>
                 {this.props.event._embedded.venues[0].name}

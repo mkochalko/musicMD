@@ -5,5 +5,5 @@ export const fetchUserEventsApi = () => (
 );
 
 export const postEventApi = event => (
-    axios.post('/api/events', event)
+    axios.post('/api/events/', event)
 );

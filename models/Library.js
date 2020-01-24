@@ -5,14 +5,16 @@ const Schema = mongoose.Schema;
 const LibrarySchema = new Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'User'
     },
-    eventIds: {
-        type: Array
-    },
-    songIds: {
-        type: Array
-    }
+    eventIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Event'
+    }],
+    songIds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Song'
+    }]
 })
 
 

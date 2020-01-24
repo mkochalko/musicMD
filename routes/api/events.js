@@ -22,7 +22,7 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         venue: req.body.venue,
         songIds: req.body.songIds
     });
-
+    console.log(newEvent);
     newEvent.save().then(event => res.json(event));
 });
 
