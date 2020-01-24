@@ -10,9 +10,9 @@ import axios from 'axios';
 import {getEvents} from './util/songkick_api_util';
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
-import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
-import {MapsAPI, SKKey, SLKey} from './config/keys';
+import { getMetroIdByClick } from './actions/songkick_actions';
 import { getSetlist } from './actions/setlist_actions';
+import {MapsAPI, SKKey, SLKey} from './config/keys';
 
 
 
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
-    window.getMetroIdByText = getMetroIdByText;
+    // window.getMetroIdByText = getMetroIdByText;
     
     // window.getSetlist = getSetlist;
     // window.postEvent = postEvent;
