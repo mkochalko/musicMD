@@ -1,4 +1,5 @@
-import * as eventAPIUtil from '../util/events_api_util';
+import { postEventApi, fetchUserEventsApi } from '../util/events_api_util';
+import { response } from 'express';
 
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_USER_EVENTS = 'RECEIVE_USER_EVENTS';
@@ -14,12 +15,12 @@ const receiveUserEvents = events => ({
 });
 
 export const postEvent = event => dispatch => (
-    eventAPIUtil.postEvent(event)
+    postEventApi(event)
         .then((event) => dispatch(receiveEvent(event)))
 );
 
 export const fetchUserEvents = () => dispatch => (
-    eventAPIUtil.fetchUserEvents()
+    fetchUserEventsApi()
         .then(library => { 
             // debugger;
             return dispatch(receiveUserEvents(library))}

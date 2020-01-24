@@ -6,7 +6,7 @@ import SLKey from "../config/keys";
 export const getArtistSetlist = (artistId) => {
     return (
         $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/setlists?artistName=Tycho`,
+            url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/setlists?artistName=${artistId}`,
             headers: {
                 'x-api-key': window.SLKey
             },
@@ -19,7 +19,7 @@ export const getArtistSetlist = (artistId) => {
 }
 
 export const getArtistId = (artist) => {
-
+    console.log(artist)
     return (
         $.ajax({
             url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/artists?artistName=${artist}&sort=relevance`,

@@ -5,7 +5,7 @@ class EventsIndexItem extends React.Component {
     render() {
         return (
             <li id={this.props.event.id}>
-                {this.props.event.displayName}
+                {this.props.event.name}
             </li>
         )
     }
