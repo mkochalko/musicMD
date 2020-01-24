@@ -45,8 +45,8 @@ class ConcertSearch extends React.Component {
 
     render() {
         // debugger
-        console.log(this.props.events.length)
-        console.log(this.state.selectedEvent)
+        // console.log(this.props.events.length)
+        console.log(this.props.events[this.state.selectedEvent])
         return (
             <div className={classes.indexSearchContainer}>
                 <div className={classes.searchBar}>
@@ -64,7 +64,7 @@ class ConcertSearch extends React.Component {
                         {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
                     </div>
                     <div className={classes.eventShow}>
-                        {this.state.selectedEvent ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
+                        {this.props.events.length ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
                     </div>
                 </div>
             </div>

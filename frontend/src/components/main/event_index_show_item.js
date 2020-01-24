@@ -9,11 +9,11 @@ class EventIndexShowItem extends React.Component {
 
 
     componentDidMount() {
-        console.log(this.props.event.performance)
+        // console.log(this.props.event.performance)
         if (this.props.event.performance.length > 0) {
             let artist = this.props.event.performance[0].displayName;
-            console.log(this.props)
-            console.log(this.props.getSetlist(artist))
+            // console.log(this.props)
+            // console.log(this.props.getSetlist(artist))
         }
     }
 
