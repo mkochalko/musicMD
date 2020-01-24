@@ -63,7 +63,7 @@ class EventIndexShowItem extends React.Component {
         console.log(this.props.event)
         // console.log(this.configureSetList())
         return (
-            <div>
+            <div className={classes.searchShowPage}>
                 {this.props.event.name}
                 <br/>
                 {this.props.event._embedded.venues[0].name}
