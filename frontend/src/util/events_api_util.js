@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const fetchUserEvents = () => (
+export const fetchUserEventsApi = () => (
     axios.get('api/libraries/library')
 );
 
-export const postEvent = event => (
+export const postEventApi = event => (
     axios.post('/api/events', event)
 );
