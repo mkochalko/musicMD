@@ -15,15 +15,15 @@ export const getMetroIdByClick = latlng => dispatch => {
     return ( 
         TMAPIUtil.getMetroIdByClick(latlng)
             .then(events =>{
-                console.log(events)
-                dispatch(receiveEvents(events))
+                dispatch(receiveEvents(events._embedded.events))
             })
     )
 };
 
 
-export const getMetroIdByText = text => dispatch => {
-    TMAPIUtil.getMetroIdByText(text)
-        .then(metroId => TMAPIUtil.getEvents(metroId.resultsPage.results.location[0].metroArea.id))
-        .then(events => dispatch(receiveEvents(events)))
-};
+// export const getMetroIdByText = text => dispatch => (
+//     TMAPIUtil.getMetroIdByText(text)
+//         .then(events => {
+//             dispatch(receiveEvents(events._embedded.events))
+//         })
+// )
