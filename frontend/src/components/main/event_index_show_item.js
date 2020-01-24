@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './event_index_show_item.module.css';
+// import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
