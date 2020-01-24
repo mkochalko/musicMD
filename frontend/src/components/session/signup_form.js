@@ -57,6 +57,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className={classes.signupContainer}>
+                <canvas id="projector"></canvas>
                 <div className={classes.background}></div>
 
                 <form onSubmit={this.handleSubmit} className={classes.signupForm}>

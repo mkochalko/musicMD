@@ -1,5 +1,5 @@
 .signupContainer {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #6d0a3c, #e73c7e, #3f0c7a, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     /* background-image: url('https://media1.giphy.com/media/3o6ozscsz4jRX7xuQE/giphy.gif'); */
@@ -8,8 +8,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    opacity: 60%;
 }
 
 @keyframes gradient {
@@ -51,52 +52,53 @@
     align-items: center;
     z-index: 2;
     background-image: url('https://i.ibb.co/m8hGkMd/doctors-Note-V7.png');
-    background-size: 600px;
+    background-size: 540px;
+    margin-top: 15px;
     background-repeat: no-repeat;
-    width: 600px;
-    height: 900px;
+    width: 700px;
+    height: 800px;
 
 }
 
 .emailInput {
     padding: 10px;
-    height: 40px;
-    width: 300px;
-    font-size: 24px;
+    height: 25px;
+    width: 200px;
+    font-size: 20px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-top: 220px;
-    margin-left: 170px;
+    margin-top: 200px;
+    margin-left: 10px;
 }
 .usernameInput {
     padding: 10px;
-    height: 40px;
-    width: 300px;
-    font-size: 24px;
+    height: 25px;
+    width: 200px;
+    font-size: 20px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-top: 10px;
-    margin-left: 170px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .passwordInput {
     padding: 10px;
-    height: 40px;
-    width: 300px;
-    font-size: 24px;
+    height: 25px;
+    width: 200px;
+    font-size: 20px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-left: 170px;
-    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
 
 
 
 .signupSubmit {
-    /* height: 40px;
+    /* height: 25px;
     width: 150px;
     border-radius: 10px;
     font-family: 'Acme', sans-serif;
@@ -104,14 +106,15 @@
       text-decoration: none;
     border: 2px solid #71D4E1;
     height: 50px;
-    width: 70%;
+    width: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #7f5a83;
     background-color: lightblue;
     font-size: 20px;
-    margin-top: 130px;
+    margin-top: 90px;
+    margin-left: -165px;
     /* background-color: #0d324d ; */
     font-family: Tahoma, Geneva, sans-serif;
 }
