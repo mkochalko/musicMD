@@ -17,6 +17,14 @@ const receiveTrack = track => ({
 })
 
 
+export const getAllTracks = tracks => dispatch => {
+    tracks.forEach(track => {
+        DeezerAPIUtil.findTrack()
+            .then(track => dispatch(receiveTrack(track)))
+    })
+}
+
+
 
 export const getTrackByInfo = trackInfo => dispatch => {
     DeezerAPIUtil.findTrack(trackInfo)

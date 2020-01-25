@@ -18,6 +18,8 @@ class EventIndexShowItem extends React.Component {
             // console.log(artist)
             this.props.getSetlist(artist)
         }
+
+            
     }
 
     componentDidUpdate(prevProps) {
@@ -44,6 +46,8 @@ class EventIndexShowItem extends React.Component {
     handleClick() {
         let songIds = [];
 
+        let otherSongIds = [];
+
         this.configureSetList().map(song => (
             songIds.push({artist: this.props.event._embedded.attractions[0].name, songName: song.name})
         ));
@@ -51,6 +55,12 @@ class EventIndexShowItem extends React.Component {
         
         this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
         console.log(this.props.event.dates.start.localDate)
+
+        // console.log(this.props.getTrackByInfo(["In The End"]))
+
+        // console.log(this.props.findTrack(["Master Exploder"]))
+
+
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
@@ -61,6 +71,13 @@ class EventIndexShowItem extends React.Component {
 
         // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
+
+        songIds.forEach(songInfo => {
+            
+            this.props.getTrackByInfo([songInfo.artist, songInfo.songName])
+        
+        })
+
     }
 
     render() {
