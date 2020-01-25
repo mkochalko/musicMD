@@ -6,7 +6,6 @@ export default function (state = {}, action) {
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_SONG:
-            debugger;
             newState[action.song.data._id] = action.song.data
             return newState;
         default:
