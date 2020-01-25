@@ -51,6 +51,10 @@ class EventIndexShowItem extends React.Component {
         this.configureSetList().map(song => (
             songIds.push({artist: this.props.event._embedded.attractions[0].name, songName: song.name})
         ));
+        
+        
+        this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
+        console.log(this.props.event.dates.start.localDate)
 
         // console.log(this.props.getTrackByInfo(["In The End"]))
 
@@ -64,6 +68,8 @@ class EventIndexShowItem extends React.Component {
             songIds: songIds,
             date: this.props.event.dates.start.localDate
         }
+
+        // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
 
         songIds.forEach(songInfo => {
