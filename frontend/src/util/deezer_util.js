@@ -9,10 +9,7 @@ export const findTrack = (trackInfo) => {
             url: `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=${trackInfo.join("+")}`,
             method: 'GET',
             async: false,
-            dataType: "json",
-            success: function(data) {
-                json = data
-            }
+            dataType: "json"
         })
     )
     // return json;
