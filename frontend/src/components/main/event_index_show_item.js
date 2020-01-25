@@ -1,5 +1,5 @@
 import React from 'react';
-// import classes from './event_index_show_item.module.css';
+import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
@@ -18,6 +18,8 @@ class EventIndexShowItem extends React.Component {
             // console.log(artist)
             this.props.getSetlist(artist)
         }
+
+            
     }
 
     componentDidUpdate(prevProps) {
@@ -44,9 +46,16 @@ class EventIndexShowItem extends React.Component {
     handleClick() {
         let songIds = [];
 
+        let otherSongIds = [];
+
         this.configureSetList().map(song => (
             songIds.push({artist: this.props.event._embedded.attractions[0].name, songName: song.name})
         ));
+
+        // console.log(this.props.getTrackByInfo(["In The End"]))
+
+        // console.log(this.props.findTrack(["Master Exploder"]))
+
 
         let event = {
             venue: this.props.event._embedded.venues[0].name,
@@ -56,6 +65,13 @@ class EventIndexShowItem extends React.Component {
             date: this.props.event.dates.start.localDate
         }
         this.props.postEvent(event)
+
+        songIds.forEach(songInfo => {
+            
+            this.props.getTrackByInfo([songInfo.artist, songInfo.songName])
+        
+        })
+
     }
 
     render() {
