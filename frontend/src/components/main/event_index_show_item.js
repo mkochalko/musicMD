@@ -1,5 +1,5 @@
 import React from 'react';
-// import classes from './event_index_show_item.module.css';
+import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
@@ -47,7 +47,10 @@ class EventIndexShowItem extends React.Component {
         this.configureSetList().map(song => (
             songIds.push({artist: this.props.event._embedded.attractions[0].name, songName: song.name})
         ));
-
+        
+        
+        this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
+        console.log(this.props.event.dates.start.localDate)
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
@@ -55,6 +58,8 @@ class EventIndexShowItem extends React.Component {
             songIds: songIds,
             date: this.props.event.dates.start.localDate
         }
+
+        // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
     }
 
