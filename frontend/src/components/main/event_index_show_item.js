@@ -39,6 +39,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist)
+            this.props.clearTracks();
         }
         // setTimeout(() => {
         //     this.configureSetList().map(song => (
@@ -48,7 +49,7 @@ class EventIndexShowItem extends React.Component {
     }
 
     componentWillUnmount() {
-        this.props.clearTracks();
+        // this.props.clearTracks();
     }
 
     configureSetList() {

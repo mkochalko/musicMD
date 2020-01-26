@@ -44,13 +44,13 @@ export const getMetroIdByClick = (latlng) => {
       //   url: `https://api.songkick.com/api/3.0/search/locations.json?location=geo:${latlng}&apikey=${window.SKKey}`,
 
 
-// export const getMetroIdByText = (city) => {
-//     city = city.split(" ").join("%20");
+export const getMetroIdByText = (city) => {
+    city = city.split(" ").join("%20");
 
-//     return $.ajax({
-//       url: `https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=${window.SKKey}&radius=20&unit=miles&locale=*&startDateTime=2020-01-23T16:26:00Z&endDateTime=2020-04-23T16:26:00Z&size=20&sort=relevance,desc&city=${city}&segmentId=KZFzniwnSyZfZ7v7nJ`,
-//       method: "GET",
-//       async: false,
-//       dataType: "json"
-//     });
-// }
+    return $.ajax({
+      url: `https://cors-anywhere.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events?apikey=${window.SKKey}&radius=20&unit=miles&locale=*&startDateTime=2020-01-23T16:26:00Z&endDateTime=2020-04-23T16:26:00Z&size=20&sort=relevance,desc&city=${city}&segmentId=KZFzniwnSyZfZ7v7nJ`,
+      method: "GET",
+      async: false,
+      dataType: "json"
+    });
+}

@@ -12,7 +12,8 @@ class LoginForm extends React.Component {
             errors: {}
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
 
@@ -34,12 +35,23 @@ class LoginForm extends React.Component {
     }
 
     // Handle form submission
-    handleSubmit(e) {
+    handleLogin(e) {
         e.preventDefault();
 
         let user = {
             email: this.state.email,
             password: this.state.password
+        };
+
+        this.props.login(user)
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+
+        let user = {
+            email: 'WillFerrell@gmail.com',
+            password: 'AfternoonDelight',
         };
 
         this.props.login(user)
@@ -63,10 +75,12 @@ class LoginForm extends React.Component {
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
         console.log(current);
         return (
+            
             <div className={classes.loginContainer}>
+               
                 <div className={classes.background}></div>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleLogin}>
                     <div className={classes.inputContainer}>
                         <div className={classes.date}>{current}</div>
 
@@ -88,11 +102,13 @@ class LoginForm extends React.Component {
                                     className={classes.passwordInput}
                                 />
                             </div>
-                       
-                      
-                        <input type="submit" value="GET YOUR PRESCRIPTION" className={classes.loginSubmit}/>
-                        {this.renderErrors()}
+                        <input type="submit" value="GET YOUR PRESCRIPTION (LOG IN)" className={classes.loginSubmit} />
                     </div>
+
+                </form>
+
+                <form onSubmit={this.handleDemo}>
+                    <input type="submit" value="EMERGENCY PRESCRIPTION (DEMO)" className={classes.demoSubmit} />
                 </form>
             </div>
         );
