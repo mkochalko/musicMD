@@ -23,12 +23,13 @@
     height: 100vh;
     color: white;
     grid-template-columns: 35% 65%;
-    grid-auto-rows: 33.33%;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 15px;
     grid-template-areas: 
         "map shw"
         "idx shw"
         "idx shw";
+    overflow: auto;
 }
 
 .map {
@@ -43,6 +44,7 @@
 
 .eventShow {
     grid-area: shw;
+    margin-left: 20px;
     
 }
 

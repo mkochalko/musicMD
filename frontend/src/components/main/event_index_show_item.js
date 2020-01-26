@@ -140,16 +140,22 @@ class EventIndexShowItem extends React.Component {
         }
         return (
             <div className={classes.searchShowPage}>
-                {this.props.event.name}
+                <div className={classes.eventName}>
+                    {this.props.event.name}
+                </div>
                 <br/>
-                {this.props.event._embedded.venues[0].name}
+                <div>
+                    {this.props.event._embedded.venues[0].name}
+                </div>
                 <br/>
-                {this.props.event._embedded.attractions[0].name}
+                <div>
+                    {this.props.event._embedded.venues[0].address.line1},
+                    <br/>
+                    {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}
+                </div>
                 <br/>
-                {this.props.event._embedded.venues[0].address.line1}
                 <br/>
-                {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}
-                <br/>
+                <div></div>
                 {this.props.event.dates.start.localDate}
                 <br />
                 {this.props.event.dates.start.localTime}

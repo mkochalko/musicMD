@@ -74,7 +74,7 @@ class LoginForm extends React.Component {
                             <div className={classes.musicMD}>Music MD</div>
                             <div className={classes.musicMD}>Get your prescription filled</div>
                         </div> */}
-                            <div classname={classes.inputs}>
+                            <div className={classes.inputs}>
                                 <input type="text"
                                     value={this.state.email}
                                     onChange={this.update('email')}
