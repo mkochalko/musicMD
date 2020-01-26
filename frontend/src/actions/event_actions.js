@@ -16,9 +16,7 @@ const receiveUserEvents = events => ({
 
 export const postEvent = event => dispatch => (
     postEventApi(event)
-        .then((event) => {
-            debugger;
-            dispatch(receiveEvent(event))})
+        .then((event) => dispatch(receiveEvent(event)))
 );
 
 export const fetchUserEvents = () => dispatch => (
