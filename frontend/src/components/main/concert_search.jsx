@@ -10,8 +10,9 @@ class ConcertSearch extends React.Component {
         super(props);
 
         this.state = { selectedEvent: 0 }
-
+        this.state.search = ""; 
         this.handleEventClick = this.handleEventClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.resetState = this.resetState.bind(this);
     }
 
@@ -31,6 +32,20 @@ class ConcertSearch extends React.Component {
     resetState() {
         this.setState({selectedEvent: 0})
     }
+    
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.getMetroIdByText(this.state.search).then(this.props.resetState);;
+        console.log(this.state.search);
+
+    }
+
+    update(field) {
+        console.log(this.state);
+        return e => this.setState({
+            [field]: e.currentTarget.value
+        });
+    }
 
     handleEventClick(e) {
         e.preventDefault();
@@ -49,12 +64,18 @@ class ConcertSearch extends React.Component {
         // console.log(this.props.events[this.state.selectedEvent])
         return (
             <div className={classes.indexSearchContainer}>
-                <div className={classes.searchBar}>
-                    <input 
-                        type="text" 
-                        placeholder="Search for concerts in your area!"
-                        className={classes.searchInput}
-                    />
+                <div className={classes.searchBar} onSubmit={this.handleSubmit}>
+                    <form >
+                        <input
+                            type="text"
+                            placeholder="Search for concerts by city!"
+                            className={classes.searchInput}
+                            onChange={this.update('search')}
+                            value={this.state.search}
+                        />
+                        <input type="submit" value="SEARCH"/>
+                    </form>
+                  
                 </div>
                 <div className={classes.searchPage}>
                     <div className={classes.map}>
