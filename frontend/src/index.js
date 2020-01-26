@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     //     window.SLKey = DevKeys.SLKey
     // }
 
-    window.MapsAPI = ProdKeys.MapsAPI
-    window.SKKey = ProdKeys.SKKey
-    window.SLKey = ProdKeys.SLKey
+    window.MapsAPI = process.env.MAPS_API
+    window.SKKey = process.env.SONG_KICK_KEY
+    window.SLKey = process.env.SETLIST_KEY
 
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
