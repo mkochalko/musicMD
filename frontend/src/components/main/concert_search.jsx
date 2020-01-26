@@ -47,7 +47,7 @@ class ConcertSearch extends React.Component {
         });
     }
 
-    handleEventClick(e) {
+    handleEventClick(e) { 
         e.preventDefault();
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
