@@ -3,7 +3,7 @@ import EventIndexShowItem from './event_index_show_item';
 import { getSetlist } from '../../actions/setlist_actions';
 import { postEvent } from '../../actions/event_actions';
 import { fetchSong } from '../../actions/song_actions';
-import {getTrackByInfo} from "../../actions/deezer_actions";
+import {getTrackByInfo, clearTracks} from "../../actions/deezer_actions";
 import { findTrack } from "../../util/deezer_util";
 
 
@@ -18,8 +18,8 @@ const mapDispatchToProps = dispatch => ({
     postEvent: (event) => dispatch(postEvent(event)),
     fetchSong: (song) => dispatch(fetchSong(song)),
     getTrackByInfo: (trackInfo) => dispatch(getTrackByInfo(trackInfo)),
-    findTrack: (trackInfo) => dispatch(findTrack(trackInfo))
-
+    findTrack: (trackInfo) => dispatch(findTrack(trackInfo)),
+    clearTracks: () => dispatch(clearTracks())
 })
 
 export default connect(
