@@ -11,7 +11,7 @@ import {getEvents} from './util/songkick_api_util';
 import * as SAU from "./util/setlist_api_util";
 import * as DeezerUtil from "./util/deezer_util";
 import {getTrackByInfo} from "./actions/deezer_actions";
-import { getMetroIdByClick } from './actions/songkick_actions';
+import { getMetroIdByClick, getMetroIdByText } from './actions/songkick_actions';
 import { getSetlist } from './actions/setlist_actions';
 import * as Keys from './config/keys'
 
@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.getEvents = getEvents;
     window.getMetroIdByClick = getMetroIdByClick;
+    window.getMetroIdByText = getMetroIdByText;
+
     // window.getMetroIdByText = getMetroIdByText;
     window.getTrackByInfo = getTrackByInfo;
     // window.getSetlist = getSetlist;
