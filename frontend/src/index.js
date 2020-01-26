@@ -13,15 +13,23 @@ import * as DeezerUtil from "./util/deezer_util";
 import {getTrackByInfo} from "./actions/deezer_actions";
 import { getMetroIdByClick } from './actions/songkick_actions';
 import { getSetlist } from './actions/setlist_actions';
-import {MapsAPI, SKKey, SLKey} from './config/keys';
+import * as ProdKeys from './config/keys_prod';
+import * as DevKeys from './config/keys_dev';
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    window.MapsAPI = MapsAPI
-    window.SKKey = SKKey
-    window.SLKey = SLKey
+
+    if (process.env.NODE_ENV === 'production') {
+        window.MapsAPI = ProdKeys.MapsAPI
+        window.SKKey = ProdKeys.SKKey
+        window.SLKey = ProdKeys.SLKey
+    } else {
+        window.MapsAPI = DevKeys.MapsAPI
+        window.SKKey = DevKeys.SKKey
+        window.SLKey = DevKeys.SLKey
+    }
 
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
