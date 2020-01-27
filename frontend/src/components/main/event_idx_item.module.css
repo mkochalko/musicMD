@@ -2,7 +2,7 @@
     background-color: rgba(169, 169, 169, 0);
     width: 95%;
     font-size: 20px;
-    height: 30px;
+    height: 45px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5px;
@@ -10,10 +10,13 @@
     text-align: left;
     border-top-right-radius:10px;
     border-bottom-left-radius:10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
 }
 
 .eventIdxItem:hover {
-    border: 1px solid black;
+    border-bottom: 1px solid white;
     background-color: rgb(1, 26, 105);
     cursor: pointer;
 }
@@ -21,4 +24,16 @@
 .eventItemContainer {
     overflow: auto;
     height: 80%;
+}
+
+.eventName {
+    width: 75%;
+    overflow-x: scroll;
+    overflow: hidden;
+    margin-right: 10px;
+    line-height: 1.2;
+}
+
+.date {
+    width: 25%
 }
