@@ -13,7 +13,7 @@ class UserSplash extends React.Component {
     }
 
     render() {
-        console.log(this.props.events);
+        // console.log(this.props.events);
         return (
             <div className="user-splash">
                 <div className="user-info">

@@ -74,7 +74,6 @@ class LoginForm extends React.Component {
     render() {
         let today = new Date();
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
-        console.log(current);
         return (
             
             <div className={classes.loginContainer}>

@@ -40,12 +40,10 @@ class ConcertSearch extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.getMetroIdByText(this.state.search).then(this.props.resetState);;
-        console.log(this.state.search);
 
     }
 
     update(field) {
-        console.log(this.state);
         return e => this.setState({
             [field]: e.currentTarget.value
         });
