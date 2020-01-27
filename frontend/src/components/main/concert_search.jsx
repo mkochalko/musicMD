@@ -2,8 +2,12 @@ import React from 'react';
 import * as TMApiUtil from "../../util/songkick_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
+import navClasses from '../../components/wrapper.module.css';
+
 import EventsIndexContainer from './events_index_container';
 import EventIndexShowItemContainer from './event_index_show_item_container';
+import NavBarContainer from '../nav/navbar_container';
+
 
 class ConcertSearch extends React.Component {
     constructor(props) {
@@ -47,7 +51,7 @@ class ConcertSearch extends React.Component {
         });
     }
 
-    handleEventClick(e) {
+    handleEventClick(e) { 
         e.preventDefault();
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
@@ -63,32 +67,36 @@ class ConcertSearch extends React.Component {
         // console.log(this.props.events.length)
         // console.log(this.props.events[this.state.selectedEvent])
         return (
-            <div className={classes.indexSearchContainer}>
-                <div className={classes.searchBar} onSubmit={this.handleSubmit}>
-                    <form >
-                        <input
-                            type="text"
-                            placeholder="Search for concerts by city!"
-                            className={classes.searchInput}
-                            onChange={this.update('search')}
-                            value={this.state.search}
-                        />
-                        <input type="submit" value="SEARCH"/>
-                    </form>
-                  
-                </div>
-                <div className={classes.searchPage}>
-                    <div className={classes.map}>
-                        <Map resetState={this.resetState}></Map>
+            <div className={navClasses.wrapper}>
+                <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
+                <div className={classes.indexSearchContainer}>
+                    <div className={classes.searchBar} onSubmit={this.handleSubmit}>
+                        <form >
+                            <input
+                                type="text"
+                                placeholder="Search for concerts by city!"
+                                className={classes.searchInput}
+                                onChange={this.update('search')}
+                                value={this.state.search}
+                            />
+                            <input type="submit" value="SEARCH" />
+                        </form>
+
                     </div>
-                    <div className={classes.eventIndex} onClick={this.handleEventClick}>
-                        {this.props.events.length > 0 ? <EventsIndexContainer /> : null }
-                    </div>
-                    <div className={classes.eventShow}>
-                        {this.props.events.length > 0 && Object.values(this.props.setlist) ?  <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]}/> : null } 
+                    <div className={classes.searchPage}>
+                        <div className={classes.map}>
+                            <Map resetState={this.resetState}></Map>
+                        </div>
+                        <div className={classes.eventIndex} onClick={this.handleEventClick}>
+                            {this.props.events.length > 0 ? <EventsIndexContainer /> : null}
+                        </div>
+                        <div className={classes.eventShow}>
+                            {this.props.events.length > 0 && Object.values(this.props.setlist) ? <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]} /> : null}
+                        </div>
                     </div>
                 </div>
             </div>
+            
         );
     }
 }

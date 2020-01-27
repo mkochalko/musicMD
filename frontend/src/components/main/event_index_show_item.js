@@ -39,7 +39,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist)
-            this.props.clearTracks();
+            // this.props.clearTracks();
         }
         // setTimeout(() => {
         //     this.configureSetList().map(song => (
@@ -70,7 +70,7 @@ class EventIndexShowItem extends React.Component {
         let songIds = [];
 
         // let otherSongIds = [];
-
+        debugger;
         this.props.deezer.map(songObj => (
             this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
         ));
@@ -167,9 +167,18 @@ class EventIndexShowItem extends React.Component {
                 <br />
                 <ul className={classes.setList}>
                     { this.configureSetList() ? (
+<<<<<<< HEAD
                         this.configureSetList().map((song, idx) => (
                             <li className={classes.song}key={idx}>{song.name}</li>
                         ))) : ""
+=======
+                        this.configureSetList().map((song, idx) => {
+                            debugger;
+                            return (
+                                <li key={idx}>{song.name}</li>
+                            )
+                        })) : ""
+>>>>>>> master
                     }
                 </ul>
             </div>
