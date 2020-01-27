@@ -6,8 +6,14 @@ class EventsIndexItem extends React.Component {
     render() {
         return (
             <li className={classes.eventIdxItem} id={this.props.event.id}>
-                {this.props.event.name}
+                <div className={classes.eventName}>
+                    {this.props.event.name}
+                </div>
+                <div className={classes.date}>
+                    {this.props.event.dates.start.localDate}
+                </div>
             </li>
+
         )
     }
 }
