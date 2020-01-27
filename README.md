@@ -12,14 +12,14 @@ This application will allow you to generate upcoming events/concerts based on a 
 
 ### Features in development: 
 * Users show page
- * Display all events users are attending
- * Display options to add songs to master library 
+  * Display all events users are attending
+  * Display options to add songs to master library 
 * Master Library
- * Addition of songs
- * Removal of songs
- * Play songs feature
+  * Addition of songs
+  * Removal of songs
+  * Play songs feature
 * User Event Creation
- * Dispaly Added events to users profile page
+  * Dispaly Added events to users profile page
 
 ## Technologies Used
 
