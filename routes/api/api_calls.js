@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
     // function axiosTest() {
         return axios.get(`https://app.ticketmaster.com/discovery/v2/events?apikey=${SKKey}&latlong=37.7749,-122.4194&radius=20&unit=miles&locale=*&startDateTime=${today}T15:28:00Z&endDateTime=${later}T15:28:00Z&size=50&page=1&sort=relevance,desc&segmentId=KZFzniwnSyZfZ7v7nJ`)
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 return res.json(response.data)
             })
     // }
