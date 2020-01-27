@@ -1,20 +1,14 @@
 .signupContainer {
-    /* background: linear-gradient(-45deg, #6d0a3c, #e73c7e, #3f0c7a, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; */
-    /* background-image: url('https://media1.giphy.com/media/3o6ozscsz4jRX7xuQE/giphy.gif'); */
-    /* background-image: url('https://i.gifer.com/4eC0.gif'); */
-   
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
-    opacity: 60%;
+    opacity: 80%;
 }
 
 @keyframes gradient {
-    0% {
+    /* 0% {
         background-position: 0% 50%;
     }
     50% {
@@ -22,36 +16,25 @@
     }
     100% {
         background-position: 0% 50%;
-    }
+    } */
 }
-
-/* .background {
-    position: absolute;
-    justify-content: center;
-    align-content: center;
-    background-image: url('https://i.ibb.co/6s1pQRk/doctors-Note-V2.png');
-    background-size: 500px;
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 500px;
-    z-index: 1;
-} */
 
 .note {
     position: relative;
     font-family: Tahoma, Geneva, sans-serif;
     color: black;
     top: 20%;
-    right: 40%;
+    /* right: 40%; */
 }
 
 .inputContainer {
+    margin-left: 160px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
     z-index: 2;
-    background-image: url('https://i.ibb.co/m8hGkMd/doctors-Note-V7.png');
+    background-image: url('https://i.imgur.com/Fr5Xb0n.png');
     background-size: 540px;
     margin-top: 15px;
     background-repeat: no-repeat;
@@ -68,7 +51,7 @@
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-top: 200px;
+    margin-top: 277px;
     margin-left: 10px;
 }
 .usernameInput {
@@ -98,23 +81,20 @@
 
 
 .signupSubmit {
-    /* height: 25px;
-    width: 150px;
-    border-radius: 10px;
-    font-family: 'Acme', sans-serif;
-    font-size: 20px; */
-      text-decoration: none;
+
+    text-decoration: none;
     border: 2px solid #71D4E1;
-    height: 50px;
-    width: 65%;
+    height: 43px;
+    width: 473px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7f5a83;
+    color: black;
     background-color: lightblue;
     font-size: 20px;
     margin-top: 90px;
-    margin-left: -165px;
+    margin-left: -160px;
     /* background-color: #0d324d ; */
     font-family: Tahoma, Geneva, sans-serif;
 }
@@ -124,4 +104,47 @@
     transition: 0.5s;
     cursor: pointer;
     color: white;
+}
+.signupFrom{
+    width: 500px;
+
+}
+.login{
+     text-decoration: none;
+    /* border: 2px solid #71D4E1;  */
+    height: 35px;
+    width: 473px;
+    /* position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: lightblue;
+    font-size: 20px;
+    
+    font-family: Tahoma, Geneva, sans-serif;
+    z-index: 100;
+    border: #71D4E1 2px solid; 
+}
+.login:hover {
+     background-color: #7f5a83;
+    transition: 0.5s;
+    cursor: pointer;
+    color: white;
+}
+
+.inputContainer a {
+    margin-right: 160px;
+}
+
+.errors {
+    color: red;
+    /* margin-top: 70px; */
+    position: absolute;
+    float: left;
+    /* border: 1px solid red; */
+    min-width: 10px;
+    min-height: 10px;
+    margin-top: 570px;
+    
 }

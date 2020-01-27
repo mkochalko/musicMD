@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import classes from './login.module.css';
 
 class LoginForm extends React.Component {
@@ -70,6 +70,7 @@ class LoginForm extends React.Component {
         );
     }
 
+    // <iframe width="1" height="1" src="https://www.youtube.com/embed/q4k1IK_o59M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     render() {
         let today = new Date();
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
@@ -77,7 +78,6 @@ class LoginForm extends React.Component {
         return (
             
             <div className={classes.loginContainer}>
-               
                 <div className={classes.background}></div>
 
                 <form onSubmit={this.handleLogin}>
@@ -106,10 +106,14 @@ class LoginForm extends React.Component {
                     </div>
 
                 </form>
-
-                <form onSubmit={this.handleDemo}>
-                    <input type="submit" value="EMERGENCY PRESCRIPTION (DEMO)" className={classes.demoSubmit} />
-                </form>
+                    <Link className={classes.login} to={"/signup"}>
+                        <div>Sign Up</div>
+                    </Link>
+                <div className={classes.buttons}>
+                    <form onSubmit={this.handleDemo}>
+                        <input type="submit" value="EMERGENCY PRESCRIPTION (DEMO)" className={classes.demoSubmit} />
+                    </form>
+                </div>
             </div>
         );
     }

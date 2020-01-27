@@ -39,7 +39,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist)
-            this.props.clearTracks();
+            // this.props.clearTracks();
         }
         // setTimeout(() => {
         //     this.configureSetList().map(song => (
@@ -70,7 +70,7 @@ class EventIndexShowItem extends React.Component {
         let songIds = [];
 
         // let otherSongIds = [];
-
+        debugger;
         this.props.deezer.map(songObj => (
             this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
         ));
@@ -139,33 +139,36 @@ class EventIndexShowItem extends React.Component {
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
             ));
         }
+        
         return (
             <div className={classes.searchShowPage}>
-                <div className={classes.eventName}>
-                    {this.props.event.name}
+                <div className={classes.eventDetails}>
+                    <div className={classes.eventName}>
+                        <h1>{this.props.event.name}</h1>
+                        <br/>
+                        <img height="180" width="320" src={this.props.event.images[0].url} /> 
+                        <br />
+                        <h3>{this.props.event._embedded.venues[0].name}</h3>   
+                    </div> 
+                    <div className={classes.eventLocation}>
+                        <p>{this.props.event._embedded.venues[0].address.line1}, {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}</p>
+                    </div>
+                    <br />
+                    <div className={classes.dateTime}>
+                        Date: {this.props.event.dates.start.localDate}
+                        <br/>
+                        <br/>
+                        Time: {this.props.event.dates.start.localTime}
+                    </div>
+                    <div>
+                        <button className={classes.goingButton} onClick={this.handleClick}>I'm Going</button>
+                    </div> 
                 </div>
-                <br/>
-                <div>
-                    {this.props.event._embedded.venues[0].name}
-                </div>
-                <br/>
-                <div>
-                    {this.props.event._embedded.venues[0].address.line1},
-                    <br/>
-                    {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}
-                </div>
-                <br/>
-                <br/>
-                <div></div>
-                {this.props.event.dates.start.localDate}
                 <br />
-                {this.props.event.dates.start.localTime}
-                <br />
-                <button onClick={this.handleClick}>I'm Going</button>
-                <ul>
+                <ul className={classes.setList}>
                     { this.configureSetList() ? (
                         this.configureSetList().map((song, idx) => (
-                            <li key={idx}>{song.name}</li>
+                            <li className={classes.song}key={idx}>{song.name}</li>
                         ))) : ""
                     }
                 </ul>

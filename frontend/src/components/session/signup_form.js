@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import classes from './signup.module.css';
 
 class SignupForm extends React.Component {
@@ -53,49 +53,61 @@ class SignupForm extends React.Component {
             </ul>
         );
     }
-
+    // <iframe width="1" height="1" src="https://www.youtube.com/embed/q4k1IK_o59M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
     render() {
         return (
-            <div className={classes.signupContainer}>
-                <canvas id="projector"></canvas>
-                <div className={classes.background}></div>
+          <div className={classes.signupContainer}>
+            <form onSubmit={this.handleSubmit} className="signupForm">
+              <div className={classes.inputContainer}>
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                  className={classes.emailInput}
+                />
+                <br />
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  placeholder="Username"
+                  className={classes.usernameInput}
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                  className={classes.passwordInput}
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                  className={classes.passwordInput}
+                />
+                <div className={classes.errors}>
 
-                <form onSubmit={this.handleSubmit} className={classes.signupForm}>
-                    <div className={classes.inputContainer}>
+                  {this.renderErrors()}
 
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            placeholder="Email"
-                            className={classes.emailInput}
-                        />
-                        <br />
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                            className={classes.usernameInput}
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                            className={classes.passwordInput}
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                            className={classes.passwordInput}
-                        />
-                        <br />
-                        <input type="submit" value="GET YOUR PRESCRIPTION" className={classes.signupSubmit} />
-                        {this.renderErrors()}
-                    </div>
-                </form>
-            </div>
+                </div>
+                <br />
+                <input
+                  type="submit"
+                  value="GET YOUR PRESCRIPTION"
+                  className={classes.signupSubmit}
+                />
+                <Link className={classes.login} to={"/login"}>
+                  <div>Returning Patients Here</div>
+                </Link>
+              </div>
+            </form>
+          </div>
         );
     }
 

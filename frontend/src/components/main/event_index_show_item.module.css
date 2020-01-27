@@ -4,9 +4,82 @@
 
 .eventName {
     width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     font-size: 36px;
     font-family: 'Alef', sans-serif;
+}
 
+.eventLocation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20;
+}
+
+.dateTime {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18;
+}
+
+.song {
+    background-color: rgba(169, 169, 169, 0);
+    width: 95%;
+    font-size: 20px;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 0px;
+    text-align: left;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+}
+
+.song:hover {
+    border: 1px solid black;
+    background-color: rgb(1, 26, 105);
+    cursor: pointer;
+}
+
+.searchShowPage {
+    display: flex;
+
+}
+
+.eventDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.goingButton {
+    margin-top: 20px;
+    height: 60px;
+    width: 120px;
+    background-color:  rgba(169, 169, 169, 0);
+    color: white;
+}
+
+.goingButton:hover {
+    border: 1px solid black;
+    background-color: rgb(1, 26, 105);
+    cursor: pointer;
+}
+
+.setList {
+    margin-left: 20px;
+    height: 400px;
+    overflow: hidden;
 }

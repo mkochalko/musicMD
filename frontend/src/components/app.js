@@ -15,12 +15,12 @@ import UserSplashContainer from '../components/user/user_splash_container';
 
 const App = () => (
     <div className={classes.wrapper}>
-        <NavBarContainer className={classes.navContainer}/>
+        {/* <NavBarContainer className={classes.navContainer}/> */}
         <Switch>
-            <Route exact path="/" component={ConcertSearchContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <Route exact path="/prescriptions" component={UserSplashContainer} />
+            <ProtectedRoute exact path="/" component={ConcertSearchContainer} />
+            <ProtectedRoute exact path="/prescriptions" component={UserSplashContainer} />
         </Switch>
     </div>
 );
