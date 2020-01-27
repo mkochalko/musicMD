@@ -4,7 +4,7 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-    opacity: 80%;
+    /* opacity: 80%; */
 }
 
 @keyframes gradient {
