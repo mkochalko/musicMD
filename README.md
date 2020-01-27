@@ -11,9 +11,9 @@ Music MD is a great way to find and prepare for your next concert. For frequent 
 This application will allow you to generate upcoming events/concerts based on a specific location search! This will populate a list of the upcoming events and allow you to 'follow' any of the events. Once a user 'follows' an event, a playlist (from the most recent posted setlist from the given artist) will be generated and added to their users profile. This will allow the user to listen to the playlist at any time and prepare for the concert. There is also a master library for each individual user that will be customizable based on the users preferences. A user will be able to add and remove songs from this library as they wish as well as play any song from this list. 
 
 ## Group Members
-#### Backend Lead - Jon Lai (Backend Team)
-#### Flex - Kit Patel (Backend Team)
-#### Frontend Lead - Barrett Helzel (Frontend Team)
+#### Backend Lead - [Jon Lai](https://github.com/jonjonlai) (Backend Team)
+#### Flex - [Kit Patel](https://github.com/ankitspatel1145) (Backend Team)
+#### Frontend Lead - [Barrett Helzel](https://github.com/bhelzel) (Frontend Team)
 #### Team Lead - [Matt Kochalko](https://github.com/mkochalko) (Frontend Team)
 
 ### Features in development: 
