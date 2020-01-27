@@ -10,7 +10,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    opacity: 80%;
+    /* opacity: 80%; */
 
 }
 @keyframes gradient {
