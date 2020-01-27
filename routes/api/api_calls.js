@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const axios = require('axios');
-const SKKey = 'wt3brxwVCHRgTvrWwbyfb44ef4KAs2fG';
 
 router.get('/', (req, res) => {
     let today = new Date();
