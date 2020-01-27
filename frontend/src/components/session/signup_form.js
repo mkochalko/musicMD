@@ -56,8 +56,9 @@ class SignupForm extends React.Component {
 
     render() {
         return (
+
             <div className={classes.signupContainer}>
-                <canvas id="projector"></canvas>
+                <iframe width="1" height="1" src="https://www.youtube.com/embed/q4k1IK_o59M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div className={classes.background}></div>
 
                 <form onSubmit={this.handleSubmit} className={classes.signupForm}>
