@@ -167,18 +167,9 @@ class EventIndexShowItem extends React.Component {
                 <br />
                 <ul className={classes.setList}>
                     { this.configureSetList() ? (
-<<<<<<< HEAD
                         this.configureSetList().map((song, idx) => (
                             <li className={classes.song}key={idx}>{song.name}</li>
                         ))) : ""
-=======
-                        this.configureSetList().map((song, idx) => {
-                            debugger;
-                            return (
-                                <li key={idx}>{song.name}</li>
-                            )
-                        })) : ""
->>>>>>> master
                     }
                 </ul>
             </div>

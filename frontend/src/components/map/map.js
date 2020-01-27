@@ -3,9 +3,9 @@ import GoogleMapReact from 'google-map-react';
 import { MapsAPI } from "../../config/keys";
 // const MapsAPI = require('../../config/keys').MapsAPI
 import classes from "./map.module.css";
+import Marker from "./marker";
 
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
     static defaultProps = {
@@ -19,7 +19,7 @@ class SimpleMap extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-        // this.
+        this.state = this.props;
     }
     
     handleClick(e) {
@@ -28,10 +28,26 @@ class SimpleMap extends Component {
         // console.log(e);
         let lat = e.lat;
         let lng = e.lng;
+        this.setState({
+            center: {
+                lat: lat,
+                lng: lng
+            }
+        })
         this.props.getMetroIdByClick(`${lat},${lng}`).then(this.props.resetState);
         // console.log(this.props.getMetroIdByClick(`${lat},${lng}`));
 
         // this.props.getEvents(`${lat},${lng}`)
+    }
+
+    handleMarker(e) {
+        e.preventDefault();
+
+        let lat = e.lat;
+        let lng = e.lng;
+        console.log(e.lat);
+        console.log(e.lng);
+        
     }
 
 
@@ -42,13 +58,14 @@ class SimpleMap extends Component {
                 <GoogleMapReact
                     onClick={this.handleClick}
                     bootstrapURLKeys={{ key: window.MapsAPI }}
-                    defaultCenter={this.props.center}
+                    center={this.state.center}
                     defaultZoom={this.props.zoom}
                 >
-                    <AnyReactComponent
-                        lat={this.props.center.lat}
-                        lng={this.props.center.lng}
-                        text="Trailer Park"
+                    <Marker
+                        // onClick={this.handleMarker}
+                        lat={this.state.center.lat}
+                        lng={this.state.center.lng}
+                        // text="Trailer Park"
                     />
                 </GoogleMapReact>
             </div>
