@@ -1,6 +1,6 @@
 Welcome to MusicMD, a great app to prepare for any of your upcoming concerts!
 
-## [MusicMD](https://dry-fortress-76181.herokuapp.com)
+## [MusicMD](https://musicmd.herokuapp.com/#/)
 
 ## Overview
 
