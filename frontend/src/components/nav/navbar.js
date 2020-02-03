@@ -28,9 +28,9 @@ class NavBar extends React.Component {
                         className={classes.logoutButton}
                         >Logout</button>
                     <a href="https://github.com/mkochalko/musicMD" className={classes.gitIcon}></a>
-                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
-                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
-                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/mkochalko/" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/jonjonlai/" className={classes.linkedInIcon}></a>
                     <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
                        
                 </div>
