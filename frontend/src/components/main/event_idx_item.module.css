@@ -37,3 +37,23 @@
 .date {
     width: 25%
 }
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Alef', sans-serif;
+    font-size: 18px;
+}
+
+.day {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    justify-self: center;
+    font-family: 'Alef', sans-serif;
+    font-size: 20px;
+    margin-top: 5px;
+}
