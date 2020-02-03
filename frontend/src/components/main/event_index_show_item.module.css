@@ -83,3 +83,16 @@
     height: 400px;
     overflow: hidden;
 }
+
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.day {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

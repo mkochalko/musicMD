@@ -3,10 +3,10 @@ import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.state = { }
-        this.prevProps = {}
+        this.state = { };
+        this.prevProps = {};
         this.configureSetList = this.configureSetList.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -14,8 +14,8 @@ class EventIndexShowItem extends React.Component {
     UNSAFE_componentWillMount() {
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
-            console.log(artist)
-            this.props.getSetlist(artist)
+            // console.log(artist);
+            this.props.getSetlist(artist);
         }
     }
 
@@ -35,10 +35,10 @@ class EventIndexShowItem extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        this.prevProps = prevProps
+        this.prevProps = prevProps;
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
-            this.props.getSetlist(artist)
+            this.props.getSetlist(artist);
             // this.props.clearTracks();
         }
         // setTimeout(() => {
@@ -62,7 +62,7 @@ class EventIndexShowItem extends React.Component {
                     setlist = this.props.setListContainer[i].sets.set[0].song;
                 }
             }
-            return setlist
+            return setlist;
         }
     }
 
@@ -70,14 +70,14 @@ class EventIndexShowItem extends React.Component {
         let songIds = [];
 
         // let otherSongIds = [];
-        debugger;
+        // debugger;
         this.props.deezer.map(songObj => (
             this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
         ));
         
         
         // this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
-        console.log(this.props.event.dates.start.localDate)
+        // console.log(this.props.event.dates.start.localDate)
 
         // console.log(this.props.getTrackByInfo(["In The End"]))
 
@@ -167,18 +167,9 @@ class EventIndexShowItem extends React.Component {
                 <br />
                 <ul className={classes.setList}>
                     { this.configureSetList() ? (
-<<<<<<< HEAD
                         this.configureSetList().map((song, idx) => (
                             <li className={classes.song}key={idx}>{song.name}</li>
                         ))) : ""
-=======
-                        this.configureSetList().map((song, idx) => {
-                            debugger;
-                            return (
-                                <li key={idx}>{song.name}</li>
-                            )
-                        })) : ""
->>>>>>> master
                     }
                 </ul>
             </div>
