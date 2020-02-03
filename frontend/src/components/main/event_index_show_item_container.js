@@ -10,7 +10,8 @@ import { findTrack } from "../../util/deezer_util";
 const mapStateToProps = (state, ownProps) => ({
     event: ownProps.event,
     setListContainer: state.entities.setlist,
-    deezer: state.entities.deezer
+    deezer: state.entities.deezer,
+    currentUser: state.session.user
 })
 
 const mapDispatchToProps = dispatch => ({

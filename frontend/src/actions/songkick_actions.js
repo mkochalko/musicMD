@@ -15,7 +15,7 @@ export const getMetroIdByClick = latlng => dispatch => {
     return ( 
         TMAPIUtil.getMetroIdByClick(latlng)
             .then(events =>{
-                debugger;
+                // debugger;
                 dispatch(receiveEvents(events._embedded.events))
             })
     )
