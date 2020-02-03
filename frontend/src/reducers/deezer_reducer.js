@@ -12,7 +12,6 @@ export default function (state = {}, action) {
             nextState[action.track.data[0].id] = action.track.data[0]
             return nextState;
         case CLEAR_TRACKS:
-            debugger;
             nextState = {}
             return nextState;
         default:

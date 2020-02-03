@@ -10,7 +10,7 @@
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    opacity: 60%;
+    /* opacity: 80%; */
 
 }
 @keyframes gradient {
@@ -49,7 +49,7 @@
     flex-direction: column;
     align-items: center;
     z-index: 2;
-    background-image: url('https://i.ibb.co/RDKRYgW/sign-in-form-V1.png');
+    background-image: url('https://i.imgur.com/4TQ1Eni.png');
     background-size: 1000px;
     background-repeat: no-repeat;
     margin-top: 30%;
@@ -62,25 +62,26 @@
 
 .emailInput {
     padding: 10px;
-    height: 18px;
-    width: 330px;
+    height: 20px;
+    width: 343px;
     font-size: 24px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
     margin-top: 315px;
-    margin-left: 60px;
+    margin-left: 83px;
+    
 }
 
 .passwordInput {
     padding: 10px;
-    height: 18px;
-    width: 330px;
+    height: 20px;
+    width: 369px;
     font-size: 24px;
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
     background-color: white;
-    margin-left: 20px;
+    margin-left: 2px;
 }
 .loginSubmit {
     /* height: 40px;
@@ -88,15 +89,16 @@
     border-radius: 10px;
     font-family: 'Acme', sans-serif;
     font-size: 20px; */
+    margin-left: 3px;
     background-color: lightblue;
       text-decoration: none;
     border: 2px solid black;
     height: 50px;
-    width: 85%;
+    width: 84%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7f5a83;
+    color: black;
     font-size: 20px;
     margin-top: 190px;
     /* background-color: #0d324d ; */
@@ -116,18 +118,45 @@
       text-decoration: none;
     border: 2px solid black;
     height: 50px;
-    width: 100%;
+    width: 840px;
+
+    margin-left: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #7f5a83;
+    color: black;
     font-size: 20px;
-    margin-top: -400px;
+    margin-top: -390px;
     font-family: Tahoma, Geneva, sans-serif;
+
 }
 
 .demoSubmit:hover {
      background-color: #7f5a83;
+    transition: 0.5s;
+    cursor: pointer;
+    color: white;
+}
+.login{
+     text-decoration: none;
+    border: 2px solid black; 
+    height: 46px;
+    width: 836px;
+    margin-left: 1px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: lightblue;
+    font-size: 20px;
+    margin-top: 237px;
+    font-family: Tahoma, Geneva, sans-serif;
+      
+    float: left;
+}
+.login:hover {
+    background-color: #7f5a83;
     transition: 0.5s;
     cursor: pointer;
     color: white;

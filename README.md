@@ -10,6 +10,14 @@ Music MD is a great way to find and prepare for your next concert. For frequent 
 
 This application will allow you to generate upcoming events/concerts based on a specific location search! This will populate a list of the upcoming events and allow you to 'follow' any of the events. Once a user 'follows' an event, a playlist (from the most recent posted setlist from the given artist) will be generated and added to their users profile. This will allow the user to listen to the playlist at any time and prepare for the concert. There is also a master library for each individual user that will be customizable based on the users preferences. A user will be able to add and remove songs from this library as they wish as well as play any song from this list. 
 
+## Features
+
+### Search Function
+
+Our search function will allow the user to either click on our map or user our text bar to search locations for events. On search we call the Ticketmaster API to complete our page with a list of concerts and events. This allows users to see the specific details for any upcoming events. Using API calls to setlist.fm and deezer, we are able to populate the event setlist and playable songs for the user to listen to. 
+
+![Search Page](https://github.com/mkochalko/musicMD/blob/master/frontend/public/SearchFeature.png)
+
 ## Group Members
 #### Backend Lead - [Jon Lai](https://github.com/jonjonlai) (Backend Team)
 #### Flex - [Kit Patel](https://github.com/ankitspatel1145) (Backend Team)
@@ -17,7 +25,7 @@ This application will allow you to generate upcoming events/concerts based on a 
 #### Team Lead - [Matt Kochalko](https://github.com/mkochalko) (Frontend Team)
 
 ### Features in development: 
-* Users show page
+* Users profile page
   * Display all events users are attending
   * Display options to add songs to master library 
 * Master Library

@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
     event: ownProps.event,
     setListContainer: state.entities.setlist,
     deezer: state.entities.deezer
-})
+});
 
 const mapDispatchToProps = dispatch => ({
     getSetlist: (artist) => dispatch(getSetlist(artist)),
@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => ({
     getTrackByInfo: (trackInfo) => dispatch(getTrackByInfo(trackInfo)),
     findTrack: (trackInfo) => dispatch(findTrack(trackInfo)),
     clearTracks: () => dispatch(clearTracks())
-})
+});
 
 export default connect(
     mapStateToProps,

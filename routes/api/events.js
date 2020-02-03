@@ -23,7 +23,7 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         songIds: req.body.songIds,
         date: req.body.date
     });
-    console.log(newEvent);
+    // console.log(newEvent);
     newEvent.save().then(event => res.json(event));
 });
 

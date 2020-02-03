@@ -10,7 +10,7 @@ const passport = require('passport');
 
 router.post("/", passport.authenticate('jwt', { session: false }), (req, res) => {
 
-    console.log(req.body)
+    // console.log(req.body)
     
     const { errors, isValid } = validateSongData(req.body)
 

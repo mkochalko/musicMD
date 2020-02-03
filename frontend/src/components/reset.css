@@ -52,13 +52,14 @@ table {
 }
 
 html a {
-	color: white;
+	/* color: white; */
 }
 
 html {
   height: 100%;
   background: radial-gradient(circle at bottom, #000033 0%, #090a0f 100%);
   overflow: hidden;
+  z-index: -4;
 }
 
 #stars {

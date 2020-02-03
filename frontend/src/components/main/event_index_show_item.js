@@ -14,7 +14,6 @@ class EventIndexShowItem extends React.Component {
     UNSAFE_componentWillMount() {
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
-            // console.log(artist);
             this.props.getSetlist(artist);
         }
     }
@@ -70,7 +69,6 @@ class EventIndexShowItem extends React.Component {
         let songIds = [];
 
         // let otherSongIds = [];
-        // debugger;
         this.props.deezer.map(songObj => (
             this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
         ));
@@ -95,11 +93,6 @@ class EventIndexShowItem extends React.Component {
         // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
 
-        // songIds.forEach(songInfo => {
-            
-        //     let test = this.props.getTrackByInfo([songInfo.artist, songInfo.songName])
-        //     console.log(test)
-        // })
 
     }
 
@@ -122,9 +115,6 @@ class EventIndexShowItem extends React.Component {
         // console.log(this.prevProps)
         if (Object.keys(this.prevProps).length > 0) {
             if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id) {
-                console.log("test")
-                console.log(this.prevProps)
-                console.log(this.props.event.id)
                 this.configureSetList().map(song => (
                     this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
                 ));
@@ -132,9 +122,6 @@ class EventIndexShowItem extends React.Component {
         }
 
         if (this.props.setListContainer[0] && Object.keys(this.props.deezer).length === 0) {
-            console.log("test")
-            console.log(this.prevProps)
-            console.log(this.props.event.id)
             this.configureSetList().map(song => (
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
             ));
