@@ -3,10 +3,10 @@ import classes from './event_index_show_item.module.css';
 
 class EventIndexShowItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
 
-        this.state = { }
-        this.prevProps = {}
+        this.state = { };
+        this.prevProps = {};
         this.configureSetList = this.configureSetList.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -14,7 +14,7 @@ class EventIndexShowItem extends React.Component {
     UNSAFE_componentWillMount() {
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
-            this.props.getSetlist(artist)
+            this.props.getSetlist(artist);
         }
     }
 
@@ -34,10 +34,10 @@ class EventIndexShowItem extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        this.prevProps = prevProps
+        this.prevProps = prevProps;
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
-            this.props.getSetlist(artist)
+            this.props.getSetlist(artist);
             // this.props.clearTracks();
         }
         // setTimeout(() => {
@@ -61,7 +61,7 @@ class EventIndexShowItem extends React.Component {
                     setlist = this.props.setListContainer[i].sets.set[0].song;
                 }
             }
-            return setlist
+            return setlist;
         }
     }
 
