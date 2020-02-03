@@ -25,15 +25,19 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         date: req.body.date
     });
     newEvent.save().then(event => {
-        debugger
+        // debugger
         // console.log(newEvent);
         let userLib = Library.find({userId:req.body.userId})
-        let updatedEvents = userLib.eventIds.push(newEvent.id)
-        let conditions = { userId: req.body.userId}
-        , update = { eventIds: updatedEvents} 
-        , options = { multi: false };
+        let updatedEvents = userLib.eventIds
+
+        axios({ method: 'put', 
+            url: '/library/update'})
+        // let updatedEvents = userLib.eventIds.push(newEvent.id)
+        // let conditions = { userId: req.body.userId}
+        // , update = { eventIds: updatedEvents} 
+        // , options = { multi: false };
         
-        Library.update(conditions, update, options, (err) => { if (err) {throw err}});
+        // Library.update(conditions, update, options, (err) => { if (err) {throw err}});
         res.json(event)
     });
 

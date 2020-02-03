@@ -1,4 +1,5 @@
 import { postEventApi, fetchUserEventsApi } from '../util/events_api_util';
+import { updateLibrary} from './library_actions';
 // import { response } from 'express';
 
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
@@ -16,7 +17,10 @@ const receiveUserEvents = events => ({
 
 export const postEvent = event => dispatch => (
     postEventApi(event)
-        .then((event) => dispatch(receiveEvent(event)))
+        .then((event) => {
+            debugger;
+            dispatch(receiveEvent(event))
+            dispatch(updateLibrary(event.data._id))})
 );
 
 export const fetchUserEvents = () => dispatch => (

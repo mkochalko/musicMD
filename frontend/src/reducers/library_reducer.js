@@ -9,7 +9,7 @@ const libraryReducer = (state = [], action) => {
     case RECEIVE_LIBRARY:
       // debugger;
       let newState = Object.assign({}, action.library);
-      newState[action.event.data._id] = action.library;
+      newState[action] = action.library;
       return newState;
     default:
       return state;
