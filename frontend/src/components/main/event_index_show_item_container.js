@@ -21,7 +21,7 @@ const mapDispatchToProps = dispatch => ({
     getTrackByInfo: (trackInfo) => dispatch(getTrackByInfo(trackInfo)),
     findTrack: (trackInfo) => dispatch(findTrack(trackInfo)),
     clearTracks: () => dispatch(clearTracks())
-})
+});
 
 export default connect(
     mapStateToProps,
