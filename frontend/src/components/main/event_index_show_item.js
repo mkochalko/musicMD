@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './event_index_show_item.module.css';
 
+
 class EventIndexShowItem extends React.Component {
     constructor(props) {
         super(props)
@@ -68,10 +69,11 @@ class EventIndexShowItem extends React.Component {
     handleClick() {
         let songIds = [];
 
+
         // let otherSongIds = [];
-        this.props.deezer.map(songObj => (
-            this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
-        ));
+        // this.props.deezer.map(songObj => (
+        //     this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
+        // ));
         
         
         // this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
@@ -87,12 +89,13 @@ class EventIndexShowItem extends React.Component {
             artist: this.props.event._embedded.attractions[0].name,
             address: `${this.props.event._embedded.venues[0].address.line1}, ${this.props.event._embedded.venues[0].city.name}, ${this.props.event._embedded.venues[0].state.stateCode}`,
             songIds: songIds,
-            date: this.props.event.dates.start.localDate
+            date: this.props.event.dates.start.localDate,
+            userId: this.props.currentUser.id
         }
-
         // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
 
+        console.log(this.props)
 
     }
 
