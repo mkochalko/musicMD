@@ -13,14 +13,29 @@
 }
 
 .logoutButton {
-    font-family: 'Acme', sans-serif;
-    width: 75px;
+    text-decoration: none;
+    border: 2px solid orange;
+    height: 54px;
+    width: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20px;
+    background-color: #0d324d ;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+}
+
+.logoutButton:hover {
+    background-color: #7f5a83;
+    transition: 0.5s;
 }
 
 .musicMD {
     font-family: 'Acme', sans-serif;
 }
-.navBar a{
+.navLink{
     text-decoration: none;
     border: 2px solid orange;
     height: 50px;
@@ -34,9 +49,32 @@
     font-family: Tahoma, Geneva, sans-serif;
 }
 
-.navBar a:hover{
+.navLink:hover{
     background-color: #7f5a83;
     transition: 0.5s;
 }
 
+.gitIcon {
+    background-image: url('./icons/git_icon.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.linkedInIcon {
+    background-image: url('./icons/linkedin-icon.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
 

@@ -21,12 +21,18 @@ class NavBar extends React.Component {
                     <div className={classes.musicMD}>
                         Music MD
                     </div>
-                    <Link to={'/'}>Event Map</Link>
-                    <Link to={'/prescriptions'}>Profile</Link>
+                    <Link to={'/'} className={classes.navLink}>Event Map</Link>
+                    <Link to={'/prescriptions'} className={classes.navLink}>Profile</Link>
                     <button 
                         onClick={this.logoutUser}
                         className={classes.logoutButton}
                         >Logout</button>
+                    <a href="https://github.com/mkochalko/musicMD" className={classes.gitIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                       
                 </div>
             );
         } else {
