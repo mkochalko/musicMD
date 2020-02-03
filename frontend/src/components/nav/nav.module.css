@@ -4,16 +4,26 @@
     flex-direction: column;
     box-sizing: border-box;
     overflow: auto;
-    padding: 10px;
     width: 100%;
     height: 100vh;
-    background-color: #80088d;
+    background-color: #2104b6;
     text-decoration: none;
-
+    border-right: 1px white;
+    box-shadow: 2px 0px 1px white;
 }
 
 .logoutButton {
-    text-decoration: none;
+    background-image: url('./icons/exit.jpeg');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    border-radius: 8px;
+    /* text-decoration: none;
     border: 2px solid orange;
     height: 54px;
     width: 104px;
@@ -24,18 +34,45 @@
     margin-top: 20px;
     background-color: #0d324d ;
     font-family: Tahoma, Geneva, sans-serif;
-    font-size: 16px;
+    font-size: 16px; */
 }
 
 .logoutButton:hover {
-    background-color: #7f5a83;
-    transition: 0.5s;
+    /* background-color: #7f5a83;
+    transition: 0.5s; */
+    cursor: pointer;
 }
 
 .musicMD {
-    font-family: 'Acme', sans-serif;
+    height: 75px;
+    width: 175px;
+    background-image: url('./icons/music_md_logo.png');
 }
-.navLink{
+
+.splashLink {
+    background-image: url('./icons/mapsicon.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.profileLink {
+    background-image: url('./icons/profile.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+/* .navLink{
     text-decoration: none;
     border: 2px solid orange;
     height: 50px;
@@ -47,12 +84,12 @@
     margin-top: 20px;
     background-color: #0d324d ;
     font-family: Tahoma, Geneva, sans-serif;
-}
+} */
 
-.navLink:hover{
+/* .navLink:hover{
     background-color: #7f5a83;
     transition: 0.5s;
-}
+} */
 
 .gitIcon {
     background-image: url('./icons/git_icon.png');
@@ -63,6 +100,16 @@
     margin-top: 20px;
     justify-content: center;
     align-items: center;
+    align-self: center;
+}
+
+.iconName {
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 5px;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 16px;
     align-self: center;
 }
 
