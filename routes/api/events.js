@@ -3,6 +3,7 @@ const router = express.Router();
 const validateEventData = require('../../validation/events');
 const bcrypt = require('bcryptjs');
 const Event = require("../../models/Event");
+const Library = require("../../models/Library");
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
@@ -10,7 +11,7 @@ const passport = require('passport');
 
 router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => {
     
-    
+    console.log(req)
     const {errors, isValid} = validateEventData(req.body);
 
     if (!isValid) {
@@ -23,8 +24,19 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         songIds: req.body.songIds,
         date: req.body.date
     });
-    // console.log(newEvent);
-    newEvent.save().then(event => res.json(event));
+    newEvent.save().then(event => {
+        debugger
+        // console.log(newEvent);
+        let userLib = Library.find({userId:req.body.userId})
+        let updatedEvents = userLib.eventIds.push(newEvent.id)
+        let conditions = { userId: req.body.userId}
+        , update = { eventIds: updatedEvents} 
+        , options = { multi: false };
+        
+        Library.update(conditions, update, options, (err) => { if (err) {throw err}});
+        res.json(event)
+    });
+
 });
 
 router.get("/test", (req, res) => res.json({ msg: "This is the events route" }));
