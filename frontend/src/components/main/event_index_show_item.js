@@ -67,32 +67,23 @@ class EventIndexShowItem extends React.Component {
     }
 
     handleClick() {
-        let songIds = [];
+        let songName = [];
 
 
-        // let otherSongIds = [];
-        // this.props.deezer.map(songObj => (
-        //     this.props.fetchSong({ artist: songObj, songName: songObj, songLink: songObj})
-        // ));
-        
-        
-        // this.props.fetchSong({artist: "Blink-182", songName: "First Date"})
-        // console.log(this.props.event.dates.start.localDate)
-
-        // console.log(this.props.getTrackByInfo(["In The End"]))
-
-        // console.log(this.props.findTrack(["Master Exploder"]))
+        for (let i = 0; i < this.props.deezer.length; i++) {
+            songName.push(this.props.deezer.artistName)
+            this.props.createSong(this.props.deezer.artistName)
+        }
 
 
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
             address: `${this.props.event._embedded.venues[0].address.line1}, ${this.props.event._embedded.venues[0].city.name}, ${this.props.event._embedded.venues[0].state.stateCode}`,
-            songIds: songIds,
+            songName: songName,
             date: this.props.event.dates.start.localDate,
             userId: this.props.currentUser.id
         }
-        // songIds.map((song) => this.props.fetchSong(song))
         this.props.postEvent(event)
 
         console.log(this.props)

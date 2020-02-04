@@ -23,6 +23,9 @@ const EventSchema = new Schema({
     },
     date: {
         type: String
+    },
+    userId: {
+        type: String
     }
 })
 

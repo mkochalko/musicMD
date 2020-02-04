@@ -32,6 +32,17 @@ router.get("/library",
     }
 );
 
+router.put("/library/update",
+    (req, res) => {
+        Library
+            .find({ userId: req.user._id })
+            .populate("eventIds")
+            .then((library) => {
+                
+                res.json(library[0])});
+    }
+)
+
 router.get("/test", (req, res) => res.json({ msg: "This is the libraries route" }));
 
 module.exports = router;

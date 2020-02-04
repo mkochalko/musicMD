@@ -8,8 +8,9 @@ const receiveSong = song => ({
 })
 
 
-export const fetchSong = song => dispatch => (
+export const createSong = song => dispatch => (
     SongAPI.postSong(song)
         .then(song => dispatch(receiveSong(song)))
 );
+
 
