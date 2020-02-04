@@ -7,12 +7,13 @@ class EventIndexShowItem extends React.Component {
         super(props);
 
         this.state = { };
-        this.prevProps = {};
+        this.prevProps = {event: {id: null}};
         this.configureSetList = this.configureSetList.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
 
     UNSAFE_componentWillMount() {
+        // debugger;
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
@@ -39,17 +40,20 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
-            // this.props.clearTracks();
+            this.props.clearTracks();
         }
         // setTimeout(() => {
-        //     this.configureSetList().map(song => (
-        //         this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //     ));
-        // }, 1000)
-    }
+        //         this.configureSetList().map(song => (
+        //                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+        //             ));
+        //         }, 1000)
 
+
+
+    }
+            
     componentWillUnmount() {
-        // this.props.clearTracks();
+        this.props.clearTracks();
     }
 
     configureSetList() {
@@ -107,20 +111,24 @@ class EventIndexShowItem extends React.Component {
         //     prevProps = this.prevProps
         // }
         // console.log(this.prevProps)
-        if (Object.keys(this.prevProps).length > 0) {
-            if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id) {
-                this.configureSetList().map(song => (
-                    this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-                ));
-            }
-        }
-
-        if (this.props.setListContainer[0] && Object.keys(this.props.deezer).length === 0) {
-            this.configureSetList().map(song => (
+        // if (Object.keys(this.prevProps).length > 0) {
+        //     if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id) {
+        //         this.configureSetList().map(song => (
+        //             this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+        //         ));
+        //     }
+        // }
+        if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
+            setTimeout(()=> { this.configureSetList().map(song => (
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-            ));
+            ))},1000)
         }
-        
+        // else if (this.props.setListContainer[0] && Object.keys(this.props.deezer).length === 0) {
+        //     debugger;
+        //     this.configureSetList().map(song => (
+        //         this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+        //     ));
+        // }
         return (
             <div className={classes.searchShowPage}>
                 <div className={classes.eventDetails}>
