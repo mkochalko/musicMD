@@ -1,37 +1,27 @@
 
 import $ from "jquery";
 import SLKey from "../config/keys";
+import axios from 'axios';
 
 
-export const getArtistSetlist = (artistId) => {
-    return (
-        $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/setlists?artistName=${artistId}`,
-            headers: {
-                'x-api-key': window.SLKey
-            },
-            method: 'GET',
-            dataType: 'json',
-            contentType: 'application/json',
-            processData: false
-        }
-        ))
-}
+export const getArtistSetlist = artistId => (
+    axios.get(`/api/calls/setlist?string=${artistId}`)
+        .then(response => {
+            return response
+        }).catch(error => {
+            console.log(error)
+        })
+)
 
-export const getArtistId = (artist) => {
-    // console.log(artist)
-    return (
-        $.ajax({
-            url: `https://cors-anywhere.herokuapp.com/https://api.setlist.fm/rest/1.0/search/artists?artistName=${artist}&sort=relevance`,
-            headers: {
-                'x-api-key': window.SLKey 
-            },
-            method: 'GET',
-            dataType: 'json',
-            contentType: 'application/json',
-            processData: false
-        }
-    ))
-}
+export const getArtistId = artist => {
+    let configuredArtist = artist.split(" ").join("+")
+    return (axios.get(`/api/calls/artistId?string=${configuredArtist}`)
+        .then(response => {
+            return response.data
+        }).catch(error => {
+            console.log(error)
+        })
+    )}
+
 
 

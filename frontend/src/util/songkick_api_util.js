@@ -16,7 +16,7 @@ export const getEvents = (metroId) => {
 }
 
 export const getMetroIdByClick = latlong => (
-    axios.get('/api/songkick/')
+    axios.get(`/api/calls/songkick?string=${latlong}`)
         .then(res => {
             // console.log(res.data)
             return res.data

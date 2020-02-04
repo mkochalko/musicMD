@@ -10,7 +10,7 @@ const login = require("./validation/login")
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path')
-const songkick = require('./routes/api/api_calls');
+const calls = require('./routes/api/api_calls');
 app.use(passport.initialize());
 require('./config/passport')(passport);
 
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, "frontend/public")));
 app.use("/api/events", events);
 app.use("/api/songs", songs);
 app.use("/api/libraries", libraries);
-app.use("/api/songkick", songkick);
+app.use("/api/calls", calls);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/frontend/public/index.html'));
