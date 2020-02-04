@@ -70,6 +70,8 @@ class EventIndexShowItem extends React.Component {
         }
     }
 
+    
+
     handleClick() {
         let songName = [];
 
@@ -95,40 +97,13 @@ class EventIndexShowItem extends React.Component {
     }
 
     render() {
-        // console.log(this.state.setList)
-        // console.log(this.props.event)
-        // console.log(this.configureSetList())
-        // console.log(this.props.setListContainer)
-        // console.log(this.props.deezer)
-        // if (this.props.setListContainer.length === 0) {
-        //     this.configureSetList().map(song => (
-        //         this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //     ));
-        // }
-        // debugger;
-        // let prevProps;
-        // if (Object.keys(this.prevProps).length > 0) {
-        //     prevProps = this.prevProps
-        // }
-        // console.log(this.prevProps)
-        // if (Object.keys(this.prevProps).length > 0) {
-        //     if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id) {
-        //         this.configureSetList().map(song => (
-        //             this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //         ));
-        //     }
-        // }
         if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
             setTimeout(()=> { this.configureSetList().map(song => (
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
             ))},1000)
         }
-        // else if (this.props.setListContainer[0] && Object.keys(this.props.deezer).length === 0) {
-        //     debugger;
-        //     this.configureSetList().map(song => (
-        //         this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //     ));
-        // }
+        console.log(this.props.deezer);
+       
         return (
             <div className={classes.searchShowPage}>
                 <div className={classes.eventDetails}>
@@ -155,11 +130,19 @@ class EventIndexShowItem extends React.Component {
                 </div>
                 <br />
                 <ul className={classes.setList}>
-                    { this.configureSetList() ? (
+                    {
+                        Object.keys(this.props.deezer).length > 0 ? (Object.values(this.props.deezer).map((song, idx) => {
+                            
+                            return (
+                                <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=100&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
+                            )
+                        })) : ""
+                    }
+                    {/* { this.configureSetList() ? (
                         this.configureSetList().map((song, idx) => (
                             <li className={classes.song}key={idx}>{song.name}</li>
                         ))) : ""
-                    }
+                    } */}
                 </ul>
             </div>
         )
