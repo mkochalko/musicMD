@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { MapsAPI } from "../../config/keys";
+// import { MapsAPI } from "../../config/keys";
 // const MapsAPI = require('../../config/keys').MapsAPI
 import classes from "./map.module.css";
 import Marker from "./marker";
