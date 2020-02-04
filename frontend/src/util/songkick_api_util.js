@@ -1,8 +1,6 @@
 
 import $ from "jquery";
 import axios from 'axios';
-import { SKKey } from "../config/keys";
-// const SKKey = require('../config/keys').SKKey
 
 
 export const getEvents = (metroId) => {

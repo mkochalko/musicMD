@@ -1,6 +1,4 @@
 
-import $ from "jquery";
-import SLKey from "../config/keys";
 import axios from 'axios';
 
 
