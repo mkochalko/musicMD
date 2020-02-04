@@ -5,12 +5,13 @@ class UserEventItem extends React.Component {
 
     render() {
         return(
-            <li className={classes.userEventItem}>
-                {this.props.event.artist}
-                {this.props.event.venue}
-                {this.props.event.address}
-                {this.props.event.date}
-            </li>
+            <div className={classes.eventDiv}>
+                <p className={classes.eventItemArtist}>{this.props.event.artist}</p>
+                <p className={classes.eventItemVenue}>{this.props.event.venue}</p>
+                <p className={classes.eventItemAddress}>{this.props.event.address}</p>
+                <p className={classes.eventItemDate}>{this.props.event.date}</p>
+            </div>
+            
         )
     }
 }
