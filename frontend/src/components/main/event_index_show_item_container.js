@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import EventIndexShowItem from './event_index_show_item';
 import { getSetlist } from '../../actions/setlist_actions';
 import { postEvent } from '../../actions/event_actions';
-import { fetchSong } from '../../actions/song_actions';
+import { createSong } from '../../actions/song_actions';
 import {getTrackByInfo, clearTracks} from "../../actions/deezer_actions";
 import { findTrack } from "../../util/deezer_util";
 
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
     getSetlist: (artist) => dispatch(getSetlist(artist)),
     postEvent: (event) => dispatch(postEvent(event)),
-    fetchSong: (song) => dispatch(fetchSong(song)),
+    createSong: (song) => dispatch(createSong(song)),
     getTrackByInfo: (trackInfo) => dispatch(getTrackByInfo(trackInfo)),
     findTrack: (trackInfo) => dispatch(findTrack(trackInfo)),
     clearTracks: () => dispatch(clearTracks())

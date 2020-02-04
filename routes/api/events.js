@@ -22,26 +22,39 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
         artist: req.body.artist,
         venue: req.body.venue,
         songIds: req.body.songIds,
-        date: req.body.date
+        date: req.body.date,
+        userId: req.body.userId
     });
     newEvent.save().then(event => {
         // debugger
         // console.log(newEvent);
-        let userLib = Library.find({userId:req.body.userId})
-        let updatedEvents = userLib.eventIds
+        // let userLib = Library.find({userId:req.body.userId})
+        // let updatedEvents = userLib.eventIds
 
-        axios({ method: 'put', 
-            url: '/library/update'})
-        // let updatedEvents = userLib.eventIds.push(newEvent.id)
-        // let conditions = { userId: req.body.userId}
-        // , update = { eventIds: updatedEvents} 
-        // , options = { multi: false };
+        // axios({ method: 'put', 
+        //     url: '/library/update'})
+        // // let updatedEvents = userLib.eventIds.push(newEvent.id)
+        // // let conditions = { userId: req.body.userId}
+        // // , update = { eventIds: updatedEvents} 
+        // // , options = { multi: false };
         
         // Library.update(conditions, update, options, (err) => { if (err) {throw err}});
         res.json(event)
     });
 
 });
+
+router.get('/get', 
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Event
+            .find({ userId: req.user._id })
+            .then((events) => {
+                console.log(events)
+                res.json(events)
+            });
+    }
+)
 
 router.get("/test", (req, res) => res.json({ msg: "This is the events route" }));
 module.exports = router;
