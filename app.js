@@ -45,6 +45,10 @@ app.get('*', (req, res) => {
 });
 
 
+app.get("/keys", (req, res) => {
+    res.send("hello");
+})
+
 const port = process.env.PORT || 5000;
 
 

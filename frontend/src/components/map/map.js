@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-// import { MapsAPI } from "../../config/keys";
-// const MapsAPI = require('../../config/keys').MapsAPI
 import classes from "./map.module.css";
 import Marker from "./marker";
+import axios from 'axios';
+// import { MapsAPI } from "../../config/keys";
+const MapsAPI = `AIzaSyDCfgh5IMc65PWQRgMbVpFmjhR6vA-l4tg`
+
+
+
 
 
 
@@ -52,12 +56,12 @@ class SimpleMap extends Component {
 
 
     render() {
+
         return (
-            // Important! Always set the container height explicitly
             <div className={classes.mapContainer}>
                 <GoogleMapReact
                     onClick={this.handleClick}
-                    bootstrapURLKeys={{ key: window.MapsAPI }}
+                    bootstrapURLKeys={{ key: MapsAPI }}
                     center={this.state.center}
                     defaultZoom={this.props.zoom}
                 >
@@ -65,11 +69,12 @@ class SimpleMap extends Component {
                         // onClick={this.handleMarker}
                         lat={this.state.center.lat}
                         lng={this.state.center.lng}
-                        // text="Trailer Park"
+                    // text="Trailer Park"
                     />
                 </GoogleMapReact>
             </div>
-        );
+        )
+       
     }
 }
 
