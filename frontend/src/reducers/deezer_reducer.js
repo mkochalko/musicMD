@@ -9,7 +9,10 @@ export default function (state = {}, action) {
     let nextState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_TRACK:
-            nextState[action.track.data[0].id] = action.track.data[0]
+            // debugger;
+            if (action.track.data.length > 0){
+                nextState[action.track.data[0].id] = action.track.data[0]
+            }
             return nextState;
         case CLEAR_TRACKS:
             nextState = {}

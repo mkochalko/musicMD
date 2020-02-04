@@ -65,5 +65,16 @@ router.get('/setlist', (req, res) => {
         res.send({error})
     })
 })
-
+router.get('/deezer', (req,res) => {
+    axios({
+      url: `https://api.deezer.com/search/track?q=${req.query.string}`,
+      method: "GET",
+    })
+      .then(response => {
+        res.send(response.data);
+      })
+      .catch(error => {
+        res.send({ error });
+      });
+})
 module.exports = router;
