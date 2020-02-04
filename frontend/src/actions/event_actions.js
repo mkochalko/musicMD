@@ -18,7 +18,6 @@ const receiveUserEvents = events => ({
 export const postEvent = event => dispatch => (
     postEventApi(event)
         .then((event) => {
-            debugger;
             dispatch(receiveEvent(event))
             dispatch(updateLibrary(event.data._id))})
 );
