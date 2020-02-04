@@ -1,3 +1,56 @@
+.greetingDiv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+    color: white;
+    font-family: 'Alef', sans-serif;
+    line-height: 1.5;
+}
+
+.userGreeting {
+    font-size: 24px;
+}
+
+.userMessage {
+    font-size: 18px; 
+}
+
 .userEventItem {
     color: white;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.eventDiv {
+    line-height: 1.5;
+    font-family: 'Alef', sans-serif;
+    padding-bottom: 25px;
+    border-top-right-radius:10px;
+    border-bottom-left-radius:10px;
+    background-color: rgba(169, 169, 169, 0);
+    border-bottom: 1px solid white;
+}
+
+.eventDiv:hover {
+    border-bottom: 1px solid white;
+    background-color: rgb(1, 26, 105);
+    cursor: pointer;
+    box-shadow: 1px 1px 1px white;
+}
+
+.eventItemArtist {
+    font-size: 36px;
+}
+
+.eventItemVenue {
+    font-size: 24px;
+}
+
+.eventItemAddress {
+    font-size: 16px;
+}
+
+.eventItemDate {
+    font-size: 16px;
 }
