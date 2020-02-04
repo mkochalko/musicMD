@@ -7,7 +7,10 @@ export default function (state = {}, action) {
     // console.log(action)
     switch (action.type) {
         case RECEIVE_SETLIST:
-            newState = action.setlist.data.setlist
+            // debugger;
+            if (action.setlist.data.setlist) {
+                newState = action.setlist.data.setlist
+            }
             return newState;
         default:
             return state;

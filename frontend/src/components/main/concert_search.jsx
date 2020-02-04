@@ -33,6 +33,11 @@ class ConcertSearch extends React.Component {
     //     }
     // }
 
+    componentWillMount() {
+      
+      
+    }
+
     resetState() {
         this.setState({selectedEvent: 0})
     }
@@ -66,6 +71,18 @@ class ConcertSearch extends React.Component {
         // debugger
         // console.log(this.props.events.length)
         // console.log(this.props.events[this.state.selectedEvent])
+
+        console.log("click");
+        let loading = document.getElementById("loading");
+        console.log(loading);
+        if (loading) {
+            loading.setAttribute("style", "display: block");
+            
+            setTimeout(() => {
+
+                loading.setAttribute("style", "display: none");
+            }, 3000)
+        }
         return (
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>

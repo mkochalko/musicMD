@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      #loading{
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 175px;
+        height: 100%;
+        background: radial-gradient(circle at bottom, #000033 0%, #090a0f 100%);
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+        z-index: 500;
+      }  
+
+      #record {
+        position: absolute;
+        top: 45vh;
+        left: 45vw;
+        height: 100%;
+        width: 100%;
+        z-index: 502;
+        background-image: url('https://i.ibb.co/kXgtxsC/286.gif');
+        background-repeat: no-repeat;
+        background-size: 100px;
+      }
+    </style>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,6 +62,12 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
     <div id="root"></div>
+    <div id="loading">
+      <div id='stars'></div>
+      <div id='stars2'></div>
+      <div id='stars3'></div>
+      <div id="record"></div>
+    </div>
 
   </body>
 </html>
