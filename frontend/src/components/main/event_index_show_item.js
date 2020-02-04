@@ -75,7 +75,7 @@ class EventIndexShowItem extends React.Component {
             this.props.createSong(this.props.deezer.artistName)
         }
 
-
+        console.log(songName)
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
@@ -86,7 +86,7 @@ class EventIndexShowItem extends React.Component {
         }
         this.props.postEvent(event)
 
-        console.log(this.props)
+        // console.log(this.props)
 
     }
 
