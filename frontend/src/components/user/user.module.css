@@ -37,6 +37,7 @@
     border-bottom-left-radius:10px;
     background-color: rgba(169, 169, 169, 0);
     border-bottom: 1px solid white;
+    overflow: auto;
 }
 
 .eventDiv:hover {

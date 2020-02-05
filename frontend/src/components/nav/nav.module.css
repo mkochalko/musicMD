@@ -43,17 +43,11 @@
     cursor: pointer;
 }
 
-.musicMD {
-    height: 80;
-    width: 90;
-    background-image: url('./icons/music_md_logo.png');
-}
-
 .splashLink {
     background-image: url('./icons/music_md_logo.png');
     background-repeat: no-repeat;
-    height: 70px;
-    width: 70px;
+    height: 64px;
+    width: 64px;
     justify-self: center;
     margin-top: 20px;
     justify-content: center;

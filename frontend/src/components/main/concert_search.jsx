@@ -92,7 +92,7 @@ class ConcertSearch extends React.Component {
                     <form >
                         <input
                             type="text"
-                            placeholder="Pharmacies Near You"
+                            placeholder="Search by City!"
                             className={classes.searchInput}
                             onChange={this.update('search')}
                             value={this.state.search}
