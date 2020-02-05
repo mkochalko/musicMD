@@ -20,7 +20,6 @@ export const getMetroIdByClick = latlng => dispatch => {
 
 
 export const getMetroIdByText = text => dispatch => {
-    console.log(text);
     return (
     TMAPIUtil.getMetroIdByText(text)
         .then(events => {

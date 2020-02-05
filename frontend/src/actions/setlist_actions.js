@@ -17,8 +17,3 @@ export const getSetlist = artist => dispatch => {
         .then(setlist => dispatch(receiveSetlist(setlist)))
 };
 
-
-// export const getMetroIdByText = text => dispatch => {
-//     SetlistAPIUtil.getMetroIdByText(text)
-//         .then(events => dispatch(receiveEvents(events)))
-// };

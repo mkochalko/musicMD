@@ -20,7 +20,6 @@ class EventsIndexItem extends React.Component {
         };
         const month = this.props.event.dates.start.localDate.split('-')[1].toString();
 
-        // console.log(this.props.event.id)
         return (
             <li className={classes.eventIdxItem} >
                 <div id={this.props.event.id} className={classes.eventName}>
