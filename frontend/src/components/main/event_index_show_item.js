@@ -54,14 +54,6 @@ class EventIndexShowItem extends React.Component {
                 }, 2000)
             }
         }
-        // setTimeout(() => {
-        //         this.configureSetList().map(song => (
-        //                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //             ));
-        //         }, 1000)
-
-
-
     }
             
     componentWillUnmount() {
@@ -117,6 +109,8 @@ class EventIndexShowItem extends React.Component {
         if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
             let that = this;
             if (this.configureSetList()) {
+                console.log(this.configureSetList());
+                console.log(that.configureSetList());
                 setTimeout(()=> { that.configureSetList().map(song => (
                     that.props.getTrackByInfo([that.props.event._embedded.attractions[0].name, song.name])
                 ))},1500)
