@@ -15,7 +15,6 @@ class EventIndexShowItem extends React.Component {
     UNSAFE_componentWillMount() {
         // debugger;
         let loading = document.getElementById("loading");
-        console.log(loading);
         if (loading) {
             loading.setAttribute("style", "display: block");
 
@@ -52,7 +51,6 @@ class EventIndexShowItem extends React.Component {
             this.props.getSetlist(artist);
             this.props.clearTracks();
             let loading = document.getElementById("loading");
-            console.log(loading);
             if (loading) {
                 loading.setAttribute("style", "display: block");
 
@@ -97,7 +95,6 @@ class EventIndexShowItem extends React.Component {
 
 
         for (let i = 0; i < Object.keys(this.props.deezer).length; i++) {
-            console.log(Object.values(this.props.deezer)[i])
             songIds.push(Object.values(this.props.deezer)[i].id)
             let songObject = {
                 artist: Object.values(this.props.deezer)[i].artist.name,
@@ -108,7 +105,6 @@ class EventIndexShowItem extends React.Component {
             this.props.createSong(songObject)
         }
 
-        console.log(songIds)
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
@@ -133,7 +129,6 @@ class EventIndexShowItem extends React.Component {
                 ))},1500)
             }
         }
-        console.log(this.props.deezer);
        
         return (
             <div className={classes.searchShowPage}>

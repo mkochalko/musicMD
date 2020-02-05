@@ -49,8 +49,8 @@ class SimpleMap extends Component {
 
         let lat = e.lat;
         let lng = e.lng;
-        console.log(e.lat);
-        console.log(e.lng);
+        // console.log(e.lat);
+        // console.log(e.lng);
         
     }
 
