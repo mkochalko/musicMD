@@ -76,17 +76,18 @@ class ConcertSearch extends React.Component {
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
                 <div className={classes.indexSearchContainer}>
+                    <div className={classes.titleDiv}>Music MD</div>
                     <div className={classes.searchBar} onSubmit={this.handleSubmit}>
-                        <form >
-                            <input
-                                type="text"
-                                placeholder="Search for concerts by city!"
-                                className={classes.searchInput}
-                                onChange={this.update('search')}
-                                value={this.state.search}
-                            />
-                            <input type="submit" value="SEARCH" />
-                        </form>
+                    <form >
+                        <input
+                            type="text"
+                            placeholder="Search by City!"
+                            className={classes.searchInput}
+                            onChange={this.update('search')}
+                            value={this.state.search}
+                        />
+                        <input className={classes.submit} type="submit" value="SEARCH" />
+                    </form>
 
                     </div>
                     <div className={classes.searchPage}>

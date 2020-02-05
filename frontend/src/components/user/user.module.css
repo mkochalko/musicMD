@@ -16,10 +16,17 @@
     font-size: 18px; 
 }
 
+.userSplash {
+    overflow: auto;
+    width: 100vh;
+}
+
 .userEventItem {
     color: white;
     margin-top: 40px;
     margin-left: 40px;
+    overflow: auto;
+    width: 400px;
 }
 
 .eventDiv {
@@ -30,6 +37,7 @@
     border-bottom-left-radius:10px;
     background-color: rgba(169, 169, 169, 0);
     border-bottom: 1px solid white;
+    overflow: auto;
 }
 
 .eventDiv:hover {
@@ -41,16 +49,20 @@
 
 .eventItemArtist {
     font-size: 36px;
+    padding-left: 10px;
 }
 
 .eventItemVenue {
     font-size: 24px;
+    padding-left: 10px;
 }
 
 .eventItemAddress {
     font-size: 16px;
+    padding-left: 10px;
 }
 
 .eventItemDate {
     font-size: 16px;
+    padding-left: 10px;
 }
