@@ -72,17 +72,7 @@ class ConcertSearch extends React.Component {
         // console.log(this.props.events.length)
         // console.log(this.props.events[this.state.selectedEvent])
 
-        console.log("click");
-        let loading = document.getElementById("loading");
-        console.log(loading);
-        if (loading) {
-            loading.setAttribute("style", "display: block");
-            
-            setTimeout(() => {
-
-                loading.setAttribute("style", "display: none");
-            }, 2000)
-        }
+       
         return (
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
