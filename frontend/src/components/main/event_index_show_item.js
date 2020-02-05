@@ -14,6 +14,16 @@ class EventIndexShowItem extends React.Component {
 
     UNSAFE_componentWillMount() {
         // debugger;
+        let loading = document.getElementById("loading");
+        console.log(loading);
+        if (loading) {
+            loading.setAttribute("style", "display: block");
+
+            setTimeout(() => {
+
+                loading.setAttribute("style", "display: none");
+            }, 2000)
+        }
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
@@ -41,6 +51,16 @@ class EventIndexShowItem extends React.Component {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
             this.props.clearTracks();
+            let loading = document.getElementById("loading");
+            console.log(loading);
+            if (loading) {
+                loading.setAttribute("style", "display: block");
+
+                setTimeout(() => {
+
+                    loading.setAttribute("style", "display: none");
+                }, 2000)
+            }
         }
         // setTimeout(() => {
         //         this.configureSetList().map(song => (
@@ -104,6 +124,7 @@ class EventIndexShowItem extends React.Component {
     }
 
     render() {
+        
         if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
             let that = this;
             if (this.configureSetList()) {
@@ -146,7 +167,7 @@ class EventIndexShowItem extends React.Component {
                             <iframe scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
                             </label>
                         ))) : ""
-                    } */}
+                    }
                 </ul>
             </div>
         )
