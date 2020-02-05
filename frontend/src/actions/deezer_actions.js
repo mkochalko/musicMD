@@ -7,10 +7,10 @@ export const CLEAR_TRACKS = "CLEAR_TRACKS";
 
 
 
-const receiveTracks = tracks => ({
-    type: RECEIVE_TRACKS,
-    tracks
-})
+// const receiveTracks = tracks => ({
+//     type: RECEIVE_TRACKS,
+//     tracks
+// })
 
 const receiveTrack = track => ({
     type: RECEIVE_TRACK,

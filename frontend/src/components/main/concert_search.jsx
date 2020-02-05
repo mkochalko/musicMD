@@ -1,5 +1,4 @@
 import React from 'react';
-import * as TMApiUtil from "../../util/songkick_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
 import navClasses from '../../components/wrapper.module.css';
@@ -63,7 +62,7 @@ class ConcertSearch extends React.Component {
     handleEventClick(e) { 
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
-            if (selectedEventId == this.props.events[i].id ) {
+            if (selectedEventId === this.props.events[i].id ) {
                 this.setState({selectedEvent: i})
             }
         }

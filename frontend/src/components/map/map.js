@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import classes from "./map.module.css";
 import Marker from "./marker";
-import axios from 'axios';
 const MapsAPI = `AIzaSyDCfgh5IMc65PWQRgMbVpFmjhR6vA-l4tg`
 
 
@@ -36,13 +35,6 @@ class SimpleMap extends Component {
             }
         })
         this.props.getMetroIdByClick(`${lat},${lng}`).then(this.props.resetState);
-    }
-
-    handleMarker(e) {
-        e.preventDefault();
-
-        let lat = e.lat;
-        let lng = e.lng;
     }
 
 

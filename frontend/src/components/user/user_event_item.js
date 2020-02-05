@@ -2,9 +2,6 @@ import React from 'react';
 import classes from './user.module.css';
 
 class UserEventItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return(
