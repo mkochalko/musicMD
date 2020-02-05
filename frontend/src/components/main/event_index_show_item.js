@@ -13,7 +13,6 @@ class EventIndexShowItem extends React.Component {
     }
 
     UNSAFE_componentWillMount() {
-        // debugger;
         let loading = document.getElementById("loading");
         if (loading) {
             loading.setAttribute("style", "display: block");
@@ -31,12 +30,7 @@ class EventIndexShowItem extends React.Component {
 
 
     componentDidMount() {
-        // console.log(this.props.event)
-        // if (this.props.event) {
-        //     let artist = this.props.event._embedded.attractions[0].name;
-        //     // console.log(artist)
-        //     this.props.getSetlist(artist)
-        // }
+     
         if (this.props.setListContainer[0] && this.props.deezer.length === 0) {
             this.configureSetList().map(song => (
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
@@ -76,7 +70,6 @@ class EventIndexShowItem extends React.Component {
 
     configureSetList() {
         if (this.props.setListContainer[0]) {
-            // console.log(this.props.setListContainer[0].sets)
         
             let setlist;
             for (let i = 0; i < this.props.setListContainer.length; i++) {
@@ -115,7 +108,7 @@ class EventIndexShowItem extends React.Component {
         }
         this.props.postEvent(event)
 
-        // console.log(this.props)
+      
 
     }
 

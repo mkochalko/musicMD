@@ -25,13 +25,7 @@ class ConcertSearch extends React.Component {
         this.props.getMetroIdByClick(latlng)
     }
 
-    // componentDidUpdate(prevProps) {
-    //     // debugger
-    //     console.log(prevProps)
-    //     if (prevProps.events.length === 0 && this.props.events.length !== 0) {
-    //         this.setState({ selectedEvent: this.props.events[0] })
-    //     }
-    // }
+   
 
     componentWillMount() {
       
@@ -55,8 +49,6 @@ class ConcertSearch extends React.Component {
     }
 
     handleEventClick(e) { 
-        e.preventDefault();
-        // debugger;
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
             if (selectedEventId == this.props.events[i].id ) {
@@ -67,10 +59,7 @@ class ConcertSearch extends React.Component {
 
 
     render() {
-        // debugger
-        // console.log(this.props.events.length)
-        // console.log(this.props.events[this.state.selectedEvent])
-
+      
        
         return (
             <div className={navClasses.wrapper}>

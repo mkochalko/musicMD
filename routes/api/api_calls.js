@@ -18,14 +18,11 @@ router.get('/songkick/click', (req, res) => {
     var y = later.getFullYear();
 
     later = y + "-" + m + "-" + d;
-    // function axiosTest() {
         axios.get(`https://app.ticketmaster.com/discovery/v2/events?apikey=${KEYS.SKKey}&latlong=${req.query.string}&radius=20&unit=miles&locale=*&startDateTime=${today}T15:28:00Z&endDateTime=${later}T15:28:00Z&size=50&page=1&sort=relevance,desc&segmentId=KZFzniwnSyZfZ7v7nJ`)
             .then(response => {
-                // console.log(response.data)
                 res.send(response.data)
             })
             .catch(error => {
-                // console.log(body)
                 res.send({error})
             })
 

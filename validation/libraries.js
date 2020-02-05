@@ -12,9 +12,7 @@ module.exports = function validateLibraryData(data) {
     if (data.songIds.length === 0 || data.songIds.includes(NaN)) {
         errors.songIds = "Error Loading Songs";
     }
-    // if ( 1 > 0) {
-    //     errors.eventIds = data;
-    // }
+  
     return {
         errors,
         isValid: Object.keys(errors).length === 0

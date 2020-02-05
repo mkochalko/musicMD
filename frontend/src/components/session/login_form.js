@@ -17,24 +17,20 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    // Once the user has been authenticated, redirect to the Tweets page
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.currentUser === true) {
             this.props.history.push('/');
         }
 
-        // Set or clear errors
         this.setState({ errors: nextProps.errors })
     }
 
-    // Handle field updates (called in the render method)
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
     }
 
-    // Handle form submission
     handleLogin(e) {
         e.preventDefault();
 
@@ -57,7 +53,6 @@ class LoginForm extends React.Component {
         this.props.login(user)
     }
 
-    // Render the session errors if there are any
     renderErrors() {
         return (
             <ul>
@@ -70,7 +65,6 @@ class LoginForm extends React.Component {
         );
     }
 
-    // <iframe width="1" height="1" src="https://www.youtube.com/embed/q4k1IK_o59M?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     render() {
         let today = new Date();
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;

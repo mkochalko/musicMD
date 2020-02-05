@@ -7,7 +7,6 @@ const libraryReducer = (state = [], action) => {
   switch (action.type) {
    
     case RECEIVE_LIBRARY:
-      // debugger;
       let newState = Object.assign({}, action.library);
       newState[action] = action.library;
       return newState;
