@@ -20,7 +20,7 @@ module.exports = function validateEventData(data) {
     if (Validator.isEmpty(data.address)) {
         errors.address = 'No Address Found';
   
-
+    }
     return {
         errors, 
         isValid: Object.keys(errors).length === 0

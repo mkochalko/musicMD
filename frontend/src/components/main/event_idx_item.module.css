@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family: 'Alef', sans-serif;
+    /* font-family: 'Alef', sans-serif; */
     font-size: 18px;
 }
 
@@ -53,7 +53,7 @@
     text-align: center;
     align-items: center;
     justify-self: center;
-    font-family: 'Alef', sans-serif;
+    /* font-family: 'Alef', sans-serif; */
     font-size: 20px;
     margin-top: 5px;
 }
