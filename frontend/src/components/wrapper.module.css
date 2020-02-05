@@ -16,3 +16,8 @@
     height: 500px;
     width: 500px;
 }
+
+.userSplash {
+    overflow: scroll;
+    height: 95vh;
+}
