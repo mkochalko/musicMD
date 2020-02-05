@@ -12,6 +12,14 @@ const SongSchema = new Schema({
     songName: {
         type: String,
         required: true
+    },
+    songId: {
+        type: String,
+        required: true
+    },
+    userId: {
+        type: String,
+        required: true
     }
 })
 

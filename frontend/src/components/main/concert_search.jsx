@@ -78,11 +78,10 @@ class ConcertSearch extends React.Component {
         if (loading) {
             loading.setAttribute("style", "display: block");
             
-            console.log(loading);
             setTimeout(() => {
 
                 loading.setAttribute("style", "display: none");
-            }, 3000)
+            }, 2000)
         }
         return (
             <div className={navClasses.wrapper}>
