@@ -13,7 +13,15 @@ class EventIndexShowItem extends React.Component {
     }
 
     UNSAFE_componentWillMount() {
-        // debugger;
+        let loading = document.getElementById("loading");
+        if (loading) {
+            loading.setAttribute("style", "display: block");
+
+            setTimeout(() => {
+
+                loading.setAttribute("style", "display: none");
+            }, 2000)
+        }
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
@@ -22,12 +30,7 @@ class EventIndexShowItem extends React.Component {
 
 
     componentDidMount() {
-        // console.log(this.props.event)
-        // if (this.props.event) {
-        //     let artist = this.props.event._embedded.attractions[0].name;
-        //     // console.log(artist)
-        //     this.props.getSetlist(artist)
-        // }
+     
         if (this.props.setListContainer[0] && this.props.deezer.length === 0) {
             this.configureSetList().map(song => (
                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
@@ -41,15 +44,16 @@ class EventIndexShowItem extends React.Component {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist);
             this.props.clearTracks();
+            let loading = document.getElementById("loading");
+            if (loading) {
+                loading.setAttribute("style", "display: block");
+
+                setTimeout(() => {
+
+                    loading.setAttribute("style", "display: none");
+                }, 2000)
+            }
         }
-        // setTimeout(() => {
-        //         this.configureSetList().map(song => (
-        //                 this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-        //             ));
-        //         }, 1000)
-
-
-
     }
             
     componentWillUnmount() {
@@ -58,7 +62,6 @@ class EventIndexShowItem extends React.Component {
 
     configureSetList() {
         if (this.props.setListContainer[0]) {
-            // console.log(this.props.setListContainer[0].sets)
         
             let setlist;
             for (let i = 0; i < this.props.setListContainer.length; i++) {
@@ -77,7 +80,6 @@ class EventIndexShowItem extends React.Component {
 
 
         for (let i = 0; i < Object.keys(this.props.deezer).length; i++) {
-            console.log(Object.values(this.props.deezer)[i])
             songIds.push(Object.values(this.props.deezer)[i].id)
             let songObject = {
                 artist: Object.values(this.props.deezer)[i].artist.name,
@@ -88,7 +90,6 @@ class EventIndexShowItem extends React.Component {
             this.props.createSong(songObject)
         }
 
-        console.log(songIds)
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
@@ -99,20 +100,22 @@ class EventIndexShowItem extends React.Component {
         }
         this.props.postEvent(event)
 
-        // console.log(this.props)
+      
 
     }
 
     render() {
+        
         if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
             let that = this;
             if (this.configureSetList()) {
+                console.log(this.configureSetList());
+                console.log(that.configureSetList());
                 setTimeout(()=> { that.configureSetList().map(song => (
                     that.props.getTrackByInfo([that.props.event._embedded.attractions[0].name, song.name])
                 ))},1500)
             }
         }
-        console.log(this.props.deezer);
        
         return (
             <div className={classes.searchShowPage}>
@@ -120,7 +123,7 @@ class EventIndexShowItem extends React.Component {
                     <div className={classes.eventName}>
                         <h1>{this.props.event.name}</h1>
                         <br/>
-                        <img height="180" width="320" src={this.props.event.images[0].url} /> 
+                        <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name}/> 
                         <br />
                         <h3>{this.props.event._embedded.venues[0].name}</h3>   
                     </div> 
@@ -143,10 +146,10 @@ class EventIndexShowItem extends React.Component {
                     { Object.keys(this.props.deezer).length > 0 ? (
                         Object.values(this.props.deezer).map((song, idx) => (
                             <label key={idx} >{idx + 1}.
-                            <iframe scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
+                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
                             </label>
                         ))) : ""
-                    } */}
+                    }
                 </ul>
             </div>
         )

@@ -16,3 +16,22 @@
     height: 500px;
     width: 500px;
 }
+
+.userSplash {
+    overflow: scroll;
+    height: 95vh;
+}
+
+.deezer {
+    /* height: 95vh;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 100px; */
+
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-content: center;
+    margin-left: 200px;
+}

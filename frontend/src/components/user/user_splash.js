@@ -10,13 +10,42 @@ class UserSplash extends React.Component {
 
     constructor(props) { 
         super(props);
+        this.state = {songIds: []};
+        this.eventClick = this.eventClick.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchUserEvents();
+        
     }
 
+    eventClick(e) {
+        console.log(e);
+        console.log("hello");
+
+    }
+
+    // getDeezer(array) {
+    //     for (let i=0; i < array.length; i++) {
+    //         return (
+    //         <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="200"></iframe>
+
+    //     }
+    // }
+
     render() {
+        let events;
+        let that = this;
+        setTimeout(() => {
+            events = document.getElementsByClassName("user_eventDiv__2qhai");
+            for (let i = 0; i < events.length; i++) {
+                events[i].addEventListener("click", (e) => {
+                    that.setState({songIds: that.props.events[e.currentTarget.id].songIds})
+                })
+            }
+        }, 2000);
+
+        
         return (
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
@@ -25,19 +54,33 @@ class UserSplash extends React.Component {
                         <p className={classes.userGreeting}>Hey {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1)}</p>
                         <p className={classes.userMessage}>Your prescriptions:</p>
                     </div>
-                    <div className={classes.userEventItem}>
+                    <div className={classes.userEventItem} >
                         {
                             Object.values(this.props.events).map((event, idx) => (
-                                <UserEventItem event={event} key={idx} />
+                                <UserEventItem onClick={this.eventClick} event={event} key={idx} id={idx} />
                             ))
                         }
                     </div>
+                </div>
+                <div className={navClasses.deezer}>
+                        {
+                            this.state.songIds.length > 0 ? (
+                                this.state.songIds.map((songId, idx) => {
+                                    console.log(this.state.songIds);
+                                    return (
+                                        <label key={idx}> 
+                                            {idx + 1}. <iframe title={idx + 1} scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                        </label>
+                                    )
+                                })
+                            ): "hello"
+                        }
                 </div>
             </div>
 
         )
     }
-
 }
+
 
 export default UserSplash;

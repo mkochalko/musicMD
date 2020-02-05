@@ -1,5 +1,4 @@
 import React from 'react';
-import * as TMApiUtil from "../../util/songkick_api_util";
 import Map from "../map/map_container";
 import classes from './concert_search.module.css';
 import navClasses from '../../components/wrapper.module.css';
@@ -25,16 +24,22 @@ class ConcertSearch extends React.Component {
         this.props.getMetroIdByClick(latlng)
     }
 
-    // componentDidUpdate(prevProps) {
-    //     // debugger
-    //     console.log(prevProps)
-    //     if (prevProps.events.length === 0 && this.props.events.length !== 0) {
-    //         this.setState({ selectedEvent: this.props.events[0] })
-    //     }
-    // }
+   
 
     componentWillMount() {
-      
+        let loading = document.getElementById("loading");
+        if (loading) {
+            loading.setAttribute("style", "display: block");
+
+            setTimeout(() => {
+
+                loading.setAttribute("style", "display: none");
+            }, 4000)
+        }
+        if (this.props.event) {
+            let artist = this.props.event._embedded.attractions[0].name;
+            this.props.getSetlist(artist);
+        }
       
     }
 
@@ -55,12 +60,9 @@ class ConcertSearch extends React.Component {
     }
 
     handleEventClick(e) { 
-        e.preventDefault();
-        // debugger;
-        console.log(e.target)
         let selectedEventId = e.target.id;
         for (let i = 0; i < this.props.events.length; i++) {
-            if (selectedEventId == this.props.events[i].id ) {
+            if (selectedEventId === this.props.events[i].id ) {
                 this.setState({selectedEvent: i})
             }
         }
@@ -68,21 +70,8 @@ class ConcertSearch extends React.Component {
 
 
     render() {
-        // debugger
-        // console.log(this.props.events.length)
-        // console.log(this.props.events[this.state.selectedEvent])
-
-        console.log("click");
-        let loading = document.getElementById("loading");
-        console.log(loading);
-        if (loading) {
-            loading.setAttribute("style", "display: block");
-            
-            setTimeout(() => {
-
-                loading.setAttribute("style", "display: none");
-            }, 2000)
-        }
+      
+       
         return (
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>

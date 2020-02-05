@@ -19,9 +19,14 @@ export const getMetroIdByClick = latlng => dispatch => {
 };
 
 
-export const getMetroIdByText = text => dispatch => (
+export const getMetroIdByText = text => dispatch => {
+    return (
     TMAPIUtil.getMetroIdByText(text)
         .then(events => {
             dispatch(receiveEvents(events._embedded.events))
         })
-)
+        .catch(error => {
+            alert("City Not Found");
+        })
+    )
+}

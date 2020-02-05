@@ -46,8 +46,9 @@
 
 
 .map {
-    grid-area: map;
+    /* grid-area: map; */
     padding-left: 30px;
+    /* width: 100%; */
 }
 
 .eventIndex {

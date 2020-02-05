@@ -1,6 +1,5 @@
-import { postLibraryApi, fetchUserLibraryApi } from '../util/library_util';
-// import { response } from 'express';
-
+import {  fetchUserLibraryApi } from '../util/library_util';
+// postLibraryApi,
 export const RECEIVE_LIBRARY = 'RECEIVE_LIBRARY';
 
 
@@ -13,7 +12,6 @@ export const updateLibrary = library => ({
 export const fetchUserLibrary = () => dispatch => (
   fetchUserLibraryApi()
     .then(library => {
-      // debugger;
       return dispatch(updateLibrary(library))
     }
     )
