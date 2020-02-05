@@ -17,30 +17,42 @@ router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => 
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    const newEvent = new Event({
+
+    Event.findOne({
         address: req.body.address,
         artist: req.body.artist,
         venue: req.body.venue,
         songIds: req.body.songIds,
         date: req.body.date,
         userId: req.body.userId
-    });
-    newEvent.save().then(event => {
-        // debugger
-        // console.log(newEvent);
-        // let userLib = Library.find({userId:req.body.userId})
-        // let updatedEvents = userLib.eventIds
+     }).then(event => {
+        if (!(event)) {
+            const newEvent = new Event({
+                address: req.body.address,
+                artist: req.body.artist,
+                venue: req.body.venue,
+                songIds: req.body.songIds,
+                date: req.body.date,
+                userId: req.body.userId
+            });
+            newEvent.save().then(event => {
+                // debugger
+                // console.log(newEvent);
+                // let userLib = Library.find({userId:req.body.userId})
+                // let updatedEvents = userLib.eventIds
 
-        // axios({ method: 'put', 
-        //     url: '/library/update'})
-        // // let updatedEvents = userLib.eventIds.push(newEvent.id)
-        // // let conditions = { userId: req.body.userId}
-        // // , update = { eventIds: updatedEvents} 
-        // // , options = { multi: false };
-        
-        // Library.update(conditions, update, options, (err) => { if (err) {throw err}});
-        res.json(event)
-    });
+                // axios({ method: 'put', 
+                //     url: '/library/update'})
+                // // let updatedEvents = userLib.eventIds.push(newEvent.id)
+                // // let conditions = { userId: req.body.userId}
+                // // , update = { eventIds: updatedEvents} 
+                // // , options = { multi: false };
+                
+                // Library.update(conditions, update, options, (err) => { if (err) {throw err}});
+                res.json(event)
+            });
+        }
+     });
 
 });
 

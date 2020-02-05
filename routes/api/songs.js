@@ -19,7 +19,9 @@ router.post("/", passport.authenticate('jwt', { session: false }), (req, res) =>
     }
     const newSong = new Song({
         artist: req.body.artist,
-        songName: req.body.songName
+        songId: req.body.songId,
+        songName: req.body.songName,
+        userId: req.body.userId
     })
 
     newSong.save().then(song => res.json(song))

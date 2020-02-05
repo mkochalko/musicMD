@@ -73,34 +73,44 @@ class EventIndexShowItem extends React.Component {
     
 
     handleClick() {
-        let songName = [];
+        let songIds = [];
 
 
-        for (let i = 0; i < this.props.deezer.length; i++) {
-            songName.push(this.props.deezer.artistName)
-            this.props.createSong(this.props.deezer.artistName)
+        for (let i = 0; i < Object.keys(this.props.deezer).length; i++) {
+            console.log(Object.values(this.props.deezer)[i])
+            songIds.push(Object.values(this.props.deezer)[i].id)
+            let songObject = {
+                artist: Object.values(this.props.deezer)[i].artist.name,
+                songId: Object.values(this.props.deezer)[i].id,
+                songName: Object.values(this.props.deezer)[i].title,
+                userId: this.props.currentUser.id
+            }
+            this.props.createSong(songObject)
         }
 
-
+        console.log(songIds)
         let event = {
             venue: this.props.event._embedded.venues[0].name,
             artist: this.props.event._embedded.attractions[0].name,
             address: `${this.props.event._embedded.venues[0].address.line1}, ${this.props.event._embedded.venues[0].city.name}, ${this.props.event._embedded.venues[0].state.stateCode}`,
-            songName: songName,
+            songIds: songIds,
             date: this.props.event.dates.start.localDate,
             userId: this.props.currentUser.id
         }
         this.props.postEvent(event)
 
-        console.log(this.props)
+        // console.log(this.props)
 
     }
 
     render() {
         if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
-            setTimeout(()=> { this.configureSetList().map(song => (
-                this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-            ))},1000)
+            let that = this;
+            if (this.configureSetList()) {
+                setTimeout(()=> { that.configureSetList().map(song => (
+                    that.props.getTrackByInfo([that.props.event._embedded.attractions[0].name, song.name])
+                ))},1500)
+            }
         }
         console.log(this.props.deezer);
        
@@ -125,22 +135,16 @@ class EventIndexShowItem extends React.Component {
                         Time: {this.props.event.dates.start.localTime}
                     </div>
                     <div>
-                        <button className={classes.goingButton} onClick={this.handleClick}>I'm Going</button>
+                        <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
                     </div> 
                 </div>
                 <br />
                 <ul className={classes.setList}>
-                    {
-                        Object.keys(this.props.deezer).length > 0 ? (Object.values(this.props.deezer).map((song, idx) => {
-                            
-                            return (
-                                <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=100&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
-                            )
-                        })) : ""
-                    }
-                    {/* { this.configureSetList() ? (
-                        this.configureSetList().map((song, idx) => (
-                            <li className={classes.song}key={idx}>{song.name}</li>
+                    { Object.keys(this.props.deezer).length > 0 ? (
+                        Object.values(this.props.deezer).map((song, idx) => (
+                            <label key={idx} >{idx + 1}.
+                            <iframe scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
+                            </label>
                         ))) : ""
                     } */}
                 </ul>
