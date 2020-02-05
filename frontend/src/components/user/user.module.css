@@ -16,10 +16,17 @@
     font-size: 18px; 
 }
 
+.userSplash {
+    overflow: auto;
+    width: 100vh;
+}
+
 .userEventItem {
     color: white;
     margin-top: 40px;
     margin-left: 40px;
+    overflow: auto;
+    width: 400px;
 }
 
 .eventDiv {
@@ -41,16 +48,20 @@
 
 .eventItemArtist {
     font-size: 36px;
+    padding-left: 10px;
 }
 
 .eventItemVenue {
     font-size: 24px;
+    padding-left: 10px;
 }
 
 .eventItemAddress {
     font-size: 16px;
+    padding-left: 10px;
 }
 
 .eventItemDate {
     font-size: 16px;
+    padding-left: 10px;
 }
