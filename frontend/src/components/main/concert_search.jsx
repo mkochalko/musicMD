@@ -28,7 +28,19 @@ class ConcertSearch extends React.Component {
    
 
     componentWillMount() {
-      
+        let loading = document.getElementById("loading");
+        if (loading) {
+            loading.setAttribute("style", "display: block");
+
+            setTimeout(() => {
+
+                loading.setAttribute("style", "display: none");
+            }, 4000)
+        }
+        if (this.props.event) {
+            let artist = this.props.event._embedded.attractions[0].name;
+            this.props.getSetlist(artist);
+        }
       
     }
 
