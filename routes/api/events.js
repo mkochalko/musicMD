@@ -11,7 +11,6 @@ const passport = require('passport');
 
 router.post("/", passport.authenticate('jwt', { session: false}), (req, res) => {
     
-    console.log(req)
     const {errors, isValid} = validateEventData(req.body);
 
     if (!isValid) {
@@ -62,7 +61,6 @@ router.get('/get',
         Event
             .find({ userId: req.user._id })
             .then((events) => {
-                console.log(events)
                 res.json(events)
             });
     }
