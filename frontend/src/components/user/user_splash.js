@@ -69,7 +69,7 @@ class UserSplash extends React.Component {
                                     console.log(this.state.songIds);
                                     return (
                                         <label key={idx}> 
-                                            {idx + 1}. <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                            {idx + 1}. <iframe title={idx + 1} scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
                                         </label>
                                     )
                                 })

@@ -123,7 +123,7 @@ class EventIndexShowItem extends React.Component {
                     <div className={classes.eventName}>
                         <h1>{this.props.event.name}</h1>
                         <br/>
-                        <img height="180" width="320" src={this.props.event.images[0].url} /> 
+                        <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name}/> 
                         <br />
                         <h3>{this.props.event._embedded.venues[0].name}</h3>   
                     </div> 
@@ -146,7 +146,7 @@ class EventIndexShowItem extends React.Component {
                     { Object.keys(this.props.deezer).length > 0 ? (
                         Object.values(this.props.deezer).map((song, idx) => (
                             <label key={idx} >{idx + 1}.
-                            <iframe scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
+                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
                             </label>
                         ))) : ""
                     }
