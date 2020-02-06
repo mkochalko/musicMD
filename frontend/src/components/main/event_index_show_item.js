@@ -132,10 +132,20 @@ class EventIndexShowItem extends React.Component {
                     </div>
                     <br />
                     <div className={classes.dateTime}>
-                        Date: {this.props.event.dates.start.localDate}
+                        Date: {
+                            this.props.event.dates.start.localDate.split('-')[1] + '-' +
+                            this.props.event.dates.start.localDate.split('-')[2] + '-' +
+                            this.props.event.dates.start.localDate.split('-')[0]
+                            }
                         <br/>
                         <br/>
-                        Time: {this.props.event.dates.start.localTime}
+                        Time: {
+                            this.props.event.dates.start.localTime.split(':')[0] <= 12 ? 
+                            this.props.event.data.start.localTime :
+                            (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
+                            this.props.event.dates.start.localTime.split(':')[1] + ':' +
+                            this.props.event.dates.start.localTime.split(':')[2]
+                        }
                     </div>
                     <div>
                         <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
