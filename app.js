@@ -6,6 +6,8 @@ const users = require("./routes/api/users");
 const events = require("./routes/api/events");
 const songs = require("./routes/api/songs");
 const libraries = require("./routes/api/libraries");
+const maps = require("./routes/api/maps");
+
 const login = require("./validation/login")
 const bodyParser = require('body-parser');
 const passport = require('passport');
@@ -39,15 +41,14 @@ app.use("/api/events", events);
 app.use("/api/songs", songs);
 app.use("/api/libraries", libraries);
 app.use("/api/calls", calls);
+app.use("/api/map", maps);
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/frontend/public/index.html'));
 });
 
 
-app.get("/keys", (req, res) => {
-    res.send("hello");
-})
+
 
 const port = process.env.PORT || 5000;
 
