@@ -1,91 +1,9 @@
-// import React, { Component } from 'react';
-// import GoogleMapReact from 'google-map-react';
-// import classes from "./map.module.css";
-// import Marker from "./marker";
-// import axios from 'axios';
-
-// const MapsAPI = `AIzaSyDCfgh5IMc65PWQRgMbVpFmjhR6vA-l4tg`
-
-
-
-
-
-
-// class SimpleMap extends Component {
-//     // static defaultProps = {
-//     //     center: {
-//     //         lat: 37.7749,
-//     //         lng: -122.4194
-//     //     },
-//     //     zoom: 11
-//     // };
-
-//     constructor(props) {
-//         super(props);
-//         this.handleClick = this.handleClick.bind(this);
-//         this.state = this.props;
-//     }
-    
-//     handleClick(e) {
-       
-//         let lat = e.lat;
-//         let lng = e.lng;
-//         this.setState({
-//             center: {
-//                 lat: lat,
-//                 lng: lng
-//             }
-//         })
-//         this.props.getMetroIdByClick(`${lat},${lng}`).then(this.props.resetState);
-//     }
-
-
-
-
-
-
-
-//     render() {
-//         console.log(this.state.city);
-//         return (
-//             <div className={classes.mapContainer}>
-//                 <GoogleMapReact
-//                     onClick={this.handleClick}
-//                     bootstrapURLKeys={{ key: MapsAPI }}
-//                     center={{
-//                         lat: this.state.lat,
-//                         lng: this.state.lng
-//                     }}
-//                     defaultZoom={11}
-//                 >
-//                     {/* <Marker
-//                         lat={this.state.lat}
-//                         lng={this.state.lng}
-//                     /> */}
-//                 </GoogleMapReact>
-//             </div>
-//         )
-       
-//     }
-// }
-
-// export default SimpleMap;
-
-
-
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import classes from "./map.module.css";
 import Marker from "./marker";
 import axios from 'axios';
 const MapsAPI = `AIzaSyDCfgh5IMc65PWQRgMbVpFmjhR6vA-l4tg`
-
-
-
-
-
-
-
 class SimpleMap extends Component {
     static defaultProps = {
         center: {
@@ -94,13 +12,11 @@ class SimpleMap extends Component {
         },
         zoom: 11
     };
-
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.state = this.props;
     }
-
     fetchLocation() {
         axios.get(`/api/map/location?string=${this.props.city}`)
             .then(response => {
@@ -115,18 +31,15 @@ class SimpleMap extends Component {
                 console.log(error)
             })
     }
-
     componentDidMount() {
         this.fetchLocation();
     }
-
-    componentDidUpdate() {
-        this.fetchLocation();
-
+    componentDidUpdate(prevProps) {
+        if (prevProps.city !== this.props.city) {
+            this.fetchLocation();
+        }
     }
-
     handleClick(e) {
-
         let lat = e.lat;
         let lng = e.lng;
         this.setState({
@@ -137,8 +50,6 @@ class SimpleMap extends Component {
         })
         this.props.getMetroIdByClick(`${lat},${lng}`).then(this.props.resetState);
     }
-
-
     render() {
         console.log(this.state.center)
         return (
@@ -149,15 +60,13 @@ class SimpleMap extends Component {
                     center={this.state.center}
                     defaultZoom={this.props.zoom}
                 >
-                <Marker
-                    lat={this.state.center.lat}
-                    lng={this.state.center.lng}
-                />
+                    <Marker
+                        lat={this.state.center.lat}
+                        lng={this.state.center.lng}
+                    />
                 </GoogleMapReact>
             </div>
         )
-
     }
 }
-
 export default SimpleMap;
