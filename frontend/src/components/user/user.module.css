@@ -7,6 +7,7 @@
     /* font-family: 'Alef', sans-serif; */
     line-height: 1.5;
     position: absolute;
+    padding: 15px;
 }
 
 .userGreeting {
@@ -74,10 +75,17 @@
 .deezer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
+    overflow: auto;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    align-content: center;
+    margin-left: 200px;
+    margin-top: 30px;
 }
+
 .deezerTrack {
     padding: 5px;
     align-self: center;
@@ -86,6 +94,5 @@
 .setlistTitle {
     color: white;
     font-size: 24px;
-    margin-left: 125px;
     display: none;
 }
