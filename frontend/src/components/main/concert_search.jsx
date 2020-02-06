@@ -6,6 +6,7 @@ import navClasses from '../../components/wrapper.module.css';
 import EventsIndexContainer from './events_index_container';
 import EventIndexShowItemContainer from './event_index_show_item_container';
 import NavBarContainer from '../nav/navbar_container';
+import axios from 'axios';
 
 
 class ConcertSearch extends React.Component {
@@ -49,9 +50,17 @@ class ConcertSearch extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        this.props.getMetroIdByText(this.state.search).then(this.props.resetState);;
+        this.props.getMetroIdByText(this.state.search).then(this.props.resetState);
 
-    }
+        // console.log(this.state.search);
+        let city = e.target.innerHTML.split(`value="`)[1].split(`">`)[0];
+
+        this.setState({ city: city })
+
+        // Map.render(this.state.search);
+        // let that = this;
+        
+    } 
 
     update(field) {
         return e => this.setState({
@@ -91,7 +100,7 @@ class ConcertSearch extends React.Component {
                     </div>
                     <div className={classes.searchPage}>
                         <div className={classes.map}>
-                            <Map resetState={this.resetState}></Map>
+                            <Map city={this.state.city} resetState={this.resetState}></Map>
                         </div>
                         <div className={classes.eventIndex} onClick={this.handleEventClick}>
                             {this.props.events.length > 0 ? <EventsIndexContainer /> : null}
