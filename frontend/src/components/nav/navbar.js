@@ -20,11 +20,9 @@ class NavBar extends React.Component {
                 <div className={classes.navBar}>
                     <div className={classes.musicMD}></div>
                     <Link to={'/'} className={classes.splashLink}></Link>
+                    <p className={classes.navIcon}>Home</p>
                     <Link to={'/prescriptions'} className={classes.profileLink}></Link>
-                    <button 
-                        onClick={this.logoutUser}
-                        className={classes.logoutButton}
-                        ></button>
+                    <p className={classes.navIcon}>Profile</p>
                     <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.gitIcon}></a>
                     <p className={classes.iconName}>Repo</p>
                     <a href="https://www.linkedin.com/in/mkochalko/" target="_blank" className={classes.linkedInIcon}></a>
@@ -35,6 +33,11 @@ class NavBar extends React.Component {
                     <p className={classes.iconName}>Jon</p>
                     <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.linkedInIcon}></a>
                     <p className={classes.iconName}>Barrett</p>
+                    <button
+                        onClick={this.logoutUser}
+                        className={classes.logoutButton}
+                    ></button>
+                    <p className={classes.navIcon}>Logout</p>
                        
                 </div>
             );

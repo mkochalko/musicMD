@@ -1,7 +1,7 @@
 .greetingDiv {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    margin-left: 150px;
     margin-top: 20px;
     color: white;
     /* font-family: 'Alef', sans-serif; */
@@ -18,19 +18,19 @@
 }
 
 .userSplash {
+    margin-top: 120px;
     overflow: auto;
     width: 30vw;
-    height: 95vh;
+    height: 90vh;
 }
 
 .userEventItem {
     color: white;
-    top: 100px;
     margin-left: 40px;
     overflow: scroll;
-    overflow: hidden;
     width: 100%;
     position: relative;
+    margin-bottom: 45px;
 }
 
 .eventDiv {
@@ -69,4 +69,23 @@
 .eventItemDate {
     font-size: 16px;
     padding-left: 10px;
+}
+
+.deezer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.deezerTrack {
+    padding: 5px;
+    align-self: center;
+}
+
+.setlistTitle {
+    color: white;
+    font-size: 24px;
+    margin-left: 125px;
+    display: none;
 }
