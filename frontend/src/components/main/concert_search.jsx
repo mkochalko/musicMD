@@ -56,9 +56,6 @@ class ConcertSearch extends React.Component {
         let city = e.target.innerHTML.split(`value="`)[1].split(`">`)[0];
 
         this.setState({ city: city })
-
-        // Map.render(this.state.search);
-        // let that = this;
         
     } 
 
