@@ -132,10 +132,20 @@ class EventIndexShowItem extends React.Component {
                     </div>
                     <br />
                     <div className={classes.dateTime}>
-                        Date: {this.props.event.dates.start.localDate}
+                        Date: {
+                            this.props.event.dates.start.localDate.split('-')[1] + '-' +
+                            this.props.event.dates.start.localDate.split('-')[2] + '-' +
+                            this.props.event.dates.start.localDate.split('-')[0]
+                            }
                         <br/>
                         <br/>
-                        Time: {this.props.event.dates.start.localTime}
+                        Time: {
+                            this.props.event.dates.start.localTime.split(':')[0] <= 12 ? 
+                            this.props.event.data.start.localTime :
+                            (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
+                            this.props.event.dates.start.localTime.split(':')[1] + ':' +
+                            this.props.event.dates.start.localTime.split(':')[2]
+                        }
                     </div>
                     <div>
                         <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
@@ -145,8 +155,8 @@ class EventIndexShowItem extends React.Component {
                 <ul className={classes.setList}>
                     { Object.keys(this.props.deezer).length > 0 ? (
                         Object.values(this.props.deezer).map((song, idx) => (
-                            <label key={idx} >{idx + 1}.
-                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60"></iframe>
+                            <label key={idx} >
+                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
                             </label>
                         ))) : ""
                     }

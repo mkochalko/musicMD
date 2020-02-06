@@ -1,6 +1,15 @@
+.titleDiv {
+    color: white;
+    font-size: 36px;
+}
+.wrapper {
+    width: 100vh;
+    overflow-y: scroll;
+}
+
 .searchBar{
     height: 50px;
-    width: 100%;
+    width: 600px;
     margin-top: 15px;
     text-align: center;
     
@@ -16,6 +25,10 @@
     color: white;
 }
 
+.submit {
+    display: none;
+}
+
 .searchPage {
     margin-top: 40px;
     display: grid;
@@ -24,13 +37,13 @@
     color: white;
     grid-template-columns: 35% 65%;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 15px;
     grid-template-areas: 
         "map shw"
         "idx shw"
         "idx shw";
-    overflow: auto;
+    overflow-y: scroll;
 }
+
 
 .map {
     /* grid-area: map; */
@@ -39,6 +52,7 @@
 }
 
 .eventIndex {
+    margin-top: 20px;
     grid-area: idx;
     padding-left: 30px;
 }
@@ -46,11 +60,16 @@
 .eventShow {
     grid-area: shw;
     margin-left: 20px;
+    width: 100%;
     
 }
 
 .indexSearchContainer {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     /* background-color: #7f5a83;
     background-image: linear-gradient(280deg,  #80088d  0%, #032842 74%); */
 }
