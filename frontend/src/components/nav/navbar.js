@@ -25,15 +25,15 @@ class NavBar extends React.Component {
                         onClick={this.logoutUser}
                         className={classes.logoutButton}
                         ></button>
-                    <a href="https://github.com/mkochalko/musicMD" className={classes.gitIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.gitIcon}></a>
                     <p className={classes.iconName}>Repo</p>
-                    <a href="https://www.linkedin.com/in/mkochalko/" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/mkochalko/" target="_blank" className={classes.linkedInIcon}></a>
                     <p className={classes.iconName}>Matt</p>
-                    <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" target="_blank" className={classes.linkedInIcon}></a>
                     <p className={classes.iconName}>Kit</p>
-                    <a href="https://www.linkedin.com/in/jonjonlai/" className={classes.linkedInIcon}></a>
+                    <a href="https://www.linkedin.com/in/jonjonlai/" target="_blank" className={classes.linkedInIcon}></a>
                     <p className={classes.iconName}>Jon</p>
-                    <a href="https://github.com/mkochalko/musicMD" className={classes.linkedInIcon}></a>
+                    <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.linkedInIcon}></a>
                     <p className={classes.iconName}>Barrett</p>
                        
                 </div>
