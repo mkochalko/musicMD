@@ -35,7 +35,7 @@
     width: 100%;
     height: 100vh;
     color: white;
-    grid-template-columns: 500px 650px;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
         "map shw"
@@ -60,6 +60,7 @@
 .eventShow {
     grid-area: shw;
     margin-left: 20px;
+    width: 100%;
     
 }
 
