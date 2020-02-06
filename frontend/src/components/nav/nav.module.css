@@ -101,10 +101,19 @@
     justify-content: center;
     align-items: center;
     color: white;
-    margin-top: 5px;
     /* font-family: Tahoma, Geneva, sans-serif; */
     font-size: 16px;
     align-self: center;
+}
+
+.navIcon {
+    justify-content: center;
+    align-items: center;
+    color: white;
+    /* font-family: Tahoma, Geneva, sans-serif; */
+    font-size: 16px;
+    align-self: center;
+    margin-top: 5px;
 }
 
 .linkedInIcon {
