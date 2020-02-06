@@ -20,6 +20,7 @@ class SimpleMap extends Component {
     fetchLocation() {
         axios.get(`/api/map/location?string=${this.props.city}`)
             .then(response => {
+                console.log(response.data)
                 let latlong = response.data.candidates[0].geometry.location;
                 this.setState({
                     center: {
