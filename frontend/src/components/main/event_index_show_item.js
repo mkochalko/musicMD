@@ -10,9 +10,48 @@ class EventIndexShowItem extends React.Component {
         this.prevProps = {event: {id: null}};
         this.configureSetList = this.configureSetList.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.fetchAllMusicInfo = this.fetchAllMusicInfo.bind(this);
     }
 
-    UNSAFE_componentWillMount() {
+
+    componentDidMount() {
+        this.fetchAllMusicInfo()
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.event.id !== this.props.event.id) {
+            this.props.clearTracks();
+            this.fetchAllMusicInfo();
+        }
+    }
+            
+    componentWillUnmount() {
+        this.props.clearTracks();
+    }
+
+    configureSetList(setlist) {
+        if (setlist[0]) {
+        
+            let newSetlist;
+            for (let i = 0; i < setlist.length; i++) {
+                if (setlist[i].sets.set.length > 0) {
+                    newSetlist = setlist[i].sets.set[0].song;
+                }
+            }
+            return newSetlist;
+        }
+    }
+
+    fetchAllMusicInfo() {
+        let artist = this.props.event._embedded.attractions[0].name;
+        this.props.getSetlist(artist).then(setlist => {
+            let newSetlist = this.configureSetList(setlist.data.setlist)
+            if (newSetlist) {
+                newSetlist.map(song => (
+                    this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+                ))
+            }
+        });
         let loading = document.getElementById("loading");
         if (loading) {
             loading.setAttribute("style", "display: block");
@@ -22,58 +61,7 @@ class EventIndexShowItem extends React.Component {
                 loading.setAttribute("style", "display: none");
             }, 2000)
         }
-        if (this.props.event) {
-            let artist = this.props.event._embedded.attractions[0].name;
-            this.props.getSetlist(artist);
-        }
     }
-
-
-    componentDidMount() {
-     
-        if (this.props.setListContainer[0] && this.props.deezer.length === 0) {
-            this.configureSetList().map(song => (
-                this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-            ));
-        }
-    }
-
-    componentDidUpdate(prevProps) {
-        this.prevProps = prevProps;
-        if (prevProps.event.id !== this.props.event.id) {
-            let artist = this.props.event._embedded.attractions[0].name;
-            this.props.getSetlist(artist);
-            this.props.clearTracks();
-            let loading = document.getElementById("loading");
-            if (loading) {
-                loading.setAttribute("style", "display: block");
-
-                setTimeout(() => {
-
-                    loading.setAttribute("style", "display: none");
-                }, 2000)
-            }
-        }
-    }
-            
-    componentWillUnmount() {
-        this.props.clearTracks();
-    }
-
-    configureSetList() {
-        if (this.props.setListContainer[0]) {
-        
-            let setlist;
-            for (let i = 0; i < this.props.setListContainer.length; i++) {
-                if (this.props.setListContainer[i].sets.set.length > 0) {
-                    setlist = this.props.setListContainer[i].sets.set[0].song;
-                }
-            }
-            return setlist;
-        }
-    }
-
-    
 
     handleClick() {
         let songIds = [];
@@ -99,23 +87,11 @@ class EventIndexShowItem extends React.Component {
             userId: this.props.currentUser.id
         }
         this.props.postEvent(event)
-
-      
-
     }
 
     render() {
         
-        if (this.props.setListContainer[0] && this.prevProps.event.id !== this.props.event.id && Object.keys(this.props.deezer).length === 0) {
-            let that = this;
-            if (this.configureSetList()) {
-                console.log(this.configureSetList());
-                console.log(that.configureSetList());
-                setTimeout(()=> { that.configureSetList().map(song => (
-                    that.props.getTrackByInfo([that.props.event._embedded.attractions[0].name, song.name])
-                ))},1500)
-            }
-        }
+        
        
         return (
             <div className={classes.searchShowPage}>
