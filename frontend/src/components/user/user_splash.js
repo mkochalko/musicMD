@@ -68,7 +68,7 @@ class UserSplash extends React.Component {
                     </div>
 
                 </div>
-                <div className={navClasses.deezer}>
+                <div className={classes.deezer}>
                     <p className={classes.setlistTitle}>Setlist:</p>
                         {
                             this.state.songIds.length > 0 ? (

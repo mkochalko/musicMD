@@ -106,7 +106,7 @@
 }
 
 .loginSubmit:hover {
-     background-color: #7f5a83;
+    background-color: #7f5a83;
     transition: 0.5s;
     cursor: pointer;
     color: white;
@@ -114,12 +114,11 @@
 
 
 .demoSubmit {
-      background-color: lightblue;
-      text-decoration: none;
+    background-color: lightblue;
+    text-decoration: none;
     border: 2px solid black;
     height: 50px;
     width: 840px;
-
     margin-left: 2px;
     display: flex;
     justify-content: center;
@@ -132,13 +131,13 @@
 }
 
 .demoSubmit:hover {
-     background-color: #7f5a83;
+    background-color: #7f5a83;
     transition: 0.5s;
     cursor: pointer;
     color: white;
 }
-.login{
-     text-decoration: none;
+.login {
+    text-decoration: none;
     border: 2px solid black; 
     height: 46px;
     width: 836px;
@@ -152,7 +151,6 @@
     font-size: 20px;
     margin-top: 237px;
     /* font-family: Tahoma, Geneva, sans-serif; */
-      
     float: left;
 }
 .login:hover {
