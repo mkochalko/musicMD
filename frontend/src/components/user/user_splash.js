@@ -12,10 +12,13 @@ class UserSplash extends React.Component {
         super(props);
         this.state = {songIds: []};
         this.eventClick = this.eventClick.bind(this);
+        this.addSong = this.addSong.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchUserEvents();
+        this.props.fetchUserEvents().then(() => {
+            this.props.fetchSongs()
+        });
         
     }
 
@@ -23,6 +26,10 @@ class UserSplash extends React.Component {
         console.log(e);
         console.log("hello");
 
+    }
+
+    addSong(e) {
+        console.log(e.currentTarget)
     }
 
     // getDeezer(array) {
@@ -75,9 +82,12 @@ class UserSplash extends React.Component {
                                 this.state.songIds.map((songId, idx) => {
                                     // console.log(this.state.songIds);
                                     return (
-                                        <label key={idx}> 
-                                            <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
-                                        </label>
+                                        <div>
+                                            <label key={idx}> 
+                                                <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                            </label>
+                                            <button songId={songId} onClick={this.addSong}>Add To Library</button>
+                                        </div>
                                     )
                                 })
                             ): "hello"
