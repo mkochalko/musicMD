@@ -28,7 +28,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
   font-family: 'Didact Gothic', sans-serif;
 }
-body, a, button, link {
+a {
+	text-decoration: none;
+}
+body, a, button, link, input {
   font-family: 'Didact Gothic', sans-serif;
 
 }

@@ -1,24 +1,24 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import classes from './signup.module.css';
+import classes from './login.module.css';
 
-class SignupForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             email: '',
-            username: '',
             password: '',
-            password2: '',
             errors: {}
         };
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
+        this.handleLogin = this.handleLogin.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        if (nextProps.currentUser === true) {
             this.props.history.push('/');
         }
 
@@ -31,15 +31,26 @@ class SignupForm extends React.Component {
         });
     }
 
-    handleSubmit(e) {
+    handleLogin(e) {
         e.preventDefault();
+
         let user = {
             email: this.state.email,
-            username: this.state.username,
-            password: this.state.password,
-            password2: this.state.password2
+            password: this.state.password
         };
-        this.props.signup(user, this.props.history);
+
+        this.props.login(user)
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+
+        let user = {
+            email: 'WillFerrell@gmail.com',
+            password: 'AfternoonDelight',
+        };
+
+        this.props.login(user)
     }
 
     renderErrors() {
@@ -53,19 +64,15 @@ class SignupForm extends React.Component {
             </ul>
         );
     }
-    
+
     render() {
+        let today = new Date();
+        let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
         return (
-        <div className={classes.page}>
-            <div className={classes.signupContainer}>
-                <div className={classes.toLogIn}>
-                    <h1>Welcome Back</h1>
-                    <h2>If you already have an account, log in here!</h2>
-                        <Link to={"/"}>
-                        <button  className={classes.loginbtn}><span>Log In!</span></button>
-                        </Link>
-                </div>
-                <div className={classes.signupFrom}>
+            <div className={classes.page}>
+                <div className={classes.signupContainer}>
+       
+                    <div className={classes.signupFrom}>
                         <h1>Create Account</h1>
                         <h2>And come see the Music Doctor</h2>
                         <form onSubmit={this.handleSubmit} className="signupForm">
@@ -103,7 +110,7 @@ class SignupForm extends React.Component {
                                     type="submit"
                                     value="Sign UP for Music MD"
                                     className={classes.loginbtn}
-                                ><span>Sign Up!</span></button>
+                                ><span>Log in!</span></button>
                                 <div className={classes.errors}>
 
                                     {this.renderErrors()}
@@ -112,12 +119,19 @@ class SignupForm extends React.Component {
 
                             </div>
                         </form>
+                    </div>
+                    <div className={classes.toLogIn}>
+                        <h1>Welcome Back</h1>
+                        <h2>If you already have an account, log in here!</h2>
+                        <Link to={"/"}>
+                            <button className={classes.loginbtn}><span>Sign Up!</span></button>
+                        </Link>
+                    </div>
                 </div>
             </div>
-          </div>
+            
         );
     }
-
 }
 
-export default withRouter(SignupForm);
+export default withRouter(LoginForm);
