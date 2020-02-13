@@ -57,6 +57,18 @@
     align-self: center;
 }
 
+.aboutLink {
+    background-image: url('./icons/profile.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
 .gitIcon {
     background-image: url('./icons/git_icon.png');
     background-repeat: no-repeat;

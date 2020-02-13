@@ -23,16 +23,8 @@ class NavBar extends React.Component {
                     <p className={classes.navIcon}>Home</p>
                     <Link to={'/prescriptions'} className={classes.profileLink}></Link>
                     <p className={classes.navIcon}>Profile</p>
-                    <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.gitIcon}></a>
-                    <p className={classes.iconName}>Repo</p>
-                    <a href="https://www.linkedin.com/in/mkochalko/" target="_blank" className={classes.linkedInIcon}></a>
-                    <p className={classes.iconName}>Matt</p>
-                    <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" target="_blank" className={classes.linkedInIcon}></a>
-                    <p className={classes.iconName}>Kit</p>
-                    <a href="https://www.linkedin.com/in/jonjonlai/" target="_blank" className={classes.linkedInIcon}></a>
-                    <p className={classes.iconName}>Jon</p>
-                    <a href="https://github.com/mkochalko/musicMD" target="_blank" className={classes.linkedInIcon}></a>
-                    <p className={classes.iconName}>Barrett</p>
+                    <Link to={'/about'} className={classes.aboutLink}></Link>
+                    <p className={classes.navIcon}>About</p>
                     <button
                         onClick={this.logoutUser}
                         className={classes.logoutButton}
