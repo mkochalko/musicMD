@@ -11,10 +11,6 @@ class LibraryIndex extends React.Component {
         // this.props.fetchUserLibrary()
     }
 
-    deleteSong(e) {
-
-        // this.props.deleteSongFromUserLibrary()
-    }
 
 
 
@@ -28,7 +24,7 @@ class LibraryIndex extends React.Component {
                     {   
                         this.props.library > 0 ? (
                             this.props.library.map((song, idx) => (
-                                <LibraryIndexItem key={idx} song={song} />
+                                <LibraryIndexItem key={idx} song={song} deleteSong={this.props.deleteSongFromUserLibrary}/>
                             ))
                     ) : ""
                     }
