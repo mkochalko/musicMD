@@ -66,6 +66,18 @@
     align-items: center;
     align-self: center;
 }
+
+.aboutLink {
+    background-image: url('./icons/profile.png');
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+    justify-self: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
 /* .navLink{
     text-decoration: none;
     border: 2px solid orange;
