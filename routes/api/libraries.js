@@ -1,6 +1,6 @@
+const {validateLibraryData, validateAddSong} = require("../../validation/libraries");
 const express = require("express");
 const router = express.Router();
-const validateLibraryData = require("../../validation/libraries");
 const bcrypt = require("bcryptjs");
 const Library = require("../../models/Library");
 const jwt = require("jsonwebtoken");
@@ -32,68 +32,62 @@ router.get("/library",
     }
 );
 
-router.put("/library",
+router.put("/library/add",
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Library.findOneAndUpdate(
-            { userId: req.user._id },
-            { $push:  {songIds: req.query.string } }
-        )
-        .then(() => {
-            Library
-                .find({ userId: req.user._id })
-                .then((library) => res.json(library))
+        let errors = {};
+        Library.find({ userId: req.user._id })
+            .then(library => {
+                if (library[0].songIds.includes(req.query.string)) {
+                    errors.songIds = "Song Already Exists In Library"
+                    return res.status(400).json(errors);
+                }
+            })
+            .then(() => {
+                Library.findOneAndUpdate(
+                    { userId: req.user._id },
+                    { $push: { songIds: req.query.string } }
+                ).then(() => {
+                    console.log("aslkdjghalskjdgf")
+
+                    Library
+                        .find({ userId: req.user._id })
+                        .then((library) => res.json(library))
+
+                })
+                    .catch(errors => {
+                        console.log(errors)
+                    })
+            })
             
-        })
-        .catch(errors => {
-            console.log(errors)
-        })
 
-
-
-
-
-            // .then(library => {
-            //     console.log(library)
-            //     Library.update(
-            //     { _id: library._id},
-            //     { $push: { songIds: req.query.string } }
-            //     )
-            //     res.json(library)
-
-            // })
-           
                 
     }
 );
 
-// Library
-//     .find({ userId: req.user._id })
-//     .then((library) => {
-//         songIds = library[0].songIds
-//         return songIds
-//     }).then(songIds => {
-//         console.log("songIds", songIds.concat(4))
-
-//     });
-//         // Library
-//         //     .update({ userId: req.user._id },
-//         //         $set: {songIds:})
-//             // .then((library) => {
-//             //     library[0].songIds = [4]
-//             //     console.log(library[0].songIds)
-//             // });
-
-router.put("/library/update",
+router.put("/library/delete",
+    passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        Library
-            .find({ userId: req.user._id })
-            .populate("eventIds")
-            .then((library) => {
-                
-                res.json(library[0])});
+        Library.findOneAndUpdate(
+            { userId: req.user._id },
+            { $pull: { songIds: req.query.string } }
+        )
+            .then(() => {
+                Library
+                    .find({ userId: req.user._id })
+                    .then((library) => res.json(library))
+
+            })
+            .catch(errors => {
+                console.log(errors)
+            })
+
+
     }
-)
+);
+
+
+
 
 router.get("/test", (req, res) => res.json({ msg: "This is the libraries route" }));
 

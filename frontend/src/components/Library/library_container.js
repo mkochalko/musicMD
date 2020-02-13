@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProsp = dispatch => ({
-    fetchUserLibrary: () => dispatch(fetchUserLibrary),
+    fetchUserLibrary: () => dispatch(fetchUserLibrary()),
     deleteSongFromUserLibrary: (songId) => dispatch(deleteSongFromUserLibrary(songId))
 })
 
