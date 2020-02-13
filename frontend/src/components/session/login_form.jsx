@@ -73,44 +73,34 @@ class LoginForm extends React.Component {
                 <div className={classes.signupContainer}>
        
                     <div className={classes.signupFrom}>
-                        <h1>Create Account</h1>
-                        <h2>And come see the Music Doctor</h2>
-                        <form onSubmit={this.handleSubmit} className="signupForm">
+                        <h1>Log In</h1>
+                        <h2>The Doctor Will Be In Soon</h2>
+                        <form onSubmit={this.handleLogin} className="signupForm">
                             <div className={classes.inputContainer}>
-                                <input
-                                    type="text"
-                                    value={this.state.email}
-                                    onChange={this.update("email")}
+                                <input 
+                                    type="text" 
+                                    value={this.state.email}   
+                                    onChange={this.update('email')} 
                                     placeholder="Email"
-                                    className={classes.Input}
                                 />
-                                <input
-                                    type="text"
-                                    value={this.state.username}
-                                    onChange={this.update("username")}
-                                    placeholder="Username"
-                                    className={classes.Input}
-                                />
-                                <input
-                                    type="password"
-                                    value={this.state.password}
-                                    onChange={this.update("password")}
+                                <input 
+                                    type="password" 
+                                    value={this.state.password} 
+                                    onChange={this.update('password')} 
                                     placeholder="Password"
-                                    className={classes.Input}
                                 />
-                                <input
-                                    type="password"
-                                    value={this.state.password2}
-                                    onChange={this.update("password2")}
-                                    placeholder="Confirm Password"
-                                    className={classes.Input}
-                                />
+                   
                                 <button
-                                    text="slasd"
                                     type="submit"
-                                    value="Sign UP for Music MD"
-                                    className={classes.loginbtn}
-                                ><span>Log in!</span></button>
+                                    className={classes.loginbtn}>
+                                    <span>Log in!</span>
+                                </button>
+                                <button
+                                    type="submit"
+                                    className={classes.loginbtn}>
+                                    <span>Demo User</span>
+                                </button>
+                        
                                 <div className={classes.errors}>
 
                                     {this.renderErrors()}
@@ -120,12 +110,14 @@ class LoginForm extends React.Component {
                             </div>
                         </form>
                     </div>
-                    <div className={classes.toLogIn}>
-                        <h1>Welcome Back</h1>
-                        <h2>If you already have an account, log in here!</h2>
-                        <Link to={"/"}>
+                    <div className={classes.toSignIn}>
+                        <h1>New Patient?</h1>
+                        <h2>If you dont't have an account, sign up here!</h2>
+                        <Link to={"/signup"}>
                             <button className={classes.loginbtn}><span>Sign Up!</span></button>
                         </Link>
+
+
                     </div>
                 </div>
             </div>
