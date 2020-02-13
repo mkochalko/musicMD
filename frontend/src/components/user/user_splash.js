@@ -80,38 +80,46 @@ class UserSplash extends React.Component {
         return (
             <div className={navClasses.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <div className={classes.greetingDiv}>
-                    <p className={classes.userGreeting}>Hey {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1)}</p>
-                    <p className={classes.userMessage}>Your prescriptions:</p>
-                </div>
-                <div className={classes.userSplash}>
-                    
-                    <div className={classes.userEventItem} >
-                        {
-                            Object.values(this.props.events).map((event, idx) => (
-                                <UserEventItem onClick={this.eventClick} event={event} key={idx} id={idx} />
-                            ))
-                        }
+                <div>
+                    <div className={classes.greetingDiv}>
+                        <p className={classes.userGreeting}>Hey {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1)}!</p>
+                        <p className={classes.userMessage}>Your Events:</p>
+                    </div>
+                    <div className={classes.userSplash}>
+                        
+                        <div className={classes.userEventItem} >
+                            {
+                                Object.values(this.props.events).map((event, idx) => (
+                                    <div>
+                                    <UserEventItem onClick={this.eventClick} event={event} key={idx} id={idx} />
+
+                                    </div>
+                                ))
+                            }
+                        </div>
+
                     </div>
 
                 </div>
                 <div className={classes.deezer}>
                     <p className={classes.setlistTitle}>Setlist:</p>
-                        {
-                            this.state.songIds.length > 0 ? (
-                                this.state.songIds.map((songId, idx) => {
-                                    // console.log(this.state.songIds);
-                                    return (
-                                        <div key={idx}>
-                                            <label> 
-                                                <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
-                                            </label>
-                                            <button className="library-add-song" id={songId} onClick={this.addSong}>Add To Library</button>
-                                        </div>
-                                    )
-                                })
-                            ): "hello"
-                        }
+                        <div className={classes.deezerContainer}>
+                            {
+                                this.state.songIds.length > 0 ? (
+                                    this.state.songIds.map((songId, idx) => {
+                                        // console.log(this.state.songIds);
+                                        return (
+                                            <div key={idx}>
+                                                <label> 
+                                                    <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                                </label>
+                                                <button className="library-add-song" id={songId} onClick={this.addSong}>Add To Library</button>
+                                            </div>
+                                        )
+                                    })
+                                ): "hello"
+                            }
+                        </div>
                 </div>
             </div>
 
