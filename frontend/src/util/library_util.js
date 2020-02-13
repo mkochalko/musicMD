@@ -5,7 +5,7 @@ export const fetchLibrary = () => (
 );
 
 export const addSongToLibrary = (songId) => (
-  axios.post(`api/libraries/library?string=${songId}`)
+  axios.put(`api/libraries/library?string=${songId}`)
 );
 
 export const deleteSongFromLibrary = (songId) => (

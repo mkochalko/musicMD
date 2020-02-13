@@ -32,6 +32,58 @@ router.get("/library",
     }
 );
 
+router.put("/library",
+    passport.authenticate('jwt', { session: false }),
+    (req, res) => {
+        Library.findOneAndUpdate(
+            { userId: req.user._id },
+            { $push:  {songIds: req.query.string } }
+        )
+        .then(() => {
+            Library
+                .find({ userId: req.user._id })
+                .then((library) => res.json(library))
+            
+        })
+        .catch(errors => {
+            console.log(errors)
+        })
+
+
+
+
+
+            // .then(library => {
+            //     console.log(library)
+            //     Library.update(
+            //     { _id: library._id},
+            //     { $push: { songIds: req.query.string } }
+            //     )
+            //     res.json(library)
+
+            // })
+           
+                
+    }
+);
+
+// Library
+//     .find({ userId: req.user._id })
+//     .then((library) => {
+//         songIds = library[0].songIds
+//         return songIds
+//     }).then(songIds => {
+//         console.log("songIds", songIds.concat(4))
+
+//     });
+//         // Library
+//         //     .update({ userId: req.user._id },
+//         //         $set: {songIds:})
+//             // .then((library) => {
+//             //     library[0].songIds = [4]
+//             //     console.log(library[0].songIds)
+//             // });
+
 router.put("/library/update",
     (req, res) => {
         Library
