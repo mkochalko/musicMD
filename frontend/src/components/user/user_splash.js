@@ -12,17 +12,44 @@ class UserSplash extends React.Component {
         super(props);
         this.state = {songIds: []};
         this.eventClick = this.eventClick.bind(this);
+        this.addSong = this.addSong.bind(this);
     }
 
     componentDidMount() {
-        this.props.fetchUserEvents();
+        this.props.fetchUserEvents().then(() => {
+            this.props.fetchSongs()
+
+            let events = document.getElementsByClassName("user_eventDiv__2qhai");
+            let setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
+            for (let i = 0; i < events.length; i++) {
+                events[i].addEventListener("click", (e) => {
+                    let buttons = document.getElementsByClassName("library-add-song")
+                    for (let j = 0; j < buttons.length; j++) {
+                        buttons[j].innerHTML = "Add To Library"
+                    }
+                    this.setState({ songIds: this.props.events[e.currentTarget.id].songIds })
+                    setlistTitle[0].setAttribute('style', 'display: block;')
+                })
+            }
+        });
         
+    }
+
+    componentDidUpdate(prevProps) {
     }
 
     eventClick(e) {
         console.log(e);
         console.log("hello");
 
+    }
+
+    addSong(e) {
+        this.props.addSongToUserLibrary(e.currentTarget.id)
+        let button = document.getElementById(e.currentTarget.id)
+        button.innerHTML = "Added!"
+
+        //Toggle button
     }
 
     // getDeezer(array) {
@@ -37,17 +64,17 @@ class UserSplash extends React.Component {
         let events;
         let that = this;
         let setlistTitle;
-        setTimeout(() => {
-            events = document.getElementsByClassName("user_eventDiv__2qhai");
-            setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
-            for (let i = 0; i < events.length; i++) {
-                events[i].addEventListener("click", (e) => {
-                    that.setState({songIds: that.props.events[e.currentTarget.id].songIds})
-                    console.log(setlistTitle);
-                    setlistTitle[0].setAttribute('style', 'display: block;')
-                })
-            }
-        }, 2000);
+        // setTimeout(() => {
+        //     events = document.getElementsByClassName("user_eventDiv__2qhai");
+        //     setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
+        //     for (let i = 0; i < events.length; i++) {
+        //         events[i].addEventListener("click", (e) => {
+        //             that.setState({songIds: that.props.events[e.currentTarget.id].songIds})
+        //             console.log(setlistTitle);
+        //             setlistTitle[0].setAttribute('style', 'display: block;')
+        //         })
+        //     }
+        // }, 2000);
 
         
         return (
@@ -75,9 +102,12 @@ class UserSplash extends React.Component {
                                 this.state.songIds.map((songId, idx) => {
                                     // console.log(this.state.songIds);
                                     return (
-                                        <label key={idx}> 
-                                            <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
-                                        </label>
+                                        <div key={idx}>
+                                            <label> 
+                                                <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                            </label>
+                                            <button className="library-add-song" id={songId} onClick={this.addSong}>Add To Library</button>
+                                        </div>
                                     )
                                 })
                             ): "hello"

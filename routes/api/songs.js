@@ -26,5 +26,11 @@ router.post("/", passport.authenticate('jwt', { session: false }), (req, res) =>
     newSong.save().then(song => res.json(song))
 })
 
+router.get("/", passport.authenticate('jwt', { session: false }), (req, res) => {
+    Song
+        .find({ userId: req.user._id })
+        .then((songs) => res.json(songs));
+})
+
 router.get("/test", (req, res) => res.json({ msg: "This is the songs route" }));
 module.exports = router;

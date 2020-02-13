@@ -10,6 +10,7 @@ import SignupFormContainer from './session/signup_form_container';
 import classes from './wrapper.module.css';
 import './reset.css';
 import UserSplashContainer from '../components/user/user_splash_container';
+import LibrarySplash from './Library/library_splash';
 import About from '../components/about/about';
 
 
@@ -18,10 +19,11 @@ const App = () => (
     <div className={classes.wrapper}>
         {/* <NavBarContainer className={classes.navContainer}/> */}
         <Switch>
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            <ProtectedRoute exact path="/" component={ConcertSearchContainer} />
+            <ProtectedRoute exact path="/search" component={ConcertSearchContainer} />
             <ProtectedRoute exact path="/prescriptions" component={UserSplashContainer} />
+            <ProtectedRoute exact path="/library" component={LibrarySplash} />
             <ProtectedRoute exact path="/about" component={About} />
         </Switch>
     </div>

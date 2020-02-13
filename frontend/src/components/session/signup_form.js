@@ -19,7 +19,7 @@ class SignupForm extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
+            this.props.history.push('/');
         }
 
         this.setState({ errors: nextProps.errors })
@@ -102,7 +102,7 @@ class SignupForm extends React.Component {
                   value="GET YOUR PRESCRIPTION"
                   className={classes.signupSubmit}
                 />
-                <Link className={classes.login} to={"/login"}>
+                <Link className={classes.login} to={"/"}>
                   <div>Returning Patients Here</div>
                 </Link>
               </div>
