@@ -11,6 +11,7 @@ import classes from './wrapper.module.css';
 import './reset.css';
 import UserSplashContainer from '../components/user/user_splash_container';
 import LibrarySplash from './Library/library_splash';
+import About from '../components/about/about';
 
 
 
@@ -23,6 +24,7 @@ const App = () => (
             <ProtectedRoute exact path="/search" component={ConcertSearchContainer} />
             <ProtectedRoute exact path="/prescriptions" component={UserSplashContainer} />
             <ProtectedRoute exact path="/library" component={LibrarySplash} />
+            <ProtectedRoute exact path="/about" component={About} />
         </Switch>
     </div>
 );

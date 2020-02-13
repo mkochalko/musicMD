@@ -1,0 +1,104 @@
+.aboutContainer {
+    display: flex;
+    width: 100%
+}
+
+.aboutUs {
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "am ap"
+        "aj ap"
+        "ak ap"
+        "ab ap";
+}
+
+.aboutMatt {
+    grid-area: am;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.textDiv {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutJon {
+    grid-area: aj;
+    color: white;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.aboutKit {
+    grid-area: ak;
+    color: white;
+    padding: 15px;
+    display: flex;
+    width: 100%;
+}
+
+.aboutBarrett {
+    grid-area: ab;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.aboutProject {
+    grid-area: ap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.imgDiv {
+    width: 22.5%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.title {
+    height: 20%;
+    width: 60%;
+    color: white;
+    font-size: 22px;
+    padding: 5px;
+}
+
+.descriptions {
+    height: 80%;
+    width: 60%;
+    color: white;
+    font-size: 18px;
+}
+
+.icons {
+    width: 12.5%;
+    height: 100%;
+}
+
+.aboutText {
+    color: white;
+    padding: 10px;
+    line-height: 1.5;
+}
+
+.aboutPhoto {
+    height: 100%;
+    width: 100%;
+}
