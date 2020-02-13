@@ -38,7 +38,7 @@
     margin: 20px;
 }
 .toLogIn{
-    
+
     display: flex;
     flex-direction: column;
     border-radius: 15px 0px 0px 15px;
@@ -67,6 +67,7 @@ input {
     font-size: 20px;
     font-weight: 500;
     margin: 20px;
+    margin-bottom: 100px;
 }
 
 .inputContainer {
@@ -99,7 +100,6 @@ input {
   background-color: #2E294E;
   padding: 17px 60px;
   margin: 0 auto;
-  margin-top: 80px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.20);
   width: 200px;
 }
