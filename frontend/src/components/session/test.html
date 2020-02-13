@@ -1,0 +1,50 @@
+
+<form onSubmit={this.handleSubmit} className="signupForm">
+  <div className={classes.inputContainer}>
+    <input
+      type="text"
+      value={this.state.email}
+      onChange={this.update("email")}
+      placeholder="Email"
+      className={classes.Input}
+    />
+    <br />
+    <input
+      type="text"
+      value={this.state.username}
+      onChange={this.update("username")}
+      placeholder="Username"
+      className={classes.Input}
+    />
+    <br />
+    <input
+      type="password"
+      value={this.state.password}
+      onChange={this.update("password")}
+      placeholder="Password"
+      className={classes.Input}
+    />
+    <br />
+    <input
+      type="password"
+      value={this.state.password2}
+      onChange={this.update("password2")}
+      placeholder="Confirm Password"
+      className={classes.Input}
+    />
+    <div className={classes.errors}>
+
+      {this.renderErrors()}
+
+    </div>
+    <br />
+    <input
+      type="submit"
+      value="GET YOUR PRESCRIPTION"
+      className={classes.signupSubmit}
+    />
+    <Link className={classes.login} to={"/"}>
+      <div>Returning Patients Here</div>
+    </Link>
+  </div>
+</form>

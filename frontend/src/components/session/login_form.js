@@ -77,10 +77,6 @@ class LoginForm extends React.Component {
                     <div className={classes.inputContainer}>
                         <div className={classes.date}>{current}</div>
 
-                        {/* <div className={classes.note}>
-                            <div className={classes.musicMD}>Music MD</div>
-                            <div className={classes.musicMD}>Get your prescription filled</div>
-                        </div> */}
                             <div className={classes.inputs}>
                                 <input type="text"
                                     value={this.state.email}
