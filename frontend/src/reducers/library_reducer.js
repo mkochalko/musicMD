@@ -10,10 +10,10 @@ const libraryReducer = (state = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_LIBRARY:
-      newState[action] = action.library;
+      newState = Object.assign(newState, action.library);
       return newState;
     case RECEIVE_LIBRARY_SONG:
-      newState[action] = action.songId;
+      newState = Object.assign(newState, action.song.songIds);
       return newState
     case REMOVE_LIBRARY_SONG:
       delete newState.action.songId;

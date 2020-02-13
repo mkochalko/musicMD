@@ -10,8 +10,9 @@ const updateLibrary = song => ({
   song
 });
 
-const getLibrary = () => ({
-  type: RECEIVE_LIBRARY
+const getLibrary = (library) => ({
+  type: RECEIVE_LIBRARY,
+  library
 })
 
 const removeLibrarySong = songId => ({
@@ -22,18 +23,17 @@ const removeLibrarySong = songId => ({
 
 export const fetchUserLibrary = () => dispatch => (
   fetchLibrary()
-    .then(() => {
-      return dispatch(getLibrary())
-    }
-    )
+    .then((library) => dispatch(getLibrary(library.data.songIds)))
 );
 
 export const addSongToUserLibrary = (songId) => dispatch => (
   addSongToLibrary(songId)
-    .then(song => dispatch(updateLibrary(song)))
+    .then(song => dispatch(updateLibrary(song.data[0])))
 )
 
 export const deleteSongFromUserLibrary = () => dispatch => (
   deleteSongFromLibrary()
-    .then((song) => dispatch(removeLibrarySong(song)))
+    .then((song) => {
+      console.log(song)
+      dispatch(removeLibrarySong(song))})
 )
