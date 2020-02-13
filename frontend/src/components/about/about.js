@@ -11,7 +11,7 @@ export default class About extends React.Component {
                 <div className={classes.aboutUs} >
                     <div className={classes.aboutMatt}>
                         <div className={classes.imgDiv}>
-                            <img className={classes.aboutPhoto} src="./pics/theDoctor.jpeg"/>
+                            <img className={classes.aboutPhoto} src="/images/matt.png"/>
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Matt: Team Leader</p>
@@ -90,7 +90,7 @@ export default class About extends React.Component {
                             We thought about leaving you with some catchy quote from a famous musician,
                             but we'll let the music do the talking instead.
                         </p>
-                        <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}></a>
+                        <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}><img src="/images/github_icon.png"/></a>
                         <p className={navClasses.iconName}>Repo</p>
                     </div>
                 </div>
