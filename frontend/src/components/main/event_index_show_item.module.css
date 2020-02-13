@@ -82,8 +82,11 @@
 
 .setList {
     margin-left: 40px;
-    height: 100vh;
-    overflow: auto;
+    height: 80%;
+    overflow: scroll;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .deezerTracks {
@@ -97,4 +100,8 @@
     text-align: center;
     padding-bottom: 10px;
     margin-bottom: 25px;
+}
+
+.nameHeading {
+    max-width: 360px;
 }

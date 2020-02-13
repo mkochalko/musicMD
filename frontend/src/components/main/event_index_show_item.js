@@ -103,7 +103,7 @@ class EventIndexShowItem extends React.Component {
                 <div className={classes.searchShowPage}>
                     <div className={classes.eventDetails}>
                         <div className={classes.eventName}>
-                            <h1>{this.props.event.name}</h1>
+                            <h1 className={classes.nameHeading}>{this.props.event.name}</h1>
                             <br />
                             <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name} />
                             <br />
