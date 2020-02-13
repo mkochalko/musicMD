@@ -69,45 +69,59 @@ class LoginForm extends React.Component {
         let today = new Date();
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
         return (
-            
-            <div className={classes.loginContainer}>
-                <div className={classes.background}></div>
-
-                <form onSubmit={this.handleLogin}>
-                    <div className={classes.inputContainer}>
-                        <div className={classes.date}>{current}</div>
-
-                        {/* <div className={classes.note}>
-                            <div className={classes.musicMD}>Music MD</div>
-                            <div className={classes.musicMD}>Get your prescription filled</div>
-                        </div> */}
-                            <div className={classes.inputs}>
-                                <input type="text"
-                                    value={this.state.email}
-                                    onChange={this.update('email')}
+            <div className={classes.page}>
+                <div className={classes.signupContainer}>
+       
+                    <div className={classes.signupFrom}>
+                        <h1>Log In</h1>
+                        <h2>The Doctor Will Be In Soon</h2>
+                        <form onSubmit={this.handleLogin} className="signupForm">
+                            <div className={classes.inputContainer}>
+                                <input 
+                                    type="text" 
+                                    value={this.state.email}   
+                                    onChange={this.update('email')} 
                                     placeholder="Email"
-                                    className={classes.emailInput}
                                 />
-                                <input type="password"
-                                    value={this.state.password}
-                                    onChange={this.update('password')}
+                                <input 
+                                    type="password" 
+                                    value={this.state.password} 
+                                    onChange={this.update('password')} 
                                     placeholder="Password"
-                                    className={classes.passwordInput}
                                 />
-                            </div>
-                        <input type="submit" value="GET YOUR PRESCRIPTION (LOG IN)" className={classes.loginSubmit} />
-                    </div>
+                   
+                                <button
+                                    type="submit"
+                                    className={classes.loginbtn}>
+                                    <span>Log in!</span>
+                                </button>
+                                <button
+                                    type="submit"
+                                    className={classes.loginbtn}>
+                                    <span>Demo User</span>
+                                </button>
+                        
+                                <div className={classes.errors}>
 
-                </form>
-                    <Link className={classes.login} to={"/signup"}>
-                        <div>Sign Up</div>
-                    </Link>
-                <div className={classes.buttons}>
-                    <form onSubmit={this.handleDemo}>
-                        <input type="submit" value="EMERGENCY PRESCRIPTION (DEMO)" className={classes.demoSubmit} />
-                    </form>
+                                    {this.renderErrors()}
+
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div className={classes.toSignIn}>
+                        <h1>New Patient?</h1>
+                        <h2>If you dont't have an account, sign up here!</h2>
+                        <Link to={"/signup"}>
+                            <button className={classes.loginbtn}><span>Sign Up!</span></button>
+                        </Link>
+
+
+                    </div>
                 </div>
             </div>
+            
         );
     }
 }
