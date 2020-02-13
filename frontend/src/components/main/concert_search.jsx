@@ -85,22 +85,12 @@ class ConcertSearch extends React.Component {
        
         return (
             <div className={navClasses.wrapper}>
-                <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <div className={classes.indexSearchContainer}>
-                    <div className={classes.titleDiv}>Music MD</div>
-                    <div className={classes.searchBar} onSubmit={this.handleSubmit}>
-                    <form >
-                        <input
-                            type="text"
-                            placeholder="Search by City!"
-                            className={classes.searchInput}
-                            onChange={this.update('search')}
-                            value={this.state.search}
-                        />
-                        <input className={classes.submit} type="submit" value="SEARCH" />
-                    </form>
-
+                <NavBarContainer className={navClasses.navContainer}></NavBarContainer> 
+                <div className={classes.searchPage}>
+                    <div className={classes.titleContainer}>
+                        <img src="/images/logo2white.png"></img> 
                     </div>
+<<<<<<< HEAD
                     <div className={classes.searchPage}>
                         <div className={classes.map}>
                             <Map city={this.state.city} resetState={this.resetState}></Map>
@@ -110,7 +100,30 @@ class ConcertSearch extends React.Component {
                         </div>
                         <div className={classes.eventShow}>
                             {this.props.events.length > 0 && Object.values(this.props.setlist) ? <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]} /> : null}
+=======
+                    <div className={classes.indexSearchContainer}>
+                        <div className={classes.searchBar} onSubmit={this.handleSubmit}>
+                            <form >
+                                <input
+                                    type="text"
+                                    placeholder="Search by City!"
+                                    className={classes.searchInput}
+                                    onChange={this.update('search')}
+                                    value={this.state.search}
+                                />
+                                <input className={classes.submit} type="submit" value="SEARCH" />
+                            </form>
+                        </div> 
+                        <div className={classes.map}>   
+                            <Map city={this.state.city} resetState={this.resetState} ></Map>
+>>>>>>> master
                         </div>
+                    </div>
+                    <div className={classes.eventIndex} onClick={this.handleEventClick}>
+                        {this.props.events.length > 0 ? <EventsIndexContainer /> : null}
+                    </div>
+                    <div className={classes.eventShow}>
+                        {this.props.events.length > 0 && Object.values(this.props.setlist) ? <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]} /> : null}
                     </div>
                 </div>
             </div>

@@ -8,10 +8,10 @@ export default class About extends React.Component {
         return(
             <div class={classes.aboutContainer} >
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <div className={classes.aboutUs} >
+                <div className={classes.aboutUs}>
                     <div className={classes.aboutMatt}>
                         <div className={classes.imgDiv}>
-                            <img className={classes.aboutPhoto} src="/images/matt.png"/>
+                            <img className={classes.aboutPhoto} src="/images/theDoctor.png" alt="Matt" />
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Matt: Team Leader</p>
@@ -26,13 +26,11 @@ export default class About extends React.Component {
                         </div>
                         <div className={classes.icons}>
                             <a href="https://www.linkedin.com/in/mkochalko/" target="_blank" className={navClasses.linkedInIcon}></a>
-                            <p className={navClasses.iconName}>Matt</p>
                         </div>
                     </div>
                     <div className={classes.aboutJon} >
                         <div className={classes.icons}>
                             <a href="https://www.linkedin.com/in/jonjonlai/" target="_blank" className={navClasses.linkedInIcon}></a>
-                            <p className={navClasses.iconName}>Jon</p>
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Jon: Backend Engineer</p>
@@ -61,13 +59,11 @@ export default class About extends React.Component {
                         </div>
                         <div className={classes.icons}>
                             <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" target="_blank" className={navClasses.linkedInIcon}></a>
-                            <p className={navClasses.iconName}>Kit</p>
                         </div>
                     </div>
                     <div className={classes.aboutBarrett} >
                         <div className={classes.icons}>
                             <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.linkedInIcon}></a>
-                            <p className={navClasses.iconName}>Barrett</p>
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Barrett: Frontend Engineer</p>
@@ -78,6 +74,7 @@ export default class About extends React.Component {
                         </div>
                     </div>
                     <div className={classes.aboutProject}>
+                        <p className={classes.aboutTitle}>Our Story</p>
                         <p className={classes.aboutText} >
                                 For us, Music MD is more than just an app to showcase our skills.
                             It is the creative expression of our passion for music, and the 
