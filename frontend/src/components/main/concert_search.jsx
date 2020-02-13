@@ -7,12 +7,12 @@ import EventsIndexContainer from './events_index_container';
 import EventIndexShowItemContainer from './event_index_show_item_container';
 import NavBarContainer from '../nav/navbar_container';
 import axios from 'axios';
+import { timingSafeEqual } from 'crypto';
 
 
 class ConcertSearch extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = { selectedEvent: 0 }
         this.state.search = ""; 
         this.handleEventClick = this.handleEventClick.bind(this);
@@ -23,6 +23,7 @@ class ConcertSearch extends React.Component {
     componentDidMount() {
         let latlng = '37.7749,-122.4194'
         this.props.getMetroIdByClick(latlng)
+        this.setState({events: this.props.events})
     }
 
    
@@ -50,13 +51,18 @@ class ConcertSearch extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        this.props.getMetroIdByText(this.state.search).then(this.props.resetState);
-
-        // console.log(this.state.search);
-        let city = e.target.innerHTML.split(`value="`)[1].split(`">`)[0];
-
-        this.setState({ city: city })
-        
+        let target = e.target;
+        let that = this;
+        this.props.getMetroIdByText(this.state.search)
+            .then((data) => {
+                console.log(data)
+                if (data.length > 0) {
+                    that.resetState()
+                    let city = target.innerHTML.split(`value="`)[1].split(`">`)[0];
+                    console.log(city)
+                    that.setState({ city: city })
+                }
+            })
     } 
 
     update(field) {
@@ -76,7 +82,6 @@ class ConcertSearch extends React.Component {
 
 
     render() {
-      
        
         return (
             <div className={navClasses.wrapper}>
@@ -101,7 +106,7 @@ class ConcertSearch extends React.Component {
                             <Map city={this.state.city} resetState={this.resetState}></Map>
                         </div>
                         <div className={classes.eventIndex} onClick={this.handleEventClick}>
-                            {this.props.events.length > 0 ? <EventsIndexContainer /> : null}
+                            {this.props.events.length > 0 ? <EventsIndexContainer events={this.state.events} /> : <div>No Events Found</div>}
                         </div>
                         <div className={classes.eventShow}>
                             {this.props.events.length > 0 && Object.values(this.props.setlist) ? <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]} /> : null}
