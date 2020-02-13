@@ -59,10 +59,10 @@ class SignupForm extends React.Component {
         <div className={classes.page}>
             <div className={classes.signupContainer}>
                 <div className={classes.toLogIn}>
-                    <h1>Welcome Back</h1>
+                    <h1>Returning Patient?</h1>
                     <h2>If you already have an account, log in here!</h2>
                         <Link to={"/"}>
-                        <button  className={classes.loginbtn}><span>Log In!</span></button>
+                            <button className={classes.loginbtn}><span>Log In!</span></button>
                         </Link>
                 </div>
                 <div className={classes.signupFrom}>
