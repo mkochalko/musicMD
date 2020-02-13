@@ -128,15 +128,18 @@ class EventIndexShowItem extends React.Component {
                     </div> 
                 </div>
                 <br />
-                <ul className={classes.setList}>
-                    { Object.keys(this.props.deezer).length > 0 ? (
-                        Object.values(this.props.deezer).map((song, idx) => (
-                            <label key={idx} >
-                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
-                            </label>
-                        ))) : ""
-                    }
-                </ul>
+                <div className={classes.setlistContainer}>
+                    <p className={classes.setlistTitle}>Setlist</p>
+                    <ul className={classes.setList}>
+                        { Object.keys(this.props.deezer).length > 0 ? (
+                            Object.values(this.props.deezer).map((song, idx) => (
+                                <label key={idx} >
+                                <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
+                                </label>
+                            ))) : ""
+                        }
+                    </ul>
+                </div>
             </div>
         )
     }
