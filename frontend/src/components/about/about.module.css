@@ -25,12 +25,6 @@
     width: 100%;
 }
 
-.textDiv {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-}
-
 .aboutJon {
     grid-area: aj;
     color: white;
@@ -63,33 +57,52 @@
     align-items: center;
     padding: 20px;
     font-size: 18px;
+    justify-content: center;
+}
+
+.aboutTitle {
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .imgDiv {
-    width: 22.5%;
+    width: 25%;
     height: 100%;
-    object-fit: contain;
+    object-fit: scale-down;
     padding: 5px;
+    display: flex;
+}
+
+.textDiv {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
     height: 20%;
-    width: 60%;
+    width: 100%;
     color: white;
-    font-size: 22px;
-    padding: 5px;
+    font-size: 28px;
+    padding: 10px;
 }
 
-.descriptions {
-    height: 80%;
-    width: 60%;
+.description {
+    height: 70%;
+    width: 100%;
     color: white;
     font-size: 18px;
+    padding: 10px;
 }
 
 .icons {
-    width: 12.5%;
+    width: 15%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .aboutText {

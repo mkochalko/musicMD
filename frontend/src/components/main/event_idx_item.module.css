@@ -22,7 +22,8 @@
 }
 
 .eventItemContainer {
-    overflow: auto;
+    margin-top: 20px;
+    overflow: scroll;
     height: 80%;
 }
 
