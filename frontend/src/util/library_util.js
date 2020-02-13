@@ -1,6 +1,14 @@
 import axios from 'axios';
 
-export const fetchUserLibraryApi = () => (
+export const fetchLibrary = () => (
   axios.get('api/libraries/library')
+);
+
+export const addSongToLibrary = (songId) => (
+  axios.put(`api/libraries/library?string=${songId}`)
+);
+
+export const deleteSongFromLibrary = (songId) => (
+  axios.delete(`api/libraries/library?string=${songId}`)
 );
 
