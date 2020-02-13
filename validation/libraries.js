@@ -2,7 +2,11 @@ const Validator = require("validator");
 const validText = require("./valid-text");
 const express = require("express");
 const router = express.Router();
-module.exports = function validateLibraryData(data) {
+const passport = require("passport");
+const jwt = require("jsonwebtoken");
+
+
+const validateLibraryData = (data)  => {
     let errors = {};
     data.eventIds = data.eventIds.split(",").map(songId => { return parseInt(songId) })
     data.songIds = data.songIds.split(",").map(songId => { return parseInt(songId) })
@@ -18,3 +22,10 @@ module.exports = function validateLibraryData(data) {
         isValid: Object.keys(errors).length === 0
     };
 };
+
+const validateAddSong = (songId, userId) => {
+  
+
+}
+
+module.exports = {validateAddSong, validateLibraryData};
