@@ -59,7 +59,8 @@ class SignupForm extends React.Component {
         <div className={classes.page}>
             <div className={classes.signupContainer}>
                 <div className={classes.toLogIn}>
-                    <p>tosiginin</p>
+                    <h1>Welcome Back</h1>
+                    <h2>If you already have an account, log in here!</h2>
                 </div>
                 <div className={classes.signupFrom}>
                     <p>form</p>

@@ -28,6 +28,10 @@ time, mark, audio, video {
 	vertical-align: baseline;
   font-family: 'Didact Gothic', sans-serif;
 }
+body, a, button, link {
+  font-family: 'Didact Gothic', sans-serif;
+
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -36,7 +40,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   background: rgb(46,41,78);
-background: radial-gradient(circle, rgba(46,41,78,1) 0%, rgba(6,6,26,1) 70%);
+  background: radial-gradient(circle, rgba(46,41,78,1) 0%, rgba(6,6,26,1) 70%);
 }
 ol, ul {
 	list-style: none;
