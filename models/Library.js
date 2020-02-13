@@ -12,7 +12,7 @@ const LibrarySchema = new Schema({
         ref: 'Event'
     }],
     songIds: [{
-        type: mongoose.Schema.Types.ObjectId,
+        type: String,
         ref: 'Song'
     }]
 })
