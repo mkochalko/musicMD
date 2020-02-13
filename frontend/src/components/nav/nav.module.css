@@ -69,8 +69,10 @@
     align-self: center;
 }
 
-.gitIcon {
-    background-image: url('./icons/git_icon.png');
+.gitIcon img {
+    /* background-image: url('/images/git_icon.png'); */
+    background-color: white;
+    border-radius: 10%;
     background-repeat: no-repeat;
     height: 80px;
     width: 80px;

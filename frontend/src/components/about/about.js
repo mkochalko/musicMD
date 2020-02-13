@@ -11,7 +11,7 @@ export default class About extends React.Component {
                 <div className={classes.aboutUs} >
                     <div className={classes.aboutMatt}>
                         <div className={classes.imgDiv}>
-                            <img className={classes.aboutPhoto} src="./pics/theDoctor.jpeg"/>
+                            <img className={classes.aboutPhoto} src="/images/matt.png"/>
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Matt: Team Leader</p>
@@ -48,7 +48,16 @@ export default class About extends React.Component {
                         </div>
                         <div className={classes.textDiv}>
                             <p className={classes.title}>Kit: Fullstack Engineer</p>
-                            <p className={classes.description}></p>
+                            <p className={classes.description}>
+                                Kit previously worked as a private network engineer 
+                                for high net worth clients before deciding to pursue 
+                                his passion in coding. His experience as an engineer 
+                                provided great insight on the flow of a project from 
+                                start to finish, as shown through his leadership as 
+                                the Fullstack engineer. In addition to ensuring a 
+                                proper workflow from frontend to backend, Kit also 
+                                led the UI/UX design of MusicMD.
+                            </p>
                         </div>
                         <div className={classes.icons}>
                             <a href="https://www.linkedin.com/in/ankit-patel-aa5216133/" target="_blank" className={navClasses.linkedInIcon}></a>
@@ -90,7 +99,7 @@ export default class About extends React.Component {
                             We thought about leaving you with some catchy quote from a famous musician,
                             but we'll let the music do the talking instead.
                         </p>
-                        <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}></a>
+                        <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}><img src="/images/github_icon.png"/></a>
                         <p className={navClasses.iconName}>Repo</p>
                     </div>
                 </div>

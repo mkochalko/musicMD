@@ -30,8 +30,9 @@ class EventIndexShowItem extends React.Component {
     }
 
     configureSetList(setlist) {
-        if (setlist[0]) {
-        
+        if (setlist === undefined) {
+            return []
+        } else if (setlist[0]) {
             let newSetlist;
             for (let i = 0; i < setlist.length; i++) {
                 if (setlist[i].sets.set.length > 0) {
@@ -43,24 +44,29 @@ class EventIndexShowItem extends React.Component {
     }
 
     fetchAllMusicInfo() {
-        let artist = this.props.event._embedded.attractions[0].name;
-        this.props.getSetlist(artist).then(setlist => {
-            let newSetlist = this.configureSetList(setlist.data.setlist)
-            if (newSetlist) {
-                newSetlist.map(song => (
-                    this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-                ))
+        if (this.props.event._embedded.attractions[0]) {
+            let artist = this.props.event._embedded.attractions[0].name;
+            this.props.getSetlist(artist).then(setlist => {
+                let newSetlist = this.configureSetList(setlist.data.setlist)
+                if (newSetlist) {
+                    newSetlist.map(song => (
+                        this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+                    ))
+                }
+            });
+            let loading = document.getElementById("loading");
+            if (loading) {
+                loading.setAttribute("style", "display: block");
+
+                setTimeout(() => {
+
+                    loading.setAttribute("style", "display: none");
+                }, 2000)
             }
-        });
-        let loading = document.getElementById("loading");
-        if (loading) {
-            loading.setAttribute("style", "display: block");
-
-            setTimeout(() => {
-
-                loading.setAttribute("style", "display: none");
-            }, 2000)
+        } else {
+            alert("No Songs Found")
         }
+
     }
 
     handleClick() {
@@ -92,53 +98,61 @@ class EventIndexShowItem extends React.Component {
     render() {
         
         
-       
-        return (
-            <div className={classes.searchShowPage}>
-                <div className={classes.eventDetails}>
-                    <div className={classes.eventName}>
-                        <h1>{this.props.event.name}</h1>
-                        <br/>
-                        <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name}/> 
+        if (this.props.event.dates.start.localDate) {
+            return (
+                <div className={classes.searchShowPage}>
+                    <div className={classes.eventDetails}>
+                        <div className={classes.eventName}>
+                            <h1>{this.props.event.name}</h1>
+                            <br/>
+                            <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name}/> 
+                            <br />
+                            <h3>{this.props.event._embedded.venues[0].name}</h3>   
+                        </div> 
+                        <div className={classes.eventLocation}>
+                            <p>{this.props.event._embedded.venues[0].address.line1}, {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}</p>
+                        </div>
                         <br />
-                        <h3>{this.props.event._embedded.venues[0].name}</h3>   
-                    </div> 
-                    <div className={classes.eventLocation}>
-                        <p>{this.props.event._embedded.venues[0].address.line1}, {this.props.event._embedded.venues[0].city.name}, {this.props.event._embedded.venues[0].state.stateCode}</p>
+                        <div className={classes.dateTime}>
+                            Date: {
+                                this.props.event.dates.start.localDate.split('-')[1] + '-' +
+                                this.props.event.dates.start.localDate.split('-')[2] + '-' +
+                                this.props.event.dates.start.localDate.split('-')[0]
+                                }
+                            <br/>
+                            <br/>
+                            Time: {
+                                this.props.event.dates.start.localTime.split(':')[0] <= 12 ? 
+                                this.props.event.data.start.localTime :
+                                (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
+                                this.props.event.dates.start.localTime.split(':')[1] + ':' +
+                                this.props.event.dates.start.localTime.split(':')[2]
+                            }
+                        </div>
+                        <div>
+                            <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
+                        </div> 
                     </div>
                     <br />
-                    <div className={classes.dateTime}>
-                        Date: {
-                            this.props.event.dates.start.localDate.split('-')[1] + '-' +
-                            this.props.event.dates.start.localDate.split('-')[2] + '-' +
-                            this.props.event.dates.start.localDate.split('-')[0]
-                            }
-                        <br/>
-                        <br/>
-                        Time: {
-                            this.props.event.dates.start.localTime.split(':')[0] <= 12 ? 
-                            this.props.event.data.start.localTime :
-                            (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
-                            this.props.event.dates.start.localTime.split(':')[1] + ':' +
-                            this.props.event.dates.start.localTime.split(':')[2]
+                    <ul className={classes.setList}>
+                        { Object.keys(this.props.deezer).length > 0 ? (
+                            Object.values(this.props.deezer).map((song, idx) => (
+                                <label key={idx} >
+                                <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
+                                </label>
+                            ))) : <div>
+                                <h1>Setlist Information Not Found!</h1>
+                                <div>Setlist information is based on user suggestions</div>
+                                <div>Current setlist did not return any information</div>
+                                <div>Please Try Again Later</div>
+                                </div>
                         }
-                    </div>
-                    <div>
-                        <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
-                    </div> 
+                    </ul>
                 </div>
-                <br />
-                <ul className={classes.setList}>
-                    { Object.keys(this.props.deezer).length > 0 ? (
-                        Object.values(this.props.deezer).map((song, idx) => (
-                            <label key={idx} >
-                            <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
-                            </label>
-                        ))) : ""
-                    }
-                </ul>
-            </div>
-        )
+            )
+        } else {
+            alert("Error")
+        }
     }
 }
 
