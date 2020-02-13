@@ -6,17 +6,17 @@ import {
 
 const libraryReducer = (state = {}, action) => {
   Object.freeze(state);
-  let newState = Object.assign({}, action.library);
+  let newState = Object.assign({}, action.payload);
 
   switch (action.type) {
     case RECEIVE_LIBRARY:
-      newState[action] = action.library;
+      newState = Object.assign(newState, action.payload);
       return newState;
     case RECEIVE_LIBRARY_SONG:
-      newState[action] = action.songId;
+      newState = Object.assign(newState, action.payload.songIds);
       return newState
     case REMOVE_LIBRARY_SONG:
-      delete newState.action.songId;
+      console.log(action.payload)
       return newState
     default:
       return state;
