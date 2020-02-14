@@ -90,17 +90,6 @@ class ConcertSearch extends React.Component {
                     <div className={classes.titleContainer}>
                         <img src="/images/logo2white.png"></img> 
                     </div>
-<<<<<<< HEAD
-                    <div className={classes.searchPage}>
-                        <div className={classes.map}>
-                            <Map city={this.state.city} resetState={this.resetState}></Map>
-                        </div>
-                        <div className={classes.eventIndex} onClick={this.handleEventClick}>
-                            {this.props.events.length > 0 ? <EventsIndexContainer events={this.state.events} /> : <div>No Events Found</div>}
-                        </div>
-                        <div className={classes.eventShow}>
-                            {this.props.events.length > 0 && Object.values(this.props.setlist) ? <EventIndexShowItemContainer event={this.props.events[this.state.selectedEvent]} /> : null}
-=======
                     <div className={classes.indexSearchContainer}>
                         <div className={classes.searchBar} onSubmit={this.handleSubmit}>
                             <form >
@@ -116,7 +105,6 @@ class ConcertSearch extends React.Component {
                         </div> 
                         <div className={classes.map}>   
                             <Map city={this.state.city} resetState={this.resetState} ></Map>
->>>>>>> master
                         </div>
                     </div>
                     <div className={classes.eventIndex} onClick={this.handleEventClick}>

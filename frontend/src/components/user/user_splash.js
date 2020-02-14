@@ -20,9 +20,17 @@ class UserSplash extends React.Component {
             this.props.fetchSongs()
 
             let events = document.getElementsByClassName("user_eventDiv__2qhai");
+            let loading = document.getElementById("loading");
+            let setlist = document.getElementsByClassName("user_deezer__2UEMn")
             let setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
             for (let i = 0; i < events.length; i++) {
                 events[i].addEventListener("click", (e) => {
+                    // loading.setAttribute("style", "display: block");
+
+                    // setTimeout(() => {
+
+                    //     loading.setAttribute("style", "display: none");
+                    // }, 2000)
                     let buttons = document.getElementsByClassName("library-add-song")
                     for (let j = 0; j < buttons.length; j++) {
                         buttons[j].innerHTML = "Add To Library"
@@ -78,7 +86,11 @@ class UserSplash extends React.Component {
 
         
         return (
+
             <div className={navClasses.wrapper}>
+                <div id="loading">
+                    <div id="record"></div>
+                </div>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
                 <div className={classes.greetingDiv}>
                     <p className={classes.userGreeting}>Hey {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1)}</p>
@@ -89,7 +101,7 @@ class UserSplash extends React.Component {
                     <div className={classes.userEventItem} >
                         {
                             Object.values(this.props.events).map((event, idx) => (
-                                <UserEventItem onClick={this.eventClick} event={event} key={idx} id={idx} />
+                                <UserEventItem  event={event} key={idx} id={idx} />
                             ))
                         }
                     </div>
