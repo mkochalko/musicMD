@@ -83,7 +83,7 @@
 .setList {
     margin-left: 40px;
     height: 80%;
-    overflow: scroll;
+    overflow: auto;
     justify-content: center;
     text-align: center;
     margin-bottom: 40px;
@@ -104,4 +104,10 @@
 
 .nameHeading {
     max-width: 360px;
+}
+.setlistcontainer{
+    height: 90vh;
+}
+.setlistfm{
+    text-align: right;
 }

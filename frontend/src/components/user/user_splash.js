@@ -55,7 +55,7 @@ class UserSplash extends React.Component {
     addSong(e) {
         this.props.addSongToUserLibrary(e.currentTarget.id)
         let button = document.getElementById(e.currentTarget.id)
-        button.innerHTML = "Added!"
+        button.innerHTML = "✓"
 
         //Toggle button
     }
@@ -121,15 +121,15 @@ class UserSplash extends React.Component {
                                     this.state.songIds.map((songId, idx) => {
                                         // console.log(this.state.songIds);
                                         return (
-                                            <div key={idx}>
+                                            <div key={idx} className={classes.trackContainer}>
                                                 <label> 
                                                     <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
                                                 </label>
-                                                <button className="library-add-song" id={songId} onClick={this.addSong}>Add To Library</button>
+                                                <button className={classes.addSong} id={songId} onClick={this.addSong}>+</button>
                                             </div>
                                         )
                                     })
-                                ): "Click Event To View Songs"
+                                ) : <p className={classes.notSelected}>Click Event To View Songs</p>
                             }
                         </div>
                 </div>
