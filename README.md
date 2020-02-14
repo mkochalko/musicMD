@@ -14,7 +14,7 @@ This application will allow you to generate upcoming events/concerts based on a 
 
 ### Search Function
 
-Our search function will allow the user to either click on our map or user our text bar to search locations for events. On search we call the Ticketmaster API to complete our page with a list of concerts and events. This allows users to see the specific details for any upcoming events. Using API calls to setlist.fm and deezer, we are able to populate the event setlist and playable songs for the user to listen to. 
+Our search function will allow the user to either click on our map or use our text bar to search locations for events. On a search we call the Ticketmaster API to compile a list of concerts and events. This allows users to see the specific details for any upcoming events. Using API calls to setlist.fm and deezer, we are able to populate the event setlist and playable songs for the user to listen to. 
 
 ![Search Page](https://github.com/mkochalko/musicMD/blob/master/frontend/public/SearchFeature.png)
 
@@ -24,29 +24,16 @@ Our search function will allow the user to either click on our map or user our t
 #### Frontend Lead - [Barrett Helzel](https://github.com/bhelzel) (Frontend Team)
 #### Team Lead - [Matt Kochalko](https://github.com/mkochalko) (Frontend Team)
 
-### Features in development: 
-* Users profile page
-  * Display all events users are attending
-  * Display options to add songs to master library 
-* Master Library
-  * Addition of songs
-  * Removal of songs
-  * Play songs feature
-* User Event Creation
-  * Dispaly Added events to users profile page
-
 ## Technologies Used
 
 ### MERN Stack
 This project is build using the MERN stack(MongoDB, Express.js, React and Node.js). MERN stack allows us to use mainly JavaScript to create a well designed interactive website with great UX/UI. 
 
-### Google login
-* Implementing the google login API with our current login information for a quick and easy login process.
 ### Multiple API Implementation
 * #### Google Maps API
-  * Display search results on the page for events in a specific location with markers on each event
+  * Display search results on the page for events in a specific location with markers on each location
 * #### Ticketmaster API
-  * Gather upcoming concert information to display on our map and list out all upcoming events
+  * Gather upcoming concert information to list all upcoming events
 * #### SetList API
   * Populate the most recent set list for a specific artist to then generate a playlist for the user to listen to
 * #### Deezer API
