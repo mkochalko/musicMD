@@ -153,7 +153,7 @@ class EventIndexShowItem extends React.Component {
                                 </div>
                             }
                         </ul>
-                        <p>Song titles provided by Setlist.fm</p>
+                        <p className={classes.setlistfm}>Song titles provided by Setlist.fm</p>
                     </div>
                 </div>
             )

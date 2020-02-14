@@ -12,6 +12,7 @@
     text-decoration: none;
     border-right: 1px white;
     /* box-shadow: 2px 0px 1px white; */
+    z-index: 10000;
 }
 
 .logoutButton {
