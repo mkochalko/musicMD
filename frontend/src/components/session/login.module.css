@@ -13,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+        min-width: 460px;
 }
 
 
@@ -50,6 +51,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    text-align: center;
 }
 input {
 	background-color: #eee;
@@ -59,7 +61,6 @@ input {
 }
 
 .toSignIn h1{
-    text-align: center;
     font-size: 50px;
     font-weight: 600;
     margin: 20px;    
@@ -129,6 +130,7 @@ input {
   -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
-form {
+.form {
     width: 80%;
+     height: max-content;
 }
