@@ -23,13 +23,15 @@ class NavBar extends React.Component {
                     <p className={classes.navIcon}>Home</p>
                     <Link to={'/prescriptions'} className={classes.profileLink}></Link>
                     <p className={classes.navIcon}>Profile</p>
+                    <Link to={'/library'} className={classes.libraryLink}></Link>
+                    <p className={classes.navIcon}>Library</p>
                     <Link to={'/about'} className={classes.aboutLink}></Link>
                     <p className={classes.navIcon}>About</p>
                     <button
                         onClick={this.logoutUser}
                         className={classes.logoutButton}
                     ></button>
-                    <p className={classes.navIcon}>Logout</p>
+                    <p className={classes.logoutIcon}>Logout</p>
                        
                 </div>
             );

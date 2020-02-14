@@ -22,6 +22,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             this.props.clearTracks();
             this.fetchAllMusicInfo();
+            document.getElementById('going').innerHTML = 'Get Prescription';
         }
     }
             
@@ -93,6 +94,8 @@ class EventIndexShowItem extends React.Component {
             userId: this.props.currentUser.id
         }
         this.props.postEvent(event)
+
+        document.getElementById('going').innerHTML = 'Going!';
     }
 
     render() {
@@ -130,7 +133,7 @@ class EventIndexShowItem extends React.Component {
                             }
                         </div>
                         <div>
-                            <button className={classes.goingButton} onClick={this.handleClick}>Get Prescription</button>
+                            <button className={classes.goingButton} id="going" onClick={this.handleClick}>Get Prescription</button>
                         </div>
                     </div>
                     <br />
