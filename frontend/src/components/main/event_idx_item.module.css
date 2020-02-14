@@ -23,7 +23,7 @@
 
 .eventItemContainer {
     margin-top: 20px;
-    overflow: scroll;
+    /* overflow: scroll; */
     height: 80%;
 }
 
