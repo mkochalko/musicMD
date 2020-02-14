@@ -10,7 +10,6 @@
     align-items: center;
     text-align: center;
     font-size: 36px;
-    /* font-family: 'Alef', sans-serif; */
 }
 
 .eventLocation {
@@ -56,7 +55,7 @@
 
 .searchShowPage {
     display: flex;
-
+    overflow: hidden;
 }
 
 .eventDetails {
@@ -83,11 +82,26 @@
 
 .setList {
     margin-left: 40px;
-    height: 100vh;
-    overflow: auto;
+    height: 80%;
+    overflow: scroll;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .deezerTracks {
     padding: 5px;
 }
 
+.setlistTitle {
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 36px;
+    justify-self: center;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.nameHeading {
+    max-width: 360px;
+}

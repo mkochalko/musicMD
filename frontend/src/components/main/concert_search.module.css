@@ -1,28 +1,49 @@
-.titleDiv {
+/* .titleDiv {
     color: white;
-    font-size: 36px;
+    height: 100px;
+    background-repeat: no-repeat;
+    
+} */
+
+.titleContainer {
+    grid-area: ttl;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 .wrapper {
-    width: 100vh;
-    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .searchBar{
-    height: 50px;
+    height: 36px;
     width: 600px;
-    margin-top: 15px;
     text-align: center;
-    
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
 .searchInput {
-    height: 50px;
-    width: 60%;
+    height: 40px;
+    width: 70%;
     text-align: center;
-    font-size: 30px;
-    border-radius: 25px;
-    background-color: transparent;
-    border: none;
+    font-size: 36px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 15px;
     color: white;
+    outline: none;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid white;
+}
+
+.searchBar:active {
+    outline: none;
 }
 
 .submit {
@@ -30,31 +51,39 @@
 }
 
 .searchPage {
-    margin-top: 40px;
     display: grid;
     width: 100%;
     height: 100vh;
     color: white;
-    grid-template-columns: 35% 65%;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 32.5% 62.5%;
+    grid-template-rows: 1.5fr 1.4fr 3fr 3fr;
+    grid-row-gap: 10px;
     grid-template-areas: 
+        "ttl ttl"
         "map shw"
         "idx shw"
         "idx shw";
-    overflow-y: scroll;
 }
 
 
 .map {
     /* grid-area: map; */
     padding-left: 30px;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    margin-top: 25px;
+    height: 75%;
+    width: 100%;
+    overflow: auto;
     /* width: 100%; */
 }
 
 .eventIndex {
-    margin-top: 20px;
     grid-area: idx;
+    grid-row-start: 3;
     padding-left: 30px;
+    overflow: scroll;
+    /* margin-top: -250px; */
 }
 
 .eventShow {
@@ -66,10 +95,20 @@
 
 .indexSearchContainer {
     width: 100%;
+    height: 35vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    grid-area: map;
     /* background-color: #7f5a83;
     background-image: linear-gradient(280deg,  #80088d  0%, #032842 74%); */
+}
+
+form {
+    height: 50px;
+}
+
+form > input {
+    margin: 0;
 }
