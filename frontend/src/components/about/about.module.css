@@ -1,115 +1,117 @@
 .aboutContainer {
-    display: flex;
-    width: 100%
+  display: flex;
+  width: 100%;
 }
 
 .aboutUs {
-    display: grid;
-    height: 100vh;
-    width: 100%;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows:  .3fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: 
-        
-        "ti ap"
-        "am ap"
-        "aj ap"
-        "ak ap"
-        "ab ap";
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "ti ap"
+    "am ap"
+    "aj ap"
+    "ak ap"
+    "ab ap";
 }
 
 .aboutMatt {
-    grid-area: am;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    /* height: 25%; */
+  grid-area: am;
+  /* padding: 15px; */
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* height: 25%; */
 }
 
 .aboutJon {
-    grid-area: aj;
-    padding: 15px;
-    display: flex;
-    width: 100%;
+  grid-area: aj;
+  /* padding: 15px; */
+  display: flex;
+  width: 100%;
 }
 
 .aboutKit {
-    grid-area: ak;
-    padding: 15px;
-    display: flex;
-    width: 100%;
+  grid-area: ak;
+  /* padding: 15px; */
+  display: flex;
+  width: 100%;
 }
 
 .aboutBarrett {
-    grid-area: ab;
-    padding: 15px;
-    margin-bottom: 10px;
-    display: flex;
-    width: 100%;
+  grid-area: ab;
+  /* padding: 15px; */
+  /* margin-bottom: 10px; */
+  display: flex;
+  width: 100%;
 }
 
 .aboutProject {
-    grid-area: ap;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-size: 18px;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.15);
-    margin: 20px;
-    border-radius: 15px;
+  grid-area: ap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin: 20px;
+  border-radius: 15px;
+  text-align: center;
+  min-width: 325px;
 }
 
 .aboutTitle {
-    font-size: 30px;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  font-size: 30px;
+  /* margin-top: 20px; */
+  /* margin-bottom: 10px; */
 }
 
 .imgDiv {
-    width: 25%;
-    height: 100%;
-    object-fit: scale-down;
-    padding: 5px;
-    display: flex;
+  width: 25%;
+  height: 100%;
+  object-fit: scale-down;
+  /* padding: 5px; */
+  display: flex;
 }
 
 .textDiv {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
-    height: 20%;
-    width: 100%;
-    font-size: 28px;
-    padding: 10px;
+  height: 20%;
+  width: 100%;
+  font-size: 28px;
+  /* padding: 10px; */
 }
 
 .description {
-    height: 70%;
-    width: 100%;
-    font-size: 18px;
-    padding: 10px;
+  height: 70%;
+  width: 100%;
+  font-size: 18px;
+  /* padding: 10px; */
 }
 
 .icons {
-    width: 15%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .aboutText {
-    padding: 10px;
-    line-height: 1.5;
+  /* padding: 10px; */
+  line-height: 1.5;
 }
 
 .aboutPhoto {
-    height: auto;
-    width: 100%;
+  height: auto;
+  width: 100%;
 }

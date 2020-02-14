@@ -96,8 +96,11 @@ export default class About extends React.Component {
                             We thought about leaving you with some catchy quote from a famous musician,
                             but we'll let the music do the talking instead.
                         </p>
-                        <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}><img src="/images/github_icon.png"/></a>
-                        <p className={navClasses.iconName}>Repo</p>
+                        <div>
+
+                            <a href="https://github.com/mkochalko/musicMD" target="_blank" className={navClasses.gitIcon}><img src="/images/github_icon.png"/></a>
+                            <p className={navClasses.iconName}>Repo</p>
+                        </div>
                     </div>
                 </div>
             </div>
