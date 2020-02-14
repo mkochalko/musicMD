@@ -5,8 +5,26 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb1c;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #FF416C; 
+}
 
+::-webkit-scrollbar-corner {
+	background-color: rgba(255, 248, 220, 0.075);
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
