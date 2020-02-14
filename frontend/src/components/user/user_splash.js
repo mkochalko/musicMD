@@ -20,9 +20,17 @@ class UserSplash extends React.Component {
             this.props.fetchSongs()
 
             let events = document.getElementsByClassName("user_eventDiv__2qhai");
+            let loading = document.getElementById("loading");
+            let setlist = document.getElementsByClassName("user_deezer__2UEMn")
             let setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
             for (let i = 0; i < events.length; i++) {
                 events[i].addEventListener("click", (e) => {
+                    loading.setAttribute("style", "display: block");
+
+                    setTimeout(() => {
+
+                        loading.setAttribute("style", "display: none");
+                    }, 2000)
                     let buttons = document.getElementsByClassName("library-add-song")
                     for (let j = 0; j < buttons.length; j++) {
                         buttons[j].innerHTML = "Add To Library"
@@ -78,7 +86,11 @@ class UserSplash extends React.Component {
 
         
         return (
+
             <div className={navClasses.wrapper}>
+                <div id="loading">
+                    <div id="record"></div>
+                </div>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
                 <div>
                     <div className={classes.greetingDiv}>
@@ -117,7 +129,7 @@ class UserSplash extends React.Component {
                                             </div>
                                         )
                                     })
-                                ): "hello"
+                                ): "Click Event To View Songs"
                             }
                         </div>
                 </div>
