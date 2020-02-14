@@ -75,7 +75,7 @@ class LoginForm extends React.Component {
                     <div className={classes.signupFrom}>
                         <h1>Log In</h1>
                         <h2>The Doctor Will Be In Soon</h2>
-                        <form onSubmit={this.handleLogin} className="signupForm">
+                        <form onSubmit={this.handleLogin} className={classes.form}>
                             <div className={classes.inputContainer}>
                                 <input 
                                     type="text" 
