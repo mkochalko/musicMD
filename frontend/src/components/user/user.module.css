@@ -1,73 +1,94 @@
 .greetingDiv {
     display: flex;
     flex-direction: column;
-    margin-left: 150px;
+    margin-left: 40px;
     margin-top: 20px;
     color: white;
+    width: 30vw;
+    /* font-family: 'Alef', sans-serif; */
     line-height: 1.5;
-    position: absolute;
+    /* position: absolute; */
     padding: 15px;
+    padding-bottom: 0;
+    max-height: 180px;
 }
 
 .userGreeting {
-    font-size: 24px;
+    font-size: 36px;
 }
 
 .userMessage {
-    font-size: 18px; 
+    padding-top: 20px;
+    font-size: 36px; 
+    text-align: center;
 }
 
 .userSplash {
-    margin-top: 120px;
-    overflow: auto;
-    width: 30vw;
-    height: 90vh;
+    margin-top: 25px;
+    overflow: scroll;
+    width: 28vw;
+    height:95vh;
+    margin-left: 40px;
+    background-color: rgba(255, 255, 255, 0.164);
+    border-radius: 15px;
+    /* box-shadow: 0px 0px 2px 0px grey; */
 }
 
 .userEventItem {
     color: white;
-    margin-left: 40px;
     overflow: scroll;
-    width: 100%;
+    width: inherit;
     position: relative;
     margin-bottom: 45px;
 }
 
 .eventDiv {
     line-height: 1.5;
-    padding-bottom: 25px;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
+    /* font-family: 'Alef', sans-serif; */
+    padding-top: 25px;
+    /* border-top-right-radius:10px;
+    border-bottom-left-radius:10px; */
     background-color: rgba(169, 169, 169, 0);
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    /* border-bottom: 1px solid white; */
     overflow: auto;
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
 }
 
 .eventDiv:hover {
-    border-bottom: 1px solid white;
-    background-color: rgb(1, 26, 105);
+    background-color: rgba(255, 65, 109, 0.637);
     cursor: pointer;
-    box-shadow: 1px 1px 1px white;
+    /* box-shadow: 1px 1px 1px white; */
 }
 
 .eventItemArtist {
     font-size: 36px;
     padding-left: 10px;
+    text-align: center;
+    text-decoration: underline;
+
 }
 
 .eventItemVenue {
     font-size: 24px;
     padding-left: 10px;
+    margin-left: 10%;
 }
 
 .eventItemAddress {
     font-size: 16px;
     padding-left: 10px;
+    margin-left: 10%;
+
 }
 
 .eventItemDate {
     font-size: 16px;
     padding-left: 10px;
+    margin-left: 10%;
 }
 
 .deezer {
@@ -81,7 +102,7 @@
     width: 500px;
     align-content: center;
     margin-left: 200px;
-    margin-top: 30px;
+    margin-top: 120px;
 }
 
 .deezerTrack {
@@ -91,31 +112,24 @@
 
 .setlistTitle {
     color: white;
-    font-size: 24px;
+    font-size: 36px;
     display: none;
+    padding-top: 15px;
 }
 
-#loading {
-    position: absolute;
-    display: none;
-    top: 0px;
-    left: 100px;
-    height: 100%;
-    background: radial-gradient(circle at bottom, #000033 0%, #090a0f 100%);
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
-    z-index: 500;
-}  
+.line {
+    padding-top: 40px;
+    width: 75%;
+    border-bottom: 1px solid rgba(255, 65, 109, 0.637);
+    margin-left: 12.5%;
+}
 
-#record {
-    position: absolute;
-    top: 45vh;
-    left: 45vw;
-    height: 100%;
-    width: 100%;
-    z-index: 502;
-    background-image: url('https://i.ibb.co/kXgtxsC/286.gif');
-    background-repeat: no-repeat;
-    background-size: 100px;
+.eventInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.deezerContainer {
+    padding: 25px;
 }
