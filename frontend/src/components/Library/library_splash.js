@@ -3,17 +3,37 @@ import LibraryContainer from './library_container';
 import classes from './library.module.css';
 import navClasses from '../../components/wrapper.module.css';
 import NavBarContainer from '../nav/navbar_container';
+import moment from 'moment';
 
 class LibrarySplash extends React.Component {
 
     render() {
-
+        let dateJoined = new Date(this.props.currentUser.date.slice(0, 10))
+        let configuredDateJoined = dateJoined.toString().slice(0, 16)
         return (
-            <div className={navClasses.wrapper}>
+            <div className={classes.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <h1>TEST</h1>
+                <div className={classes.libraryContainer}>
+                    <div className={classes.libraryHeaderSection}>
+                        <h1>Library</h1>
+                        <div className={classes.userInfoSection}>
+                            <div className={classes.userInfo}>
+                                <h3>Username: </h3>
+                                <h3>Email: </h3>
+                                <h3>Date Joined: </h3>
+                                <h3>Total Songs: </h3>
+                            </div>
+                            <div className={classes.userInfoResponse}>
+                                <h3>{this.props.currentUser.username}</h3>
+                                <h3>{this.props.currentUser.email}</h3>
+                                <h3>{configuredDateJoined}</h3>
+                                <h3>{this.props.library.length}</h3>
+                            </div>
+                        </div>
+                    </div>
 
-                <LibraryContainer />
+                    <LibraryContainer />
+                </div>
             </div>
         )
     }
