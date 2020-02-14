@@ -25,12 +25,12 @@ class UserSplash extends React.Component {
             let setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
             for (let i = 0; i < events.length; i++) {
                 events[i].addEventListener("click", (e) => {
-                    // loading.setAttribute("style", "display: block");
+                    loading.setAttribute("style", "display: block");
 
-                    // setTimeout(() => {
+                    setTimeout(() => {
 
-                    //     loading.setAttribute("style", "display: none");
-                    // }, 2000)
+                        loading.setAttribute("style", "display: none");
+                    }, 2000)
                     let buttons = document.getElementsByClassName("library-add-song")
                     for (let j = 0; j < buttons.length; j++) {
                         buttons[j].innerHTML = "Add To Library"
@@ -129,7 +129,7 @@ class UserSplash extends React.Component {
                                             </div>
                                         )
                                     })
-                                ): "hello"
+                                ): "Click Event To View Songs"
                             }
                         </div>
                 </div>
