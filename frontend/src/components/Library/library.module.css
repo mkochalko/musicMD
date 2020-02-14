@@ -1,3 +1,80 @@
-.text {
+.libraryContainer {
+    padding: 35px;
+    width: 900px;
     color: white;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.171);
+    border-radius: 15px;
+    height: 85vh;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.libraryHeaderSection > h1{
+    font-size: 72px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.userInfoSection {
+    font-size: 30px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.userInfoResponse {
+    margin-left: 40px;
+    color: #FF416C;
+}
+
+.userInfoSection > h3 {
+    padding: 5px;
+}
+
+.librarySongIndexList {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.librarySongIndex {
+    padding-top: 30px;
+    overflow: auto;
+    height: 600px;
+}
+
+.librarySongIndexItem {
+    display: flex;
+    /* border: 1px solid #FF416C; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.librarySongIndexItem > button {
+    cursor: pointer;
+}
+
+.deezerTrack {
+    padding: 0;
+}
+
+.librarySongIndexItem > button {
+    width: 200px;
+    font-size: 24px;
+    background-color: #1a1633;
+    color: #FF416C;
+    border: 1px solid #FF416C;
+}
+
+.librarySongIndexItem > button:hover {
+    background-color: #231e3e;
+}
+
+.librarySongIndexItem > button:focus {
+    outline: none;
 }

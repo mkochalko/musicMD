@@ -10,7 +10,7 @@ import SignupFormContainer from './session/signup_form_container';
 import classes from './wrapper.module.css';
 import './reset.css';
 import UserSplashContainer from '../components/user/user_splash_container';
-import LibrarySplash from './Library/library_splash';
+import LibrarySplashContainer from './Library/library_splash_container';
 import About from '../components/about/about';
 
 
@@ -23,7 +23,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/search" component={ConcertSearchContainer} />
             <ProtectedRoute exact path="/prescriptions" component={UserSplashContainer} />
-            <ProtectedRoute exact path="/library" component={LibrarySplash} />
+            <ProtectedRoute exact path="/library" component={LibrarySplashContainer} />
             <ProtectedRoute exact path="/about" component={About} />
         </Switch>
     </div>

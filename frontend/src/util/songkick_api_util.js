@@ -7,7 +7,6 @@ export const getEvents = (metroId) => {
     return (
         $.ajax({
             url: `https://api.songkick.com/api/3.0/metro_areas/${metroId}/calendar.json?apikey=${window.SKKey}`,
-            async: false,
             dataType: "json"
         })
     )
