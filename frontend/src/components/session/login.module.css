@@ -7,7 +7,7 @@
 }
 .signupContainer {
     border-radius: 15px;
-    opacity: 90%;
+    /* opacity: 90%; */
     width: 60%;
     height: 600px;
     display: flex;

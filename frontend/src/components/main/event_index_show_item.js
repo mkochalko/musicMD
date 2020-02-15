@@ -138,7 +138,7 @@ class EventIndexShowItem extends React.Component {
                     </div>
                     <br />
                     <div className={classes.setlistcontainer}>
-                        <p className={classes.setlistTitle}>Setlist</p>
+                        <p className={classes.setlistTitle}>Setlist*</p>
                         <ul className={classes.setList}>
                             {Object.keys(this.props.deezer).length > 0 ? (
                                 Object.values(this.props.deezer).map((song, idx) => (
@@ -153,7 +153,7 @@ class EventIndexShowItem extends React.Component {
                                 </div>
                             }
                         </ul>
-                        <p className={classes.setlistfm}>Song titles provided by Setlist.fm</p>
+                        <p className={classes.setlistfm}>*Song titles provided by Setlist.fm</p>
                     </div>
                 </div>
             )
