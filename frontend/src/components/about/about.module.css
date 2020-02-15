@@ -1,6 +1,7 @@
 .aboutContainer {
   display: flex;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 .aboutUs {
@@ -9,22 +10,30 @@
   width: 100%;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr;
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
   grid-template-areas:
     "ti ap"
     "am ap"
     "aj ap"
     "ak ap"
-    "ab ap";
+    "ab ap"
+    "x y";
+  overflow: auto;
+  /* margin-bottom: 30px; */
 }
-
+.team {
+  grid-area: ti;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
+}
 .aboutMatt {
   grid-area: am;
   /* padding: 15px; */
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* height: 25%; */
+  line-height: 1.2;
 }
 
 .aboutJon {
@@ -32,12 +41,16 @@
   /* padding: 15px; */
   display: flex;
   width: 100%;
+  text-align: right;
+  justify-content: flex-end;
 }
 
 .aboutKit {
   grid-area: ak;
   /* padding: 15px; */
   display: flex;
+  justify-content: space-between;
+  line-height: 1.2;
   width: 100%;
 }
 
@@ -47,6 +60,8 @@
   /* margin-bottom: 10px; */
   display: flex;
   width: 100%;
+  text-align: right;
+  justify-content: flex-end;
 }
 
 .aboutProject {
@@ -70,18 +85,14 @@
   /* margin-bottom: 10px; */
 }
 
-.imgDiv {
-  width: 25%;
-  height: 100%;
-  object-fit: scale-down;
-  /* padding: 5px; */
-  display: flex;
-}
-
 .textDiv {
   width: 60%;
   display: flex;
+  margin: 10px;
+  padding: 10px;
   flex-direction: column;
+  min-width: 450px;
+  justify-content: center;
 }
 
 .title {
@@ -99,11 +110,17 @@
 }
 
 .icons {
-  width: 15%;
-  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  width: 100px;
+  /* background-color: rgba(255, 255, 255, 0.219); */
+    margin: 2vh;
+}
+.iconlink {
+  /* background-color: red; */
+  width: 80%;
 }
 
 .aboutText {
@@ -114,4 +131,23 @@
 .aboutPhoto {
   height: auto;
   width: 100%;
+  overflow: none;
+  border: 3px solid #725ac1;
+  border-radius: 15px;
+}
+
+.imgDiv {
+  width: 25%;
+  height: 100%;
+  object-fit: scale-down;
+  margin: 2vw;
+  display: flex;
+  min-width: 150px;
+  max-width: 200px;
+}
+.svg {
+  fill: #725ac1;
+  margin: 2px;
+  width: 100%;
+  height: auto;
 }
