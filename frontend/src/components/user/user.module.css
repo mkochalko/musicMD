@@ -27,7 +27,7 @@
     margin-top: 25px;
     overflow: scroll;
     width: 28vw;
-    height:95vh;
+    height:80vh;
     margin-left: 40px;
     background-color: rgba(255, 255, 255, 0.164);
     border-radius: 15px;
@@ -58,10 +58,36 @@
     border-radius: 15px;
 }
 
+.trackContainer {
+    display: flex;
+    align-items: center;
+}
+
+.addSong {
+    height: 40px;
+    width: 40px;
+    font-size: 30px;
+    background-color: rgb(46,41,78);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-weight: 100;
+    margin-left: 15px;
+}
+
 .eventDiv:hover {
     background-color: rgba(255, 65, 109, 0.637);
     cursor: pointer;
     /* box-shadow: 1px 1px 1px white; */
+}
+
+.notSelected {
+    color: white;
+    font-size: 36px;
 }
 
 .eventItemArtist {

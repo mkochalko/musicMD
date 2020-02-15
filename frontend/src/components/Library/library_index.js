@@ -1,5 +1,7 @@
 import React from 'react'
 import LibraryIndexItem from './library_index_item';
+import classes from './library.module.css';
+
 
 
 class LibraryIndex extends React.Component {
@@ -14,9 +16,8 @@ class LibraryIndex extends React.Component {
     render() {
         console.log(this.props.library)
         return (
-            <div>
-
-                <ul>
+            <div className={classes.librarySongIndex}>
+                <ul className={classes.librarySongIndexList}>
                     {   
                         this.props.library.length > 0 ? (
                             this.props.library.map((song, idx) => (
