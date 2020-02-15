@@ -28,13 +28,15 @@
     color: #725AC1;
     text-align: center;
     text-align: center;
-}
-.signupFrom h1{
+  }
+  .signupFrom h1{
     font-size: 50px;
+    color: #725AC1;
     font-weight: 600;
     margin: 20px;
-}
-.signupFrom h2{
+  }
+  .signupFrom h2{
+    color: #725AC1;
     font-size: 20px;
     font-weight: 500;
     margin: 20px;
