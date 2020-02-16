@@ -80,7 +80,12 @@ export default class About extends React.Component {
                 </div>
                 <div className={classes.textDiv}>
                   <p className={classes.title}>Jon: Backend Engineer</p>
-                  <p className={classes.description}>jon goyourself buddy</p>
+                  <p className={classes.description}>Jon graduated from Yale with 
+                    a background in Mechanical Engineering and went on to work in the financial
+                    sector in Hong Kong. His diverse background was essential in the design
+                    of the backend of MusicMD, as it lead him develop a robust framework 
+                    that integrates various APIs into the frontend. Jon also helped design dynamic 
+                    react elements that give MusicMD important functionality   </p>
                 </div>
                 <div className={classes.imgDiv}>
                   <img
@@ -107,7 +112,7 @@ export default class About extends React.Component {
                     insight on the flow of a project from start to finish, as
                     shown through his leadership as the Fullstack engineer. In
                     addition to ensuring a proper workflow from frontend to
-                    backend, Kit also led the UI/UX design of MusicMD.
+                    backend, Ankit also led the UI/UX design of MusicMD.
                   </p>
                 </div>
                 <div className={classes.icons}>

@@ -7,13 +7,13 @@
 }
 .signupContainer {
     border-radius: 15px;
-    /* opacity: 90%; */
+    opacity: 100%;
     width: 60%;
     height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
-        min-width: 460px;
+    min-width: 460px;
 }
 
 

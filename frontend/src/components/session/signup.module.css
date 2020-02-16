@@ -6,7 +6,7 @@
     align-items: center;
 }
 .signupContainer {
-    /* opacity: 90%; */
+    opacity: 100%;
     width: 60%;
     height: 600px;
     display: flex;
