@@ -25,12 +25,13 @@ export default class About extends React.Component {
                 <div className={classes.textDiv}>
                   <p className={classes.title}>Matt: Team Leader</p>
                   <p className={classes.description}>
-                    Graduated from Santa Clara University with a Mechanical
-                    Engineering Degree. Used my background in Project Management
-                    to lead our team to a smooth project that gave us all a
-                    great programming experience. I worked on every aspect of
-                    the project, discussing design and problem solutions with
-                    each team member to create a great end product.
+                    Matt graduated from Santa Clara University with a degree in Mechanical
+                    Engineering and worked as a Project Manager for two years before learning to code.
+                    Using this experience, he guided the team and project through the numerous challenges 
+                    of building an app from scratch, yielding nothing short of fantastic programming experience 
+                    for each team member. He played a crucial role in all aspects of the project, providing input and direction
+                    on design, structure, functionality, bugs, and solutions. His leadership can be seen on every page
+                    of MusicMD.
                   </p>
                 </div>
                 <div className={classes.icons}>
@@ -161,7 +162,15 @@ export default class About extends React.Component {
                 </div>
                 <div className={classes.textDiv}>
                   <p className={classes.title}>Barrett: Frontend Engineer</p>
-                  <p className={classes.description}>Dude, Squaw</p>
+                  <p className={classes.description}>Barrett graduated from the University
+                  of Vermont with a degree in Chinese and Religion. With a background in linguistics 
+                  and a strong set of skills developed while learning Mandarin, his affinity for language was
+                  on full display throughout the project. Despite little to no experience in tech 
+                  and engineering, he quickly picked up new programming languages, libraries, and frameworks
+                  and easily built the app's frontend. He played an important
+                  role in the design and layout of the site and was responsible for all creative
+                  and professional writing.
+                  </p>
                 </div>
                 <div className={classes.imgDivleft}>
                   <img
