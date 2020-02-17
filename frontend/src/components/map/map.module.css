@@ -1,8 +1,9 @@
 .mapContainer {
-    height: 100%;
-    width: 562px;
-    margin-left: 30px;
-    border-radius: 15px;
-    /* border: 1px solid red; */
-    overflow: hidden;
+  height: 100%;
+  /* width: 562px; */
+  width: 28vw;
+  margin-left: 30px;
+  border-radius: 15px;
+  /* border: 1px solid red; */
+  overflow: hidden;
 }
