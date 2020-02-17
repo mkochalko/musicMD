@@ -1,14 +1,14 @@
-Welcome to MusicMD, a great app to prepare for any of your upcoming concerts!
+Music MD: When your doctor can't cure you, it's time to get a second opinion. 
 
 ## [MusicMD](https://musicmd.herokuapp.com/#/)
 
 ## Overview
 
-Music MD is a great way to find and prepare for your next concert. For frequent concert goers, casual concert attendees and music fans in general. Lets you enjoy all of the song your favorite artist is currently playing!
+Music MD is the gateway to your next show. Whether you're a seasoned concert-goer or getting your metaphorical feet wet for the first time, we have everything you need to find concerts, check out tunes from the artists you're interested in, and save both the concert details and songs into your personal library.  
 
 ### How it works? 
 
-This application will allow you to generate upcoming events/concerts based on a specific location search! This will populate a list of the upcoming events and allow you to 'follow' any of the events. Once a user 'follows' an event, a playlist (from the most recent posted setlist from the given artist) will be generated and added to their users profile. This will allow the user to listen to the playlist at any time and prepare for the concert. There is also a master library for each individual user that will be customizable based on the users preferences. A user will be able to add and remove songs from this library as they wish as well as play any song from this list. 
+The application provides the user with a way to generate upcoming concerts based on a specific location search! The search populates a list of upcoming shows and allows the user to click any one of them, revealing event details and a list of songs. If the user opts to save the event, the concert and playlist will be added to their profile; they then have quick access to concert details and can easily revisit the playlist at their leisure. Each user also has a master library to keep track of song they want to keep listening to; with the simple click of a button, songs can be added and removed from the library with ease.
 
 ## Features
 
