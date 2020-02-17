@@ -137,6 +137,7 @@
     max-width: 360px;
 }
 .setlistcontainer{
+    min-width: 400px;
     height: 90vh;
     /* background-color: rgba(0, 80, 11, 0.555); */
 }
