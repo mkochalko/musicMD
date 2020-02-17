@@ -48,11 +48,13 @@ class EventIndexShowItem extends React.Component {
         if (this.props.event._embedded.attractions[0]) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist).then(setlist => {
-                let newSetlist = this.configureSetList(setlist.data.setlist)
-                if (newSetlist) {
-                    newSetlist.map(song => (
-                        this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-                    ))
+                if (setlist) {
+                    let newSetlist = this.configureSetList(setlist.data.setlist)
+                    if (newSetlist) {
+                        newSetlist.map(song => (
+                            this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+                        ))
+                    }
                 }
             });
             let loading = document.getElementById("loading");
