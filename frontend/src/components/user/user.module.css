@@ -54,8 +54,6 @@
 .eventDiv {
     line-height: 1.5;
     padding-top: 25px;
-
-    /* height: 100px; */
     overflow: auto;
     width: inherit;
     display: flex;
@@ -78,7 +76,7 @@
     color: #FF416C;
     border: 1px solid #23232C;
 }
-.addsong:hover{
+.addSong:hover {
     background-color: #725AC1;
     cursor: pointer;
 }

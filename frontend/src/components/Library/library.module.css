@@ -29,7 +29,6 @@
 
 .userInfoResponse {
     margin-left: 40px;
-    
     color: #FF416C;
 }
 
@@ -40,12 +39,10 @@
 .librarySongIndexList {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
 }
 
 .librarySongIndex {
-    /* padding-top: 30px; */
     overflow: auto;
     height: 60vh;
     border-radius: 15px;
@@ -53,9 +50,6 @@
 
 .librarySongIndexItem {
     display: flex;
-    /* border: 1px solid #FF416C; */
-    /* align-items: center; */
-    /* justify-content: center; */
 }
 
 

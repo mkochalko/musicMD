@@ -133,7 +133,7 @@ class EventIndexShowItem extends React.Component {
                             }
                         </div>
                         <div>
-                            <button className={classes.goingButton} id="going" onClick={this.handleClick}>Get Prescription</button>
+                            <button className={classes.goingButton} id="going" onClick={this.handleClick}><span>Add to Your Events</span></button>
                         </div>
                     </div>
                     <br />
