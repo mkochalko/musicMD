@@ -5,12 +5,17 @@
     margin-top: 20px;
     color: white;
     width: 30vw;
-    /* font-family: 'Alef', sans-serif; */
     line-height: 1.5;
-    /* position: absolute; */
     padding: 15px;
     padding-bottom: 0;
     max-height: 180px;
+}
+.profile{
+    display: flex;
+    /* justify-content: center; */
+    border: 3px solid lightseagreen;
+    width: 94vw;
+    height: 99vh;
 }
 
 .userGreeting {
@@ -18,7 +23,7 @@
 }
 .userevents{
     border: 1px solid red;
-
+    height: 100%;
 }
 .userMessage {
     padding-top: 20px;
@@ -27,33 +32,29 @@
 }
 
 .userSplash {
-    margin-top: 25px;
-    overflow: scroll;
+    /* margin-top: 25px; */
+    overflow: auto;
     width: 28vw;
     height:80vh;
+    /* height:100%; */
     margin-left: 40px;
     background-color: rgba(255, 255, 255, 0.164);
     border-radius: 15px;
-    /* box-shadow: 0px 0px 2px 0px grey; */
 }
 
 .userEventItem {
-    color: white;
-    overflow: scroll;
-    width: inherit;
-    position: relative;
-    margin-bottom: 45px;
+    overflow: auto;
+    /* width: inherit; */
+    /* position: relative; */
+    /* margin-bottom: 45px; */
 }
 
 .eventDiv {
     line-height: 1.5;
-    /* font-family: 'Alef', sans-serif; */
     padding-top: 25px;
-    /* border-top-right-radius:10px;
-    border-bottom-left-radius:10px; */
+
     background-color: rgba(169, 169, 169, 0);
-    /* border-bottom: 1px solid white; */
-    /* border-bottom: 1px solid white; */
+
     overflow: auto;
     width: inherit;
     display: flex;
@@ -85,7 +86,6 @@
 .eventDiv:hover {
     background-color: rgba(255, 65, 109, 0.637);
     cursor: pointer;
-    /* box-shadow: 1px 1px 1px white; */
 }
 
 .notSelected {
@@ -135,8 +135,6 @@
     flex-direction: column;
     width: 500px;
     align-content: center;
-    margin-left: 200px;
-    margin-top: 120px;
     background-color: violet;
 }
 
