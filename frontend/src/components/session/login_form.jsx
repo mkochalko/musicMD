@@ -70,6 +70,9 @@ class LoginForm extends React.Component {
         let current = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`;
         return (
             <div className={classes.page}>
+                <div className={classes.mainlogo}>
+                    <img src="/images/logo2white.png"></img> 
+                </div>
                 <div className={classes.signupContainer}>
        
                     <div className={classes.signupFrom}>

@@ -22,9 +22,9 @@
 }
 
 .eventItemContainer {
-    /* margin-top: 20px; */
-    height: 80%;
-    width:auto;
+    padding-top: 5px;
+    /* height: 20vh; */
+    /* width:auto; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
