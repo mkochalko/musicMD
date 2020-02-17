@@ -1,32 +1,35 @@
 .greetingDiv {
     display: flex;
+    width: 30vw;
     flex-direction: column;
     margin-left: 40px;
-    margin-top: 20px;
+    /* margin-top: 10px; */
     color: white;
-    width: 30vw;
     line-height: 1.5;
-    padding: 15px;
-    padding-bottom: 0;
     max-height: 180px;
 }
 .profile{
     display: flex;
-    /* justify-content: center; */
-    border: 3px solid lightseagreen;
+    justify-content: space-between;
+    /* border: 3px solid lightseagreen; */
     width: 94vw;
     height: 99vh;
 }
 
 .userGreeting {
     font-size: 36px;
+    position: absolute;
+    top: 0;
+    margin-left: 30vw;
+    /* right: 40vw; */
 }
 .userevents{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 100%;
+    margin-top: 40px;
 }
 .userMessage {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-size: 36px; 
     text-align: center;
 }
@@ -35,7 +38,7 @@
     /* margin-top: 25px; */
     overflow: auto;
     width: 28vw;
-    height:80vh;
+    height:89vh;
     /* height:100%; */
     margin-left: 40px;
     background-color: rgba(255, 255, 255, 0.164);
@@ -44,17 +47,15 @@
 
 .userEventItem {
     overflow: auto;
-    /* width: inherit; */
-    /* position: relative; */
-    /* margin-bottom: 45px; */
+    margin-right: 1px;
+
 }
 
 .eventDiv {
     line-height: 1.5;
     padding-top: 25px;
 
-    background-color: rgba(169, 169, 169, 0);
-
+    /* height: 100px; */
     overflow: auto;
     width: inherit;
     display: flex;
@@ -63,24 +64,23 @@
 }
 
 .trackContainer {
+    margin: 0px;
+    padding:0px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .addSong {
-    height: 40px;
-    width: 40px;
-    font-size: 30px;
-    background-color: rgb(46,41,78);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    font-weight: 100;
-    margin-left: 15px;
+    width: 200px;
+    font-size: 24px;
+    background-color: #23232C;
+    color: #FF416C;
+    border: 1px solid #23232C;
+}
+.addsong:hover{
+    background-color: #725AC1;
+    cursor: pointer;
 }
 
 .eventDiv:hover {
@@ -91,6 +91,8 @@
 .notSelected {
     color: white;
     font-size: 36px;
+    /* position: absolute; */
+    margin-top: 30px;
 }
 
 .eventItemArtist {
@@ -122,25 +124,26 @@
 
 
 .deezerContainer {
-    padding: 25px;
-    background-color: green;
+    overflow: auto;
+    /* height: 400px; */
+    min-height: 100px;
 }
 .deezer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    overflow: auto;
+    /* overflow: auto; */
     height: 95vh;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
-    width: 500px;
     align-content: center;
-    background-color: violet;
+    /* border: 1px solid red; */
 }
 
 .deezerTrack {
-    padding: 5px;
-    align-self: center;
+    padding: 0px;
 }
 
 .setlistTitle {
@@ -148,6 +151,7 @@
     font-size: 36px;
     display: none;
     padding-top: 15px;
+    margin-bottom: 10px;
 }
 
 .line {

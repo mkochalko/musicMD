@@ -126,9 +126,9 @@ class UserSplash extends React.Component {
                                             return (
                                                 <div key={idx} className={classes.trackContainer}>
                                                     <label> 
-                                                        <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="60"></iframe>
+                                                        <iframe className={classes.deezerTrack} title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=90&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="700" height="90"></iframe>
                                                     </label>
-                                                    <button className={classes.addSong} id={songId} onClick={this.addSong}>+</button>
+                                                    <button className={classes.addSong} id={songId} onClick={this.addSong}>Add to Library</button>
                                                 </div>
                                             )
                                         })
