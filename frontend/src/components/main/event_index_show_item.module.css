@@ -35,7 +35,9 @@
     font-size: 18;
     margin-bottom: 20px;
 }
-
+.notrack{
+    width: 300px;
+}
 .song {
     background-color: rgba(169, 169, 169, 0);
     width: 95%;
