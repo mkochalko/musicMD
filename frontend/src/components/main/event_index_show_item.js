@@ -22,7 +22,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             this.props.clearTracks();
             this.fetchAllMusicInfo();
-            document.getElementById('going').innerHTML = 'Add To Your Events';
+            // document.getElementById('going').innerHTML = 'Add To Your Events';
         }
     }
             
@@ -48,11 +48,13 @@ class EventIndexShowItem extends React.Component {
         if (this.props.event._embedded.attractions[0]) {
             let artist = this.props.event._embedded.attractions[0].name;
             this.props.getSetlist(artist).then(setlist => {
-                let newSetlist = this.configureSetList(setlist.data.setlist)
-                if (newSetlist) {
-                    newSetlist.map(song => (
-                        this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
-                    ))
+                if (setlist) {
+                    let newSetlist = this.configureSetList(setlist.data.setlist)
+                    if (newSetlist) {
+                        newSetlist.map(song => (
+                            this.props.getTrackByInfo([this.props.event._embedded.attractions[0].name, song.name])
+                        ))
+                    }
                 }
             });
             let loading = document.getElementById("loading");
@@ -100,7 +102,7 @@ class EventIndexShowItem extends React.Component {
 
     render() {
 
-
+        console.log(this.props.events)
         if (this.props.event.dates.start.localDate) {
             return (
                 <div className={classes.searchShowPage}>
@@ -108,7 +110,7 @@ class EventIndexShowItem extends React.Component {
                         <div className={classes.eventName}>
                             <h1 className={classes.nameHeading}>{this.props.event.name}</h1>
                             <br />
-                            <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name} />
+                            <img className={classes.eventPic} height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name} />
                             <br />
                             <h3>{this.props.event._embedded.venues[0].name}</h3>
                         </div>
@@ -128,8 +130,8 @@ class EventIndexShowItem extends React.Component {
                                 this.props.event.dates.start.localTime.split(':')[0] <= 12 ?
                                     this.props.event.data.start.localTime :
                                     (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
-                                    this.props.event.dates.start.localTime.split(':')[1] + ':' +
-                                    this.props.event.dates.start.localTime.split(':')[2]
+                                    this.props.event.dates.start.localTime.split(':')[1] + 'PM' 
+                                    // this.props.event.dates.start.localTime.split(':')[2]
                             }
                         </div>
                         <div>
@@ -145,12 +147,12 @@ class EventIndexShowItem extends React.Component {
                                     <label key={idx} >
                                         <iframe title={idx + 1} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=60&color=ff0000&layout=dark&size=medium&type=tracks&id=${song.id}&app_id=1`} width="300" height="60" className={classes.deezerTracks}></iframe>
                                     </label>
-                                ))) : <div>
+                                ))) : <div className={classes.notracks} >
                                     <h1>Setlist Information Not Found!</h1>
                                     <div>Setlist information is based on user suggestions</div>
                                     <div>Current setlist did not return any information</div>
                                     <div>Please Try Again Later</div>
-                                </div>
+                                    </div>
                             }
                         </ul>
                         <p className={classes.setlistfm}>*Song titles provided by Setlist.fm</p>
