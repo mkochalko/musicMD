@@ -100,7 +100,7 @@ class EventIndexShowItem extends React.Component {
 
     render() {
 
-
+        console.log(this.props.events)
         if (this.props.event.dates.start.localDate) {
             return (
                 <div className={classes.searchShowPage}>
@@ -108,7 +108,7 @@ class EventIndexShowItem extends React.Component {
                         <div className={classes.eventName}>
                             <h1 className={classes.nameHeading}>{this.props.event.name}</h1>
                             <br />
-                            <img height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name} />
+                            <img className={classes.eventPic} height="180" width="320" src={this.props.event.images[0].url} alt={this.props.event.name} />
                             <br />
                             <h3>{this.props.event._embedded.venues[0].name}</h3>
                         </div>
@@ -128,8 +128,8 @@ class EventIndexShowItem extends React.Component {
                                 this.props.event.dates.start.localTime.split(':')[0] <= 12 ?
                                     this.props.event.data.start.localTime :
                                     (this.props.event.dates.start.localTime.split(':')[0] - 12) + ':' +
-                                    this.props.event.dates.start.localTime.split(':')[1] + ':' +
-                                    this.props.event.dates.start.localTime.split(':')[2]
+                                    this.props.event.dates.start.localTime.split(':')[1] + 'PM' 
+                                    // this.props.event.dates.start.localTime.split(':')[2]
                             }
                         </div>
                         <div>

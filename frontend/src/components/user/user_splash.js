@@ -117,7 +117,7 @@ class UserSplash extends React.Component {
 
                     </div>
                     <div className={classes.deezer}>
-                        <p className={classes.setlistTitle}>Show Setlist*:</p>
+                        <p className={classes.setlistTitle}>Show Setlist:</p>
                             <div className={classes.deezerContainer}>
                                 {
                                     this.state.songIds.length > 0 ? (
