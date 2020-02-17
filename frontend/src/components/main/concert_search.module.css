@@ -1,9 +1,4 @@
-/* .titleDiv {
-    color: white;
-    height: 100px;
-    background-repeat: no-repeat;
-    
-} */
+
 
 .titleContainer {
     grid-area: ttl;
@@ -11,6 +6,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-top: 10px;
 }
 .wrapper {
     width: 100%;
@@ -19,27 +15,32 @@
 }
 
 .searchBar{
+    margin-left: 60px;
     height: 36px;
-    /* width: 600px; */
     text-align: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 5px; */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    width: inherit;
+}
+.searchBar input{
+    width: 100%;
 }
 
 .searchInput {
     height: 40px;
-    width: 70%;
+    width: 100%;
     text-align: center;
     font-size: 36px;
     background-color: rgba(0, 0, 0, 0);
     border-radius: 5px;
     color: white;
     outline: none;
-    margin: 0px;
+    /* margin: 0px; */
     padding: 0px;
-    border: 1px solid white;
+    border: 2px solid   #725AC1;
+
 }
 
 .searchBar:active {
@@ -67,23 +68,25 @@
 
 
 .map {
-    /* grid-area: map; */
-    padding-left: 30px;
+    /* padding-left: 30px; */
     grid-row-start: 2;
     grid-column-start: 1;
     margin-top: 25px;
     height: 75%;
     width: 100%;
-    overflow: auto;
-    /* width: 100%; */
+    /* overflow: auto; */
+    border-radius: 15px;
 }
 
 .eventIndex {
     grid-area: idx;
     grid-row-start: 3;
-    padding-left: 30px;
+    margin-left: 30px;
     overflow: auto;
-    /* margin-top: -250px; */
+    background-color: rgba(255, 255, 255, 0.171);
+    border-radius: 15px;
+    height: 53vh;
+    min-width: 560px;
 }
 
 .eventShow {
@@ -101,8 +104,6 @@
     justify-content: flex-start;
     align-items: center;
     grid-area: map;
-    /* background-color: #7f5a83;
-    background-image: linear-gradient(280deg,  #80088d  0%, #032842 74%); */
 }
 
 form {

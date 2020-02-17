@@ -3,7 +3,7 @@ import LibraryContainer from './library_container';
 import classes from './library.module.css';
 import navClasses from '../../components/wrapper.module.css';
 import NavBarContainer from '../nav/navbar_container';
-import moment from 'moment';
+
 
 class LibrarySplash extends React.Component {
 

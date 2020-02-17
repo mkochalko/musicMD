@@ -1,56 +1,59 @@
 .greetingDiv {
     display: flex;
+    width: 30vw;
     flex-direction: column;
     margin-left: 40px;
-    margin-top: 20px;
+    /* margin-top: 10px; */
     color: white;
-    width: 30vw;
-    /* font-family: 'Alef', sans-serif; */
     line-height: 1.5;
-    /* position: absolute; */
-    padding: 15px;
-    padding-bottom: 0;
     max-height: 180px;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    /* border: 3px solid lightseagreen; */
+    width: 94vw;
+    height: 99vh;
 }
 
 .userGreeting {
     font-size: 36px;
+    position: absolute;
+    top: 0;
+    margin-left: 30vw;
+    /* right: 40vw; */
 }
-
+.userevents{
+    /* border: 1px solid red; */
+    height: 100%;
+    margin-top: 40px;
+}
 .userMessage {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-size: 36px; 
     text-align: center;
 }
 
 .userSplash {
-    margin-top: 25px;
-    overflow: scroll;
+    /* margin-top: 25px; */
+    overflow: auto;
     width: 28vw;
-    height:80vh;
+    height:89vh;
+    /* height:100%; */
     margin-left: 40px;
     background-color: rgba(255, 255, 255, 0.164);
     border-radius: 15px;
-    /* box-shadow: 0px 0px 2px 0px grey; */
 }
 
 .userEventItem {
-    color: white;
-    overflow: scroll;
-    width: inherit;
-    position: relative;
-    margin-bottom: 45px;
+    overflow: auto;
+    margin-right: 1px;
+
 }
 
 .eventDiv {
     line-height: 1.5;
-    /* font-family: 'Alef', sans-serif; */
     padding-top: 25px;
-    /* border-top-right-radius:10px;
-    border-bottom-left-radius:10px; */
-    background-color: rgba(169, 169, 169, 0);
-    /* border-bottom: 1px solid white; */
-    /* border-bottom: 1px solid white; */
     overflow: auto;
     width: inherit;
     display: flex;
@@ -59,35 +62,35 @@
 }
 
 .trackContainer {
+    margin: 0px;
+    padding:0px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .addSong {
-    height: 40px;
-    width: 40px;
-    font-size: 30px;
-    background-color: rgb(46,41,78);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    font-weight: 100;
-    margin-left: 15px;
+    width: 200px;
+    font-size: 24px;
+    background-color: #23232C;
+    color: #FF416C;
+    border: 1px solid #23232C;
+}
+.addSong:hover {
+    background-color: #725AC1;
+    cursor: pointer;
 }
 
 .eventDiv:hover {
     background-color: rgba(255, 65, 109, 0.637);
     cursor: pointer;
-    /* box-shadow: 1px 1px 1px white; */
 }
 
 .notSelected {
     color: white;
     font-size: 36px;
+    /* position: absolute; */
+    margin-top: 30px;
 }
 
 .eventItemArtist {
@@ -117,23 +120,28 @@
     margin-left: 10%;
 }
 
+
+.deezerContainer {
+    overflow: auto;
+    /* height: 400px; */
+    min-height: 100px;
+}
 .deezer {
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
-    overflow: auto;
+    /* overflow: auto; */
     height: 95vh;
+    margin-top: 35px;
     display: flex;
     flex-direction: column;
-    width: 500px;
     align-content: center;
-    margin-left: 200px;
-    margin-top: 120px;
+    /* border: 1px solid red; */
 }
 
 .deezerTrack {
-    padding: 5px;
-    align-self: center;
+    padding: 0px;
 }
 
 .setlistTitle {
@@ -141,6 +149,7 @@
     font-size: 36px;
     display: none;
     padding-top: 15px;
+    margin-bottom: 10px;
 }
 
 .line {
@@ -156,22 +165,18 @@
     justify-content: left;
 }
 
-.deezerContainer {
-    padding: 25px;
-}
-
- #load{
-        position: absolute;
-        display: none;
-        top: 0px;
-        left: 100px;
-        height: 100%;
-        background: radial-gradient(circle at bottom, #000033 0%, #090a0f 100%);
-        overflow: hidden;
-        height: 100vh;
-        width: 100%;
-        z-index: 500;
-      }  
+ #load {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 100px;
+    height: 100%;
+    background: radial-gradient(circle at bottom, #000033 0%, #090a0f 100%);
+    overflow: hidden;
+    height: 100vh;
+    width: 100%;
+    z-index: 500;
+}  
 
 .record {
     position: absolute;

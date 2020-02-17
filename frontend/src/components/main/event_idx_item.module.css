@@ -8,22 +8,27 @@
     padding-left: 5px;
     padding-right: 0px;
     text-align: left;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
+    /* border-top-right-radius:10px; */
+    /* border-bottom-left-radius:10px; */
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid  rgba(255, 65, 109, 0.637);;
 }
 
 .eventIdxItem:hover {
     border-bottom: 1px solid white;
-    background-color: rgb(1, 26, 105);
+    background-color: rgba(255, 65, 109, 0.637);
     cursor: pointer;
 }
 
 .eventItemContainer {
-    margin-top: 20px;
-    height: 80%;
+    padding-top: 5px;
+    /* height: 20vh; */
+    /* width:auto; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }
 
 .eventName {

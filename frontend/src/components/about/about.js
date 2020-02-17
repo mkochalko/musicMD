@@ -59,7 +59,7 @@ export default class About extends React.Component {
               <div className={classes.aboutJon}>
                 <div className={classes.icons}>
                   <a
-                    href="https://github.com/ankitspatel1145/"
+                    href="https://github.com/jonjonlai"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -69,7 +69,7 @@ export default class About extends React.Component {
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/in/ankitspatel1145/"
+                    href="https://www.linkedin.com/in/jonjonlai/"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -80,13 +80,18 @@ export default class About extends React.Component {
                 </div>
                 <div className={classes.textDiv}>
                   <p className={classes.title}>Jon: Backend Engineer</p>
-                  <p className={classes.description}>jon goyourself buddy</p>
+                  <p className={classes.description}>Jon graduated from Yale with 
+                    a background in Mechanical Engineering and went on to work in the financial
+                    sector in Hong Kong. His diverse background was essential in the design
+                    of the backend of MusicMD, as it lead him develop a robust framework 
+                    that integrates various APIs into the frontend. Jon also helped design dynamic 
+                    react elements that give MusicMD important functionality   </p>
                 </div>
-                <div className={classes.imgDiv}>
+                <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
-                    src="/images/theDoctor.png"
-                    alt="Matt"
+                    src="/images/GFYB.jpeg"
+                    alt="Jom"
                   />
                 </div>
               </div>
@@ -107,7 +112,7 @@ export default class About extends React.Component {
                     insight on the flow of a project from start to finish, as
                     shown through his leadership as the Fullstack engineer. In
                     addition to ensuring a proper workflow from frontend to
-                    backend, Kit also led the UI/UX design of MusicMD.
+                    backend, Ankit also led the UI/UX design of MusicMD.
                   </p>
                 </div>
                 <div className={classes.icons}>
@@ -135,7 +140,7 @@ export default class About extends React.Component {
               <div className={classes.aboutBarrett}>
                 <div className={classes.icons}>
                   <a
-                    href="https://github.com/ankitspatel1145/"
+                    href="https://github.com/bhelzel"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -158,7 +163,7 @@ export default class About extends React.Component {
                   <p className={classes.title}>Barrett: Frontend Engineer</p>
                   <p className={classes.description}>Dude, Squaw</p>
                 </div>
-                <div className={classes.imgDiv}>
+                <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
                     src="/images/theDoctor.png"

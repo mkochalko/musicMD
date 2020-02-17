@@ -57,6 +57,9 @@ class SignupForm extends React.Component {
     render() {
         return (
         <div className={classes.page}>
+                <div className={classes.mainlogo}>
+                    <img src="/images/logo2white.png"></img>
+                </div>
             <div className={classes.signupContainer}>
                 <div className={classes.toLogIn}>
                     <h1>Returning Patient?</h1>

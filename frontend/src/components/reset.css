@@ -5,7 +5,6 @@
 
 html, body {margin: 0; height: 100%; overflow: hidden}
 
-/* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 10px;
 }

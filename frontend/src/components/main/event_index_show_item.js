@@ -22,7 +22,7 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             this.props.clearTracks();
             this.fetchAllMusicInfo();
-            document.getElementById('going').innerHTML = 'Get Prescription';
+            document.getElementById('going').innerHTML = 'Add To Your Events';
         }
     }
             
@@ -133,12 +133,12 @@ class EventIndexShowItem extends React.Component {
                             }
                         </div>
                         <div>
-                            <button className={classes.goingButton} id="going" onClick={this.handleClick}>Get Prescription</button>
+                            <button className={classes.goingButton} id="going" onClick={this.handleClick}><span>Add to Your Events</span></button>
                         </div>
                     </div>
-                    <br />
+                    
                     <div className={classes.setlistcontainer}>
-                        <p className={classes.setlistTitle}>Setlist</p>
+                        <p className={classes.setlistTitle}>Setlist*</p>
                         <ul className={classes.setList}>
                             {Object.keys(this.props.deezer).length > 0 ? (
                                 Object.values(this.props.deezer).map((song, idx) => (
@@ -153,7 +153,7 @@ class EventIndexShowItem extends React.Component {
                                 </div>
                             }
                         </ul>
-                        <p className={classes.setlistfm}>Song titles provided by Setlist.fm</p>
+                        <p className={classes.setlistfm}>*Song titles provided by Setlist.fm</p>
                     </div>
                 </div>
             )
