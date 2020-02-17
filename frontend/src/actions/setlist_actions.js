@@ -13,10 +13,15 @@ const receiveSetlist = setlist => ({
  
 export const getSetlist = artist => dispatch => (
     SetlistAPIUtil.getArtistId(artist)
-        .then(data => SetlistAPIUtil.getArtistSetlist(data.artist[0].mbid))
+        .then(data => {
+            return SetlistAPIUtil.getArtistSetlist(data.artist[0].mbid)})
         .then(setlist => {
             dispatch(receiveSetlist(setlist))
             return setlist
+        })
+        .catch(error => {
+            // alert("Artist Not Found")
+            console.log(error)
         })
 );
 
