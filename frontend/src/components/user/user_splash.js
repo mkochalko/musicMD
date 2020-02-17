@@ -92,7 +92,7 @@ class UserSplash extends React.Component {
                     <div id="record"></div>
                 </div>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <div>
+                <div className={classes.userevents}>
                     <div className={classes.greetingDiv}>
                         <p className={classes.userGreeting}>Hey {this.props.currentUser.username[0].toUpperCase() + this.props.currentUser.username.slice(1)}!</p>
                         <p className={classes.userMessage}>Your Events:</p>

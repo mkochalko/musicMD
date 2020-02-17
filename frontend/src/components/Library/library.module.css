@@ -24,10 +24,12 @@
     padding-left: 20px;
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 20px;
 }
 
 .userInfoResponse {
     margin-left: 40px;
+    
     color: #FF416C;
 }
 
@@ -43,9 +45,10 @@
 }
 
 .librarySongIndex {
-    padding-top: 30px;
+    /* padding-top: 30px; */
     overflow: auto;
-    height: 600px;
+    height: 60vh;
+    border-radius: 15px;
 }
 
 .librarySongIndexItem {
@@ -55,9 +58,7 @@
     /* justify-content: center; */
 }
 
-.librarySongIndexItem > button {
-    cursor: pointer;
-}
+
 
 .deezerTrack {
     padding: 0;
@@ -66,15 +67,12 @@
 .librarySongIndexItem > button {
     width: 200px;
     font-size: 24px;
-    background-color: #1a1633;
+    background-color: #23232C;
     color: #FF416C;
-    border: 1px solid #FF416C;
+    border: 1px solid #23232C;
 }
 
 .librarySongIndexItem > button:hover {
-    background-color: #231e3e;
-}
-
-.librarySongIndexItem > button:focus {
-    outline: none;
+    background-color: #725AC1;
+    cursor: pointer;
 }

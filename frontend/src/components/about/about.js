@@ -59,7 +59,7 @@ export default class About extends React.Component {
               <div className={classes.aboutJon}>
                 <div className={classes.icons}>
                   <a
-                    href="https://github.com/ankitspatel1145/"
+                    href="https://github.com/jonjonlai"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -69,7 +69,7 @@ export default class About extends React.Component {
                   </a>
 
                   <a
-                    href="https://www.linkedin.com/in/ankitspatel1145/"
+                    href="https://www.linkedin.com/in/jonjonlai/"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -87,11 +87,11 @@ export default class About extends React.Component {
                     that integrates various APIs into the frontend. Jon also helped design dynamic 
                     react elements that give MusicMD important functionality   </p>
                 </div>
-                <div className={classes.imgDiv}>
+                <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
-                    src="/images/theDoctor.png"
-                    alt="Matt"
+                    src="/images/GFYB.jpeg"
+                    alt="Jom"
                   />
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default class About extends React.Component {
               <div className={classes.aboutBarrett}>
                 <div className={classes.icons}>
                   <a
-                    href="https://github.com/ankitspatel1145/"
+                    href="https://github.com/bhelzel"
                     target="_blank"
                     className={classes.iconlink}
                   >
@@ -163,7 +163,7 @@ export default class About extends React.Component {
                   <p className={classes.title}>Barrett: Frontend Engineer</p>
                   <p className={classes.description}>Dude, Squaw</p>
                 </div>
-                <div className={classes.imgDiv}>
+                <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
                     src="/images/theDoctor.png"
