@@ -1,5 +1,4 @@
 
-
 .titleContainer {
     grid-area: ttl;
     display: flex;
@@ -64,6 +63,7 @@
         "map shw"
         "idx shw"
         "idx shw";
+    grid-column-gap: 25px;
 }
 
 
@@ -92,7 +92,7 @@
 
 .eventShow {
     grid-area: shw;
-    margin-left: 20px;
+    /* margin-left: 10px; */
     width: 100%;
     
 }
