@@ -115,7 +115,6 @@
 
 
 .setList {
-    margin-left: 40px;
     height: 80%;
     overflow: auto;
     justify-content: center;
@@ -124,7 +123,7 @@
 }
 
 .deezerTracks {
-    /* padding: 5px; */
+    width: 100%;
 }
 
 .setlistTitle {
@@ -139,7 +138,7 @@
 }
 .setlistcontainer{
     height: 90vh;
-    background-color: rgba(0, 80, 11, 0.555);
+    /* background-color: rgba(0, 80, 11, 0.555); */
 }
 .setlistfm{
     text-align: right;
