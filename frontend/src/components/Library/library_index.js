@@ -14,7 +14,6 @@ class LibraryIndex extends React.Component {
 
 
     render() {
-        console.log(this.props.library)
         return (
             <div className={classes.librarySongIndex}>
                 <ul className={classes.librarySongIndexList}>

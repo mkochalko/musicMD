@@ -15,7 +15,6 @@ class LibraryIndexItem extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return (
             <li className={libraryClasses.librarySongIndexItem}>
                 <iframe className={classes.deezerTrack} scrolling="no" frameBorder="0" allowtransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=700&height=92&color=ff0000&layout=dark&size=medium&type=tracks&id=${this.props.song}&app_id=1`} width="700" height="92"></iframe> 

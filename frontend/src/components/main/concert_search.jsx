@@ -55,11 +55,9 @@ class ConcertSearch extends React.Component {
         let that = this;
         this.props.getMetroIdByText(this.state.search)
             .then((data) => {
-                console.log(data)
                 if (data.length > 0) {
                     that.resetState()
                     let city = target.innerHTML.split(`value="`)[1].split(`">`)[0];
-                    console.log(city)
                     that.setState({ city: city })
                 }
             })
