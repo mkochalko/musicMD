@@ -100,7 +100,7 @@ export default class About extends React.Component {
                 <div className={classes.imgDiv}>
                   <img
                     className={classes.aboutPhoto}
-                    src="/images/theDoctor.png"
+                    src="/images/kit.png"
                     alt="Matt"
                   />
                 </div>
@@ -175,7 +175,7 @@ export default class About extends React.Component {
                 <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
-                    src="/images/theDoctor.png"
+                    src="/images/barrett.png"
                     alt="Matt"
                   />
                 </div>
@@ -205,6 +205,7 @@ export default class About extends React.Component {
                   some catchy quote from a famous musician, but we'll let the
                   music do the talking instead.
                 </p>
+                <img className={classes.groupPhoto} src="/images/groupPhoto.png"/>
                 <div>
                   <a
                     href="https://github.com/mkochalko/musicMD"
