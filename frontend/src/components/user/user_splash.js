@@ -46,45 +46,18 @@ class UserSplash extends React.Component {
     componentDidUpdate(prevProps) {
     }
 
-    eventClick(e) {
-        console.log(e);
-        console.log("hello");
 
-    }
 
     addSong(e) {
         this.props.addSongToUserLibrary(e.currentTarget.id)
         let button = document.getElementById(e.currentTarget.id)
         button.innerHTML = "✓"
-
-        //Toggle button
     }
-
-    // getDeezer(array) {
-    //     for (let i=0; i < array.length; i++) {
-    //         return (
-    //         <iframe scrolling="no" frameborder="0" allowTransparency="true" src={`https://www.deezer.com/plugins/player?format=classic&autoplay=false&playlist=true&width=300&height=200&color=ff0000&layout=dark&size=medium&type=tracks&id=${songId}&app_id=1`} width="300" height="200"></iframe>
-
-    //     }
-    // }
 
     render() {
         let events;
         let that = this;
         let setlistTitle;
-        // setTimeout(() => {
-        //     events = document.getElementsByClassName("user_eventDiv__2qhai");
-        //     setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
-        //     for (let i = 0; i < events.length; i++) {
-        //         events[i].addEventListener("click", (e) => {
-        //             that.setState({songIds: that.props.events[e.currentTarget.id].songIds})
-        //             console.log(setlistTitle);
-        //             setlistTitle[0].setAttribute('style', 'display: block;')
-        //         })
-        //     }
-        // }, 2000);
-
-        
         return (
 
             <div className={navClasses.wrapper}>
@@ -122,7 +95,6 @@ class UserSplash extends React.Component {
                                 {
                                     this.state.songIds.length > 0 ? (
                                         this.state.songIds.map((songId, idx) => {
-                                            // console.log(this.state.songIds);
                                             return (
                                                 <div key={idx} className={classes.trackContainer}>
                                                     <label> 

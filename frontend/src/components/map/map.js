@@ -20,7 +20,6 @@ class SimpleMap extends Component {
     fetchLocation() {
         axios.get(`/api/map/location?string=${this.props.city}`)
             .then(response => {
-                console.log(response.data)
                 let latlong = response.data.candidates[0].geometry.location;
                 this.setState({
                     center: {
@@ -52,7 +51,6 @@ class SimpleMap extends Component {
         this.props.getMetroIdByClick(`${lat},${lng}`).then(this.props.resetState);
     }
     render() {
-        console.log(this.state.center)
         return (
             <div className={classes.mapContainer}>
                 <GoogleMapReact

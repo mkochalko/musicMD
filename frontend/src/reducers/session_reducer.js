@@ -10,7 +10,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-    console.log(action.currentUser)
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             return {

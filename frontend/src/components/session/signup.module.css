@@ -8,11 +8,9 @@
 }
 .mainlogo{
     margin-bottom: 30px;
-    position: absolute;
     top: 70px;
 }
 .signupContainer {
-    /* opacity: 100%; */
     width: 60%;
     height: 600px;
     display: flex;

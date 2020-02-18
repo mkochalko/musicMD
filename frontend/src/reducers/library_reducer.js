@@ -16,7 +16,6 @@ const libraryReducer = (state = {}, action) => {
       newState = Object.assign(newState, action.payload.songIds);
       return newState
     case REMOVE_LIBRARY_SONG:
-      console.log(action.payload)
       return newState
     default:
       return state;

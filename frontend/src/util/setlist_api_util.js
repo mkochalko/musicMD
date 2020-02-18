@@ -17,7 +17,6 @@ export const getArtistId = artist => {
         .then(response => {
             return response.data
         }).catch(error => {
-            debugger;
             console.log(error)
         })
     )}

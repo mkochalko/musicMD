@@ -102,7 +102,6 @@ class EventIndexShowItem extends React.Component {
 
     render() {
 
-        console.log(this.props.events)
         if (this.props.event.dates.start.localDate) {
             return (
                 <div className={classes.searchShowPage}>

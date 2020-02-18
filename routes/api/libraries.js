@@ -48,7 +48,6 @@ router.put("/library/add",
                     { userId: req.user._id },
                     { $push: { songIds: req.query.string } }
                 ).then(() => {
-                    console.log("aslkdjghalskjdgf")
 
                     Library
                         .find({ userId: req.user._id })
