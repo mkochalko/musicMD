@@ -88,6 +88,9 @@ input {
   line-height: 1;
   margin-top: 20px;
 }
+.errors li {
+  color: #FF416C;
+}
 
 .signupFrom button {
     margin-top: 20px;

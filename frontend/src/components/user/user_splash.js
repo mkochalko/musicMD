@@ -11,7 +11,6 @@ class UserSplash extends React.Component {
     constructor(props) { 
         super(props);
         this.state = {songIds: []};
-        this.eventClick = this.eventClick.bind(this);
         this.addSong = this.addSong.bind(this);
     }
 
