@@ -45,6 +45,7 @@ time, mark, audio, video {
 	vertical-align: baseline;
 	font-family: 'Didact Gothic', sans-serif;
 	color: white;
+	opacity: 1;
 }
 a {
 	text-decoration: none;
