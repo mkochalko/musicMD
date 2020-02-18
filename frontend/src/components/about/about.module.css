@@ -157,3 +157,7 @@
   width: 100%;
   height: auto;
 }
+
+.groupPhoto {
+  height: 250px;
+}
