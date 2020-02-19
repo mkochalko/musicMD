@@ -36,7 +36,8 @@ router.post("/register", (req, res) => {
             const newUser = new User({
                 username: req.body.username,
                 email: req.body.email,
-                password: req.body.password
+                password: req.body.password,
+                date: new Date()
             });
 
 
@@ -48,7 +49,7 @@ router.post("/register", (req, res) => {
                     newUser
                         .save()
                         .then(user => {
-                            const payload = { id: user.id, username: user.username };
+                            const payload = { id: user.id, email: user.email, username: user.username, date: user.date };
                             const newLibrary = new Library({
                                 userId: newUser.id,
                                 eventIds: [],
