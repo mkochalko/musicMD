@@ -68,13 +68,11 @@
 
 
 .map {
-    /* padding-left: 30px; */
     grid-row-start: 2;
     grid-column-start: 1;
     margin-top: 25px;
     height: 75%;
     width: 100%;
-    /* overflow: auto; */
     border-radius: 15px;
 }
 
@@ -82,19 +80,17 @@
     grid-area: idx;
     grid-row-start: 3;
     margin-left: 30px;
+    margin-bottom: 1%;
     overflow: auto;
     background-color: rgba(255, 255, 255, 0.171);
     border-radius: 15px;
-    height: 53vh;
-    /* min-width: 560px; */
+    height: auto;
     width: 28vw;
 }
 
 .eventShow {
     grid-area: shw;
-    /* margin-left: 10px; */
     width: 100%;
-    
 }
 
 .indexSearchContainer {
