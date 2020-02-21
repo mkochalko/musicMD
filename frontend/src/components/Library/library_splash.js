@@ -14,27 +14,31 @@ class LibrarySplash extends React.Component {
         return (
             <div className={classes.wrapper}>
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
-                <div className={classes.libraryContainer}>
-                    <div className={classes.libraryHeaderSection}>
-                        <h1>Library</h1>
-                        <div className={classes.userInfoSection}>
-                            <div className={classes.userInfo}>
-                                <h3>Username: </h3>
-                                <h3>Email: </h3>
-                                <h3>Date Joined: </h3>
-                                <h3>Total Songs: </h3>
-                            </div>
-                            <div className={classes.userInfoResponse}>
-                                <h3>{this.props.currentUser.username}</h3>
-                                <h3>{this.props.currentUser.email}</h3>
-                                <h3>{configuredDateJoined}</h3>
-                                <h3>{this.props.library.length}</h3>
+                <div className={classes.libraryBody}>
+
+                    <div className={classes.libraryContainer}>
+                        <div className={classes.libraryHeaderSection}>
+                            <h1>Library</h1>
+                            <div className={classes.userInfoSection}>
+                                <div className={classes.userInfo}>
+                                    <h3>Username: </h3>
+                                    <h3>Email: </h3>
+                                    <h3>Date Joined: </h3>
+                                    <h3>Total Songs: </h3>
+                                </div>
+                                <div className={classes.userInfoResponse}>
+                                    <h3>{this.props.currentUser.username}</h3>
+                                    <h3>{this.props.currentUser.email}</h3>
+                                    <h3>{configuredDateJoined}</h3>
+                                    <h3>{this.props.library.length}</h3>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <LibraryContainer />
+                        <LibraryContainer />
+                    </div>
                 </div>
+
             </div>
         )
     }
