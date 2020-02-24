@@ -89,8 +89,8 @@ class ConcertSearch extends React.Component {
                         <img src="/images/logo2white.png"></img> 
                     </div>
                     <div className={classes.indexSearchContainer}>
-                        <div className={classes.searchBar} onSubmit={this.handleSubmit}>
-                            <form >
+                        <div className={classes.searchBar} >
+                            <form onSubmit={this.handleSubmit} >
                                 <input
                                     type="text"
                                     placeholder="Search by City!"
