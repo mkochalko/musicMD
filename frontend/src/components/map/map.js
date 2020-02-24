@@ -17,9 +17,12 @@ class SimpleMap extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.state = this.props;
     }
-    fetchLocation() {
-        axios.get(`/api/map/location?string=${this.props.city}`)
+
+    fetchLocation(location) {
+
+        axios.get(`https://localhost:3000/api/map/location?string=${location}`)
             .then(response => {
+                console.log(response)
                 let latlong = response.data.candidates[0].geometry.location;
                 this.setState({
                     center: {
@@ -31,12 +34,15 @@ class SimpleMap extends Component {
                 console.log(error)
             })
     }
+
     componentDidMount() {
         this.fetchLocation();
     }
+
     componentDidUpdate(prevProps) {
+        console.log(this.props.city)
         if (prevProps.city !== this.props.city) {
-            this.fetchLocation();
+            this.fetchLocation(this.props.city);
         }
     }
     handleClick(e) {
