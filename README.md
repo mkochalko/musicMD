@@ -6,9 +6,34 @@ Music MD: When your doctor can't cure you, it's time to get a second opinion.
 
 Music MD is the gateway to your next show. Whether you're a seasoned concert-goer or getting your metaphorical feet wet for the first time, we have everything you need to find concerts, check out tunes from the artists you're interested in, and save both the concert details and songs into your personal library.  
 
+![]( Search Page)
+
 ### How it works? 
 
 The application provides the user with a way to generate upcoming concerts based on a specific location search! The search populates a list of upcoming shows and allows the user to click any one of them, revealing event details and a list of songs. If the user opts to save the event, the concert and playlist will be added to their profile; they then have quick access to concert details and can easily revisit the playlist at their leisure. Each user also has a master library to keep track of song they want to keep listening to; with the simple click of a button, songs can be added and removed from the library with ease.
+
+## Technologies Used
+
+### MERN Stack
+This project is build using the MERN stack(MongoDB, Express.js, React and Node.js). MERN stack allows us to use JavaScript to create a well designed interactive website with great UX/UI. 
+* #### `MongoDB`
+    * MongoDB is a non-relational database, which means that instead of your standard table schema design, all data is stored as a P.O.J.O.(Plain Old JavaScript Object). This allows for change to the data scructure over time and makes it easy to scale.
+* #### `Express.js`
+    * The Express framework makes the server side much cleaner and easy to use. This prevents the need to repeat the same code multiple times as would have to do with just Node.js
+* #### `React`
+    * React is a great fontend tool. This library manages the state of each created component, allowing developers to not worry about managing updating information or changes in state. 
+* #### `Node.js`
+    * Node is an open source server enviroment that was build to execute JavaScript code outside of the browser. 
+
+### Multiple API Implementation
+* #### Google Maps API
+  * Display search results on the page for events in a specific location with markers on each location
+* #### Ticketmaster API
+  * Gather upcoming concert information to list all upcoming events
+* #### SetList API
+  * Populate the most recent set list for a specific artist to then generate a playlist for the user to listen to
+* #### Deezer API
+  * Once a setlist is populated, Deezer will allow for music to be shown and played directly from the site for great user experience.
 
 ## Features
 
@@ -191,26 +216,18 @@ export default EventIndexShowItem;
 
 ![](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/MusicMDGif.gif)
 
+Another Feature we implemented was a Library. This was the place users could add all of their favorite songs, or remove any songs they were tired of listening to. 
+
+![]( Library)
+
+-------------
+![]( About Group)
+
 ## Group Members
 #### Backend Lead - [Jon Lai](https://github.com/jonjonlai) (Backend Team)
 #### Flex - [Kit Patel](https://github.com/ankitspatel1145) (Backend Team)
 #### Frontend Lead - [Barrett Helzel](https://github.com/bhelzel) (Frontend Team)
 #### Team Lead - [Matt Kochalko](https://github.com/mkochalko) (Frontend Team)
-
-## Technologies Used
-
-### MERN Stack
-This project is build using the MERN stack(MongoDB, Express.js, React and Node.js). MERN stack allows us to use mainly JavaScript to create a well designed interactive website with great UX/UI. 
-
-### Multiple API Implementation
-* #### Google Maps API
-  * Display search results on the page for events in a specific location with markers on each location
-* #### Ticketmaster API
-  * Gather upcoming concert information to list all upcoming events
-* #### SetList API
-  * Populate the most recent set list for a specific artist to then generate a playlist for the user to listen to
-* #### Deezer API
-  * Once a setlist is populated, Deezer will allow for music to be shown and played directly from the site for great user experience.
 
 
 ### Git Workflow
