@@ -2,15 +2,20 @@ Music MD: When your doctor can't cure you, it's time to get a second opinion.
 
 ## [MusicMD](https://musicmd.herokuapp.com/#/)
 
+
 ## Overview
 
 Music MD is the gateway to your next show. Whether you're a seasoned concert-goer or getting your metaphorical feet wet for the first time, we have everything you need to find concerts, check out tunes from the artists you're interested in, and save both the concert details and songs into your personal library.  
 
-![]( Search Page)
+![Search Page](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/search_page.png)
+
+-------------
 
 ### How it works? 
 
 The application provides the user with a way to generate upcoming concerts based on a specific location search! The search populates a list of upcoming shows and allows the user to click any one of them, revealing event details and a list of songs. If the user opts to save the event, the concert and playlist will be added to their profile; they then have quick access to concert details and can easily revisit the playlist at their leisure. Each user also has a master library to keep track of song they want to keep listening to; with the simple click of a button, songs can be added and removed from the library with ease.
+
+-------------
 
 ## Technologies Used
 
@@ -24,6 +29,8 @@ This project is build using the MERN stack(MongoDB, Express.js, React and Node.j
     * React is a great fontend tool. This library manages the state of each created component, allowing developers to not worry about managing updating information or changes in state. 
 * #### `Node.js`
     * Node is an open source server enviroment that was build to execute JavaScript code outside of the browser. 
+    
+-------------
 
 ### Multiple API Implementation
 * #### Google Maps API
@@ -34,6 +41,8 @@ This project is build using the MERN stack(MongoDB, Express.js, React and Node.j
   * Populate the most recent set list for a specific artist to then generate a playlist for the user to listen to
 * #### Deezer API
   * Once a setlist is populated, Deezer will allow for music to be shown and played directly from the site for great user experience.
+  
+-------------
 
 ## Features
 
@@ -41,7 +50,7 @@ This project is build using the MERN stack(MongoDB, Express.js, React and Node.j
 
 Our search function will allow the user to either click on our map or use our text bar to search locations for events. On a search we call the Ticketmaster API to compile a list of concerts and events. This allows users to see the specific details for any upcoming events. Using API calls to setlist.fm and deezer, we are able to populate the event setlist and playable songs for the user to listen to. 
 
-![Search Page](https://github.com/mkochalko/musicMD/blob/master/frontend/public/SearchFeature.png)
+![](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/MusicMDGif.gif)
 
 The code below shows the code for our event info and setlist component when a user selects a searched event. This was a critical part of our application becaue of the multiple api calls we were required to make in sequence before we are able to render the proper information on the page. 
 
@@ -214,14 +223,13 @@ class EventIndexShowItem extends React.Component {
 export default EventIndexShowItem;
 ```
 
-![](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/MusicMDGif.gif)
+-------------
 
 Another Feature we implemented was a Library. This was the place users could add all of their favorite songs, or remove any songs they were tired of listening to. 
 
-![]( Library)
+![Library](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/library.png)
 
 -------------
-![]( About Group)
 
 ## Group Members
 #### Backend Lead - [Jon Lai](https://github.com/jonjonlai) (Backend Team)
@@ -229,6 +237,9 @@ Another Feature we implemented was a Library. This was the place users could add
 #### Frontend Lead - [Barrett Helzel](https://github.com/bhelzel) (Frontend Team)
 #### Team Lead - [Matt Kochalko](https://github.com/mkochalko) (Frontend Team)
 
+![About Group](https://github.com/mkochalko/musicMD/blob/master/frontend/public/images/about_page.png)
+
+-------------
 
 ### Git Workflow
 * As new software developers, this is our first experience working with a team. We all see the importance of being very meticulous with our workflow to make sure there are no issues. Our individual roles on the team mean the git workflow is a huge part of this project. Using a proper git workflow and checking in with each over whenever a question arises, has lead to a successful workflow throughout the project.
