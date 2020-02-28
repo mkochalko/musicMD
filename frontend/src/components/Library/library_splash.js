@@ -7,12 +7,26 @@ import NavBarContainer from '../nav/navbar_container';
 
 class LibrarySplash extends React.Component {
 
+    constructor(props) {
+        super(props)
+
+    }
+
+    componentDidMount() {
+        let loading = document.getElementById("loading");
+        loading.setAttribute("style", "display: block")
+        setTimeout(() => {
+            loading.setAttribute("style", "display: none");
+        }, 7000)
+    }
+    
     render() {
-        console.log(this.props.currentUser)
+        // console.log(this.props.currentUser)
         let dateJoined = new Date(this.props.currentUser.date.slice(0, 10))
         let configuredDateJoined = dateJoined.toString().slice(0, 16)
         return (
             <div className={classes.wrapper}>
+
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer>
                 <div className={classes.libraryBody}>
 

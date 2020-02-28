@@ -3,6 +3,14 @@ import classes from './about.module.css';
 import NavBarContainer from '../nav/navbar_container';
 import navClasses from '../nav/nav.module.css';
 export default class About extends React.Component {
+
+  componentDidMount() {
+    let loading = document.getElementById("loading");
+    loading.setAttribute("style", "display: block")
+    setTimeout(() => {
+      loading.setAttribute("style", "display: none");
+    }, 500)
+  }
     
     render() {
         return (
@@ -91,8 +99,8 @@ export default class About extends React.Component {
                 <div className={classes.imgDivleft}>
                   <img
                     className={classes.aboutPhoto}
-                    src="/images/GFYB.jpeg"
-                    alt="Jom"
+                    src="/images/theNurse.jpg"
+                    alt="Jon"
                   />
                 </div>
               </div>

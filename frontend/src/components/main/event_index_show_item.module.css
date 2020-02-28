@@ -1,162 +1,161 @@
 .searchShowPage {
-    color: white;
+  color: white;
 }
 
 .eventName {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 36px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 36px;
 }
-.eventPic{
-    border: 3px solid #725AC1;
-    border-radius: 15px;
+.eventPic {
+  border: 3px solid #725ac1;
+  border-radius: 15px;
 }
 .eventLocation {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 20;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20;
 }
 
 .dateTime {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-    font-size: 18;
-    margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18;
+  margin-bottom: 20px;
 }
-.notrack{
-    width: 300px;
+.notrack {
+  width: 300px;
 }
 .song {
-    background-color: rgba(169, 169, 169, 0);
-    width: 95%;
-    font-size: 20px;
-    height: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 5px;
-    padding-right: 0px;
-    text-align: left;
-    border: 1px solid transparent;
-    border-top-right-radius:10px;
-    border-bottom-left-radius:10px;
+  background-color: rgba(169, 169, 169, 0);
+  width: 95%;
+  font-size: 20px;
+  height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 0px;
+  text-align: left;
+  border: 1px solid transparent;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .song:hover {
-    border: 1px solid black;
-    background-color: rgb(1, 26, 105);
-    cursor: pointer;
+  border: 1px solid black;
+  background-color: rgb(1, 26, 105);
+  cursor: pointer;
 }
 
 .searchShowPage {
-    display: flex;
-    overflow: hidden;
+  display: flex;
+  overflow: none;
 }
 
 .eventDetails {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    /* max-width: 60%; */
-    /* min-width: 50%; */
-    margin: 60px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  /* max-width: 60%; */
+  /* min-width: 50%; */
+  margin: 20px;
+  /* margin: 60px; */
 }
 .goingButton {
-    width: 200px;
-    border: none;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    outline: none;
-    overflow: hidden;
-    position: relative;
-    color: #fff;
-    font-weight: 700;
-    font-size: 15px;
-    background-color: #2E294E;
-    padding: 17px 60px;
-    margin-top:10px;
-    /* margin-top: 80px; */
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25);
-    width: 200px;
-    border: 3px solid #FF416C;
-    border-radius: 5px;
+  width: 200px;
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #2e294e;
+  padding: 17px 60px;
+  margin-top: 10px;
+  /* margin-top: 80px; */
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  border: 3px solid #ff416c;
+  border-radius: 5px;
 }
 
 .goingButton span {
-    position: relative; 
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .goingButton:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    background: #FF416C;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    -webkit-transform: translateX(-98%) translateY(-55%) rotate(45deg);
-    transform: translateX(-119%) translateY(-15%) rotate(45deg);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #ff416c;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-55%) rotate(45deg);
+  transform: translateX(-119%) translateY(-15%) rotate(45deg);
 }
 
 .goingButton:hover:after {
-    -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
 
-
-
 .setList {
-    height: 81vh;
-    overflow: auto;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: rgba(255, 255, 255, 0.171);
-    border-radius: 15px;
-    /* padding-top: 5px; */
+  height: 81vh;
+  overflow: auto;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.171);
+  border-radius: 15px;
+  /* padding-top: 5px; */
 }
 
 .deezerTracks {
-    width: 100%;
+  width: 100%;
 }
 
 .setlistTitle {
-    font-size: 36px;
-    justify-self: center;
-    text-align: center;
-    margin-bottom: 10px;
+  font-size: 36px;
+  justify-self: center;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .nameHeading {
-    max-width: 360px;
+  max-width: 360px;
 }
-.setlistcontainer{
-    min-width: 400px;
-    height: auto;
-    /* background-color: rgba(0, 80, 11, 0.555); */
+.setlistcontainer {
+  min-width: 400px;
+  height: auto;
+  /* background-color: rgba(0, 80, 11, 0.555); */
+  margin-left: 1vw;
 }
-.setlistfm{
-    text-align: right;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 10px;
+.setlistfm {
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 10px;
 }

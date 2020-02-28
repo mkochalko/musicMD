@@ -36,7 +36,7 @@ class ConcertSearch extends React.Component {
             setTimeout(() => {
 
                 loading.setAttribute("style", "display: none");
-            }, 4000)
+            }, 8000)
         }
         if (this.props.event) {
             let artist = this.props.event._embedded.attractions[0].name;

@@ -29,7 +29,7 @@ class UserSplash extends React.Component {
                     setTimeout(() => {
 
                         loading.setAttribute("style", "display: none");
-                    }, 2000)
+                    }, 6000)
                     let buttons = document.getElementsByClassName("library-add-song")
                     for (let j = 0; j < buttons.length; j++) {
                         buttons[j].innerHTML = "Add To Library"
