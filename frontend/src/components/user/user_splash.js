@@ -20,7 +20,7 @@ class UserSplash extends React.Component {
 
             let events = document.getElementsByClassName("user_eventDiv__2qhai");
             let loading = document.getElementById("loading");
-            let setlist = document.getElementsByClassName("user_deezer__2UEMn")
+            // let setlist = document.getElementsByClassName("user_deezer__2UEMn")
             let setlistTitle = document.getElementsByClassName("user_setlistTitle__2U5LA")
             for (let i = 0; i < events.length; i++) {
                 events[i].addEventListener("click", (e) => {
@@ -54,9 +54,9 @@ class UserSplash extends React.Component {
     }
 
     render() {
-        let events;
-        let that = this;
-        let setlistTitle;
+        // let events;
+        // let that = this;
+        // let setlistTitle;
         return (
 
             <div className={navClasses.wrapper}>

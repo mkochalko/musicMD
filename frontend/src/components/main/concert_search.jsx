@@ -6,8 +6,8 @@ import navClasses from '../../components/wrapper.module.css';
 import EventsIndexContainer from './events_index_container';
 import EventIndexShowItemContainer from './event_index_show_item_container';
 import NavBarContainer from '../nav/navbar_container';
-import axios from 'axios';
-import { timingSafeEqual } from 'crypto';
+// import axios from 'axios';
+// import { timingSafeEqual } from 'crypto';
 
 
 class ConcertSearch extends React.Component {
@@ -86,7 +86,7 @@ class ConcertSearch extends React.Component {
                 <NavBarContainer className={navClasses.navContainer}></NavBarContainer> 
                 <div className={classes.searchPage}>
                     <div className={classes.titleContainer}>
-                        <img src="/images/logo2white.png"></img> 
+                        <img alt="test" src="/images/logo2white.png"></img> 
                     </div>
                     <div className={classes.indexSearchContainer}>
                         <div className={classes.searchBar} >

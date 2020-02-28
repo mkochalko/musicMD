@@ -45,7 +45,7 @@ export default class About extends React.Component {
                 <div className={classes.icons}>
                   <a
                     href="https://github.com/mkochalko"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ export default class About extends React.Component {
 
                   <a
                     href="https://www.linkedin.com/in/mkochalko/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ export default class About extends React.Component {
                 <div className={classes.icons}>
                   <a
                     href="https://github.com/jonjonlai"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -79,7 +79,7 @@ export default class About extends React.Component {
 
                   <a
                     href="https://www.linkedin.com/in/jonjonlai/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -127,7 +127,7 @@ export default class About extends React.Component {
                 <div className={classes.icons}>
                   <a
                     href="https://github.com/ankitspatel1145/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -137,7 +137,7 @@ export default class About extends React.Component {
 
                   <a
                     href="https://www.linkedin.com/in/ankitspatel1145/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -150,7 +150,7 @@ export default class About extends React.Component {
                 <div className={classes.icons}>
                   <a
                     href="https://github.com/bhelzel"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -160,7 +160,7 @@ export default class About extends React.Component {
 
                   <a
                     href="https://www.linkedin.com/in/ankitspatel1145/"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={classes.iconlink}
                   >
                     <svg className={classes.svg} viewBox="0 0 24 24">
@@ -213,14 +213,14 @@ export default class About extends React.Component {
                   some catchy quote from a famous musician, but we'll let the
                   music do the talking instead.
                 </p>
-                <img className={classes.groupPhoto} src="/images/groupPhoto.png"/>
+                <img alt="test" className={classes.groupPhoto} src="/images/groupPhoto.png"/>
                 <div>
                   <a
                     href="https://github.com/mkochalko/musicMD"
-                    target="_blank"
+                    target="_blank" rel="noopener noreferrer"
                     className={navClasses.gitIcon}
                   >
-                    <img src="/images/github_icon.png" />
+                    <img alt="test" src="/images/github_icon.png" />
                   </a>
                   <p className={navClasses.iconName}>Repo</p>
                 </div>

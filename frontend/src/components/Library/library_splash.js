@@ -7,11 +7,6 @@ import NavBarContainer from '../nav/navbar_container';
 
 class LibrarySplash extends React.Component {
 
-    constructor(props) {
-        super(props)
-
-    }
-
     componentDidMount() {
         let loading = document.getElementById("loading");
         loading.setAttribute("style", "display: block")
