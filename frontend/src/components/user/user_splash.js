@@ -12,6 +12,9 @@ class UserSplash extends React.Component {
         super(props);
         this.state = {songIds: []};
         this.addSong = this.addSong.bind(this);
+
+        this.formatTodaysDate = this.formatTodaysDate.bind(this);
+        this.convertDateToNum = this.convertDateToNum.bind(this);
     }
 
     componentDidMount() {
@@ -42,7 +45,21 @@ class UserSplash extends React.Component {
         
     }
 
-    componentDidUpdate(prevProps) {
+    formatTodaysDate() {
+        let d = new Date(),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+        return parseInt(`${year.toString()}${month}${day}`);
+    }
+
+    convertDateToNum(date) {
+        return parseInt(date.split('-').join(''))
     }
 
 
@@ -54,9 +71,6 @@ class UserSplash extends React.Component {
     }
 
     render() {
-        // let events;
-        // let that = this;
-        // let setlistTitle;
         return (
 
             <div className={navClasses.wrapper}>
@@ -76,12 +90,16 @@ class UserSplash extends React.Component {
                             
                             <div className={classes.userEventItem} >
                                 {
-                                    Object.values(this.props.events).map((event, idx) => (
-                                        <div>
-                                        <UserEventItem onClick={this.eventClick} event={event} key={idx} id={idx} />
-
-                                        </div>
-                                    ))
+                                    Object.values(this.props.events).map((event, idx) => {
+                                        if (this.formatTodaysDate() < this.convertDateToNum(event.date)) {
+                                            return (
+                                                <div key={idx}>
+                                                    <UserEventItem onClick={this.eventClick} event={event} id={idx} />
+    
+                                                </div>
+                                            )
+                                        }
+                                    })
                                 }
                             </div>
 

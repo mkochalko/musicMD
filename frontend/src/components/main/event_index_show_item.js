@@ -22,7 +22,6 @@ class EventIndexShowItem extends React.Component {
         if (prevProps.event.id !== this.props.event.id) {
             this.props.clearTracks();
             this.fetchAllMusicInfo();
-            // document.getElementById('going').innerHTML = 'Add To Your Events';
         }
     }
             
@@ -101,7 +100,6 @@ class EventIndexShowItem extends React.Component {
     }
 
     render() {
-
         if (this.props.event.dates.start.localDate) {
             return (
                 <div className={classes.searchShowPage}>
