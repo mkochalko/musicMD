@@ -15,6 +15,7 @@ export const getEvents = (metroId) => {
 export const getMetroIdByClick = latlong => (
     axios.get(`/api/calls/songkick/click?string=${latlong}`)
         .then(res => {
+            
             return res.data
         })
         .catch(error => {
@@ -27,6 +28,7 @@ export const getMetroIdByText = (city) => {
     city = city.split(" ").join("%20");
     return axios.get(`/api/calls/songkick/text?string=${city}`)
         .then(res => {
+            // console.log(res)
             return res.data
         })
         .catch(error => {
