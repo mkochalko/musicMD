@@ -7,8 +7,8 @@ const MapsAPI = `AIzaSyDCfgh5IMc65PWQRgMbVpFmjhR6vA-l4tg`
 class SimpleMap extends Component {
     static defaultProps = {
         center: {
-            lat: 37.7749,
-            lng: -122.4194
+            lat: 36.1699,
+            lng: -115.1398
         },
         zoom: 11
     };
