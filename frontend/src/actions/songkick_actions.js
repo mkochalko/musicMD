@@ -17,7 +17,7 @@ export const getMetroIdByClick = latlng => dispatch => {
             .then(events => dispatch(receiveEvents(events._embedded.events)))
         )
         .catch(error => {
-            alert("No Events Found");
+            alert("No Events Found. Due to Covid-19, Your city may not have any events to display.");
         })
 };
 
